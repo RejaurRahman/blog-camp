@@ -1,6 +1,7 @@
 "use client";
 
 import * as Dialog from "@radix-ui/react-dialog";
+import { motion } from "framer-motion";
 import React from "react";
 
 import HeaderLogo from "../HeaderLogo/HeaderLogo.component";
@@ -35,8 +36,12 @@ export default function HeaderModal() {
               aria-label="Close"
               className={`w-24 h-24 flex items-center ${styles.burgerMenu}`}
             >
-              <span
+              <motion.span
+                animate={{ opacity: 1 }}
                 className={`flex relative mx-auto h-9 w-10 ${styles.menuIcon}`}
+                exit={{ opacity: 0 }}
+                initial={{ opacity: 0 }}
+                transition={{ delay: 0.4, duration: 0.3, ease: "easeInOut" }}
               />
             </button>
           </Dialog.Close>
