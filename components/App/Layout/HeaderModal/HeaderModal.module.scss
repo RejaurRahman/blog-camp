@@ -2,33 +2,79 @@
 
 $icon-line-height: 2px;
 $icon-top-width: 15px;
+$logo-size: 96px;
+
+.headerBar {
+  background-image: linear-gradient(styles.$transparent 0%, styles.$transparent $logo-size, styles.$supernova $logo-size);
+}
 
 .burgerMenu {
   background-color: styles.$buddha-gold;
+}
+
+.menuIcon {
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    height: $icon-line-height;
+    background-color: styles.$white;
+    transform: none;
+  }
+
+  &::before {
+    display: flex;
+  }
+
+  &::after {
+    width: 100%;
+  }
 
   span {
-    &::before,
-    &::after {
-      content: "";
-      position: absolute;
-      height: $icon-line-height;
-      background-color: styles.$white;
-    }
+    width: calc(100% - $icon-top-width / 2);
+    background-color: styles.$white;
+    transform: translateY(-50%);
+  }
+}
 
+.overlay {
+  background-color: styles.$overlay;
+  opacity: 0;
+  transition: opacity .3s ease-in-out;
+  transition-delay: .5s;
+
+  &[aria-hidden=true] {
+    opacity: 1;
+  }
+}
+
+:not([data-state="open"]) {
+  .menuIcon {
     &::before {
       width: calc(100% - $icon-top-width);
       top: 0;
-      display: flex;
     }
 
     &::after {
-      width: 100%;
       bottom: 0;
     }
   }
+}
 
+[data-state="open"] {
   .menuIcon {
-    width: calc(100% - $icon-top-width / 2);
-    transform: translateY(-50%);
+    &::before,
+    &::after {
+      top: 50%;
+    }
+
+    &::before {
+      width: 100%;
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      transform: rotate(-45deg);
+    }
   }
 }

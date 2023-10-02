@@ -1,5 +1,7 @@
 @use "../../../../styles/base.scss" as styles;
 
+$logo-size: 96px;
+
 .header {
-  background-color: styles.$supernova;
+  background-image: linear-gradient(styles.$white 0%, styles.$white $logo-size, styles.$supernova $logo-size);
 }
