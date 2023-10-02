@@ -4,12 +4,8 @@ $icon-line-height: styles.to-rem(2);
 $icon-top-width: styles.to-rem(15);
 $logo-size: styles.to-rem(96);
 
-.headerBar {
-  background-image: linear-gradient(styles.$transparent 0%, styles.$transparent $logo-size, styles.$supernova $logo-size);
-}
-
 .burgerMenu {
-  background-color: styles.$buddha-gold;
+  background-color: styles.$supernova;
 }
 
 .menuIcon {
@@ -18,7 +14,7 @@ $logo-size: styles.to-rem(96);
     content: "";
     position: absolute;
     height: $icon-line-height;
-    background-color: styles.$white;
+    background-color: styles.$black;
     transform: none;
   }
 
@@ -32,7 +28,7 @@ $logo-size: styles.to-rem(96);
 
   span {
     width: calc(100% - $icon-top-width / 2);
-    background-color: styles.$white;
+    background-color: styles.$black;
     transform: translateY(-50%);
   }
 }
@@ -46,6 +42,15 @@ $logo-size: styles.to-rem(96);
   &[aria-hidden=true] {
     opacity: 1;
   }
+}
+
+.left {
+  background-color: styles.$supernova;
+  width: 320px;
+}
+
+.right {
+  background-image: linear-gradient(styles.$transparent 0%, styles.$transparent $logo-size, styles.$buddha-gold $logo-size);
 }
 
 :not([data-state="open"]) {

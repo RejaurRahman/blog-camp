@@ -1,0 +1,33 @@
+@use "../../../../styles/base.scss" as styles;
+
+$block-height: styles.to-rem(96);
+
+.formField,
+.title {
+  height: $block-height;
+}
+
+.formField {
+  background-color: styles.$buddha-gold;
+  color: styles.$white;
+}
+
+.bottom {
+  @include styles.breakpoint(max-width, device-mobile) {
+    padding: {
+      right: styles.to-rem(15);
+      left: styles.to-rem(15);
+    }
+  }
+
+  @include styles.breakpoint(min-width, device-mobile) {
+    padding: {
+      right: styles.to-rem(30);
+      left: styles.to-rem(30);
+    }
+  }
+
+  flex-flow: column;
+  height: calc(100% - $block-height * 2);
+  padding-bottom: styles.to-rem(30);
+}

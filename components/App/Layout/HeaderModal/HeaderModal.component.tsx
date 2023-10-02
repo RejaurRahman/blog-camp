@@ -4,6 +4,7 @@ import * as Dialog from "@radix-ui/react-dialog";
 import { motion } from "framer-motion";
 import React from "react";
 
+import HeaderLeft from "../HeaderLeft/HeaderLeft.component";
 import HeaderLogo from "../HeaderLogo/HeaderLogo.component";
 import HeaderSocial from "../HeaderSocial/HeaderSocial.component";
 
@@ -28,24 +29,29 @@ export default function HeaderModal() {
           className={`fixed top-0 h-screen w-full ${styles.overlay}`}
         />
         <Dialog.Content
-          className={`absolute top-0 left-0 w-24 h-screen ${styles.headerBar}`}
+          className="absolute flex top-0 left-0 h-screen"
         >
-          <HeaderLogo />
-          <Dialog.Close asChild>
-            <button
-              aria-label="Close"
-              className={`w-24 h-24 flex items-center ${styles.burgerMenu}`}
-            >
-              <motion.span
-                animate={{ opacity: 1 }}
-                className={`flex relative mx-auto h-9 w-10 ${styles.menuIcon}`}
-                exit={{ opacity: 0 }}
-                initial={{ opacity: 0 }}
-                transition={{ delay: 0.4, duration: 0.3, ease: "easeInOut" }}
-              />
-            </button>
-          </Dialog.Close>
-          <HeaderSocial />
+          <div className={styles.left}>
+            <HeaderLeft />
+          </div>
+          <div className={`w-24 ${styles.right}`}>
+            <HeaderLogo />
+            <Dialog.Close asChild>
+              <button
+                aria-label="Close"
+                className={`w-24 h-24 flex items-center ${styles.burgerMenu}`}
+              >
+                <motion.span
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ delay: 0.4, duration: 0.3, ease: "easeInOut" }}
+                  className={`flex relative mx-auto h-9 w-10 ${styles.menuIcon}`}
+                />
+              </button>
+            </Dialog.Close>
+            <HeaderSocial />
+          </div>
         </Dialog.Content>
       </Dialog.Portal>
     </Dialog.Root>
