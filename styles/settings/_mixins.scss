@@ -1,0 +1,29 @@
+@use "sass:math";
+@use "./breakpoints" as *;
+
+@mixin breakpoint($direction, $breakpoint) {
+  $breakpoint-value: map-get($breakpoints, $breakpoint);
+
+  @if $direction == min-width {
+    @media screen and (min-width: $breakpoint-value) {
+      @content;
+    }
+  } @else if $direction == max-width {
+    @media screen and (max-width: ($breakpoint-value - 1)) {
+      @content;
+    }
+  } @else if $direction == min-height {
+    @media screen and (min-height: ($breakpoint-value - 1)) {
+      @content;
+    }
+  } @else if $direction == max-height {
+    @media screen and (max-height: ($breakpoint-value - 1)) {
+      @content;
+    }
+  }
+}
+
+@function to-rem($value) {
+  $rem-value: (math.div($value, 16)) + rem;
+  @return $rem-value;
+}
