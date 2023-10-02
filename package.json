@@ -11,6 +11,8 @@
   "dependencies": {
     "@heroicons/react": "^2.0.18",
     "@portabletext/react": "^3.0.9",
+    "@radix-ui/react-dialog": "^1.0.5",
+    "@radix-ui/react-navigation-menu": "^1.1.4",
     "@sanity/client": "^6.4.9",
     "@sanity/icons": "^2.0.0",
     "@sanity/image-url": "1",
