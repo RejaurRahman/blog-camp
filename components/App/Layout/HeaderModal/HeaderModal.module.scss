@@ -3,9 +3,10 @@
 $icon-line-height: styles.to-rem(2);
 $icon-top-width: styles.to-rem(15);
 $logo-size: styles.to-rem(96);
+$modal-left-width: styles.to-rem(320);
 
 .burgerMenu {
-  background-color: styles.$supernova;
+  background-color: styles.$supernova
 }
 
 .menuIcon {
@@ -45,8 +46,15 @@ $logo-size: styles.to-rem(96);
 }
 
 .left {
+  @include styles.breakpoint(max-width, device-mobile) {
+    width: calc(100% - $logo-size);
+  }
+
+  @include styles.breakpoint(min-width, device-mobile) {
+    width: $modal-left-width;
+  }
+
   background-color: styles.$supernova;
-  width: 320px;
 }
 
 .right {

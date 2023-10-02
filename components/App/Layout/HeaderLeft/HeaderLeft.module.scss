@@ -7,11 +7,7 @@ $block-height: styles.to-rem(96);
   height: $block-height;
 }
 
-.formField {
-  background-color: styles.$buddha-gold;
-  color: styles.$white;
-}
-
+.formField,
 .bottom {
   @include styles.breakpoint(max-width, device-mobile) {
     padding: {
@@ -26,7 +22,31 @@ $block-height: styles.to-rem(96);
       left: styles.to-rem(30);
     }
   }
+}
 
+.formField {
+  background-color: styles.$buddha-gold;
+  color: styles.$white;
+
+
+  &::placeholder {
+    color: styles.$white;
+  }
+}
+
+.copyright,
+.formField,
+.menuItem,
+.subtitle,
+.title {
+  font-family: "AR One Sans", sans-serif;
+}
+
+.title {
+  font-weight: bold;
+}
+
+.bottom {
   flex-flow: column;
   height: calc(100% - $block-height * 2);
   padding-bottom: styles.to-rem(30);
