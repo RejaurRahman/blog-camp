@@ -29,7 +29,7 @@ export default function HeaderModal() {
           className={`fixed top-0 h-screen w-full ${styles.overlay}`}
         />
         <Dialog.Content
-          className="absolute flex top-0 left-0 h-screen"
+          className={`absolute flex top-0 left-0 h-screen ${styles.content}`}
         >
           <div className={styles.left}>
             <HeaderLeft />

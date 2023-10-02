@@ -28,24 +28,24 @@ export default function HeaderLeft() {
         <ul>
           <li className="pb-6">
             <Link
+              className={`text-lg ${styles.menuItem} `}
               href="/"
-              className={`text-lg pb-6 ${styles.menuItem}`}
             >
               Home
             </Link>
           </li>
           <li className="pb-6">
             <Link
+              className={`text-lg ${styles.menuItem} `}
               href="/about"
-              className={`text-lg pb-6 ${styles.menuItem}`}
             >
               About
             </Link>
           </li>
           <li>
             <Link
+              className={`text-lg ${styles.menuItem} `}
               href="/contact"
-              className={`text-lg pb-6 ${styles.menuItem}`}
             >
               Contact
             </Link>
