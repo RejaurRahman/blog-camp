@@ -1,4 +1,7 @@
+import React from "react";
+
 import Header from "@/components/App/Layout/Header/Header.component";
+
 import "../../styles/globals.css";
 
 export const metadata = {
