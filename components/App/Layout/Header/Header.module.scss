@@ -1,6 +1,6 @@
 @use "../../../../styles/base.scss" as styles;
 
-$logo-size: 96px;
+$logo-size: styles.to-rem(96);
 
 .header {
   background-image: linear-gradient(styles.$white 0%, styles.$white $logo-size, styles.$supernova $logo-size);

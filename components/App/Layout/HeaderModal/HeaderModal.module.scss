@@ -1,8 +1,8 @@
 @use "../../../../styles/base.scss" as styles;
 
-$icon-line-height: 2px;
-$icon-top-width: 15px;
-$logo-size: 96px;
+$icon-line-height: styles.to-rem(2);
+$icon-top-width: styles.to-rem(15);
+$logo-size: styles.to-rem(96);
 
 .headerBar {
   background-image: linear-gradient(styles.$transparent 0%, styles.$transparent $logo-size, styles.$supernova $logo-size);

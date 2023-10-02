@@ -4,6 +4,7 @@ import * as Dialog from "@radix-ui/react-dialog";
 import React from "react";
 
 import HeaderLogo from "../HeaderLogo/HeaderLogo.component";
+import HeaderSocial from "../HeaderSocial/HeaderSocial.component";
 
 import styles from "./HeaderModal.module.scss";
 
@@ -39,6 +40,7 @@ export default function HeaderModal() {
               />
             </button>
           </Dialog.Close>
+          <HeaderSocial />
         </Dialog.Content>
       </Dialog.Portal>
     </Dialog.Root>
