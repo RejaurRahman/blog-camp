@@ -1,0 +1,34 @@
+@use "../../../../styles/base.scss" as styles;
+
+$icon-line-height: 2px;
+$icon-top-width: 15px;
+
+.burgerMenu {
+  background-color: styles.$buddha-gold;
+
+  span {
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      height: $icon-line-height;
+      background-color: styles.$white;
+    }
+
+    &::before {
+      width: calc(100% - $icon-top-width);
+      top: 0;
+      display: flex;
+    }
+
+    &::after {
+      width: 100%;
+      bottom: 0;
+    }
+  }
+
+  .menuIcon {
+    width: calc(100% - $icon-top-width / 2);
+    transform: translateY(-50%);
+  }
+}
