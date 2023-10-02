@@ -10,6 +10,8 @@ import {deskTool} from "sanity/desk"
 import {apiVersion, dataset, projectId} from "./env"
 import {schema} from "./schema"
 import { blogCampTheme } from "./theme"
+import StudioNavbar from "./components/Sanity/StudioNavbar/StudioNavbar.component"
+import Logo from "./components/Sanity/Logo/Logo.component"
 
 export default defineConfig({
   basePath: "/studio",
@@ -24,6 +26,12 @@ export default defineConfig({
   projectId,
   // Add and edit the content schema in the "./sanity/schema" folder
   schema,
+  studio: {
+    components: {
+      logo: Logo,
+      navbar: StudioNavbar
+    }
+  },
   theme: blogCampTheme,
   title: "BLOGCAMP Content Studio",
 })
