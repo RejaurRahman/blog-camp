@@ -6,7 +6,9 @@ $logo-size: styles.to-rem(96);
 $modal-left-width: styles.to-rem(320);
 
 .burgerMenu {
-  background-color: styles.$supernova
+  &[type="button"] {
+    background-color: styles.$supernova;
+  }
 }
 
 .menuIcon {
