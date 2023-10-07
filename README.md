@@ -1,5 +1,11 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+## Tasks
+
+1. Favicon
+2. Live Preview Mode
+3. Breadcrumbs on Posts
+
 ## Getting Started
 
 First, run the development server:

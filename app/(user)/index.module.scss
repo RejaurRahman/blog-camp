@@ -1,0 +1,20 @@
+@use "../../styles/base.scss" as styles;
+
+$nav-width: styles.to-rem(96);
+
+.container {
+  @include styles.breakpoint(max-width, device-desktop) {
+    flex-flow: column;
+  }
+
+  @include styles.breakpoint(min-width, device-desktop) {
+    height: 100vh;
+    width: calc(100% - $nav-width);
+  }
+}
+
+.content {
+  @include styles.breakpoint(min-width, device-desktop) {
+    width: 50%;
+  }
+}

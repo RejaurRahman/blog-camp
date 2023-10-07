@@ -1,0 +1,40 @@
+@use "../../../styles/base.scss" as styles;
+
+$nav-width: styles.to-rem(96);
+$mobile-banner-height: styles.to-rem(300);
+
+.banner {
+  @include styles.breakpoint(min-width, device-desktop) {
+    width: calc(50% - $nav-width / 2);
+    position: fixed;
+    right: 0;
+    height: 100%;
+  }
+
+  img {
+    &[data-desktop="false"] {
+      @include styles.breakpoint(max-width, device-desktop) {
+        display: block;
+      }
+
+      @include styles.breakpoint(min-width, device-desktop) {
+        display: none;
+      }
+    }
+
+    &[data-desktop="true"] {
+      @include styles.breakpoint(max-width, device-desktop) {
+        display: none;
+      }
+
+      @include styles.breakpoint(min-width, device-desktop) {
+        display: block;
+      }
+    }
+
+    @include styles.breakpoint(max-width, device-desktop) {
+      max-height: $mobile-banner-height;
+      object-fit: cover;
+    }
+  }
+}

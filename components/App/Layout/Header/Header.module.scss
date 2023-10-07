@@ -3,5 +3,11 @@
 $logo-size: styles.to-rem(96);
 
 .header {
-  background-image: linear-gradient(styles.$white 0%, styles.$white $logo-size, styles.$buddha-gold $logo-size);
+  @include styles.breakpoint(max-width, device-desktop) {
+    background-image: linear-gradient(styles.$transparent 0%, styles.$transparent $logo-size, styles.$buddha-gold $logo-size);
+  }
+
+  @include styles.breakpoint(min-width, device-desktop) {
+    background-image: linear-gradient(styles.$white 0%, styles.$white $logo-size, styles.$buddha-gold $logo-size);
+  }
 }
