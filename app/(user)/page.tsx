@@ -1,15 +1,30 @@
 import React from "react";
+import { groq } from "next-sanity";
+import { client } from "@/lib/client";
 
+import BlogList from "@/components/App/Blog/BlogList/BlogList.component";
 import MainBanner from "@/components/App/MainBanner/MainBanner.component";
 
 import styles from "./index.module.scss";
 
-export default function HomePage() {
+const query = groq`
+  *[_type=="post"] {
+    ...,
+    author->,
+    categories[]->
+  } | order(_createdAt desc)
+`
+
+export default async function HomePage() {
+  const posts = await client.fetch(query);
+
   return (
     <>
       <div className={`flex ml-auto ${styles.container}`}>
         <MainBanner />
-        <div className={`flex ${styles.content}`} />
+        <div className={`flex ${styles.content}`}>
+          <BlogList posts={posts} />
+        </div>
       </div>
     </>
   )
