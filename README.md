@@ -1,10 +1,23 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Tasks
+## Global Tasks
 
 1. Favicon
 2. Live Preview Mode
-3. Breadcrumbs on Posts
+3. Search Functionality
+
+## Tasks on Blog Posts
+
+1. Breadcrumbs on Posts
+2. Read time on posts
+3. Share posts
+4. Similar posts section
+5. Authors page
+
+## Other Pages
+
+1. About Us
+2. Contact
 
 ## Getting Started
 
@@ -44,3 +57,37 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## Sanity Integration
+
+```bash
+sanity login
+```
+
+I selected Github, but you choose the option you use to login to Sanity
+
+```bash
+sanity start
+```
+
+It will say _'Content Studio successfully compiled! Go to http://localhost:3333'_
+
+A browser page will open to login to your Sanity account.
+
+To deploy sanity cms to production you need to run:
+
+```bash
+sanity deploy
+```
+
+## Setup Sanity initialization
+
+Create _'.env.local'_ in the root of the repository
+
+You will need to add the following code:
+
+```bash
+NEXT_PUBLIC_SANITY_DATASET={value}
+NEXT_PUBLIC_SANITY_PROJECT_ID={value}
+SANITY_API_TOKEN={token}
+```
