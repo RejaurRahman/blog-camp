@@ -13,6 +13,8 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 3. Share posts
 4. Similar posts section
 5. Authors page
+6. Progress bar on post
+7. Sticky Headings section
 
 ## Other Pages
 

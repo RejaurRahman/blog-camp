@@ -12,7 +12,7 @@ const query = groq`
     ...,
     author->,
     categories[]->
-  } | order(_createdAt desc)
+  } | order(_publishedAt desc)
 `
 
 export default async function HomePage() {
