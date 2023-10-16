@@ -1,0 +1,33 @@
+@use "../../../../styles/base.scss" as styles;
+
+$divider-size: styles.to-rem(8);
+$nav-width: styles.to-rem(96);
+
+.grid {
+  @include styles.breakpoint(max-width, device-desktop) {
+    padding: {
+      right: styles.to-rem(15);
+      left: calc($nav-width + styles.to-rem(15));
+    }
+  }
+
+  @include styles.breakpoint(min-width, device-desktop) {
+    padding: {
+      right: styles.to-rem(40);
+      left: styles.to-rem(40);
+    }
+  }
+}
+
+.date {
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: $divider-size;
+    height: $divider-size;
+    border-radius: 50%;
+    background-color: styles.$black;
+  }
+}
