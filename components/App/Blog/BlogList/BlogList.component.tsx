@@ -18,6 +18,7 @@ export default function BlogList({ posts }: Props) {
       >
         {posts.map((post, index) => (
           <ClientSideRoute
+            className={styles.articleLink}
             route={`/post/${post.slug.current}`}
             key={post._id}
           >

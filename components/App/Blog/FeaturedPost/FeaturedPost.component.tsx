@@ -48,10 +48,10 @@ export default function FeaturedPost({ post }: Props) {
       <h1 className={`font-bold pb-5 ${styles.title}`}>
         {post.title}
       </h1>
-      <div className="relative w-full h-80">
+      <div className="relative w-full h-80 overflow-hidden">
         <Image
           alt={post.title}
-          className="object-cover object-center"
+          className="object-cover object-center group-hover:scale-150 duration-300 ease-out"
           fill
           src={
             urlFor(post.mainImage).url()
@@ -59,7 +59,7 @@ export default function FeaturedPost({ post }: Props) {
         />
       </div>
       <div className="mt-5 flex-1">
-        <p className="line-clamp-2 text-gray-500">
+        <p className="line-clamp-3 text-gray-500">
           {post.description}
         </p>
       </div>
@@ -68,7 +68,7 @@ export default function FeaturedPost({ post }: Props) {
       >
         Read Post
         <ArrowUpRightIcon
-          className="ml-2 h-4 w-4"
+          className="ml-2 h-4 w-4 group-hover:rotate-45 duration-300 ease-out"
         />
       </p>
     </div>
