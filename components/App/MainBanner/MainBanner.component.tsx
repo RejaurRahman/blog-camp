@@ -10,13 +10,13 @@ export default function MainBanner() {
     <div className={styles.banner}>
       <Image
         alt="Rejaur Rahman"
-        className="h-full"
+        className="object-cover object-center h-full"
         data-desktop="false"
         src={PortfolioImage}
       />
       <Image
         alt="Rejaur Rahman"
-        className="h-full"
+        className="object-cover object-center h-full"
         data-desktop="true"
         src={PortfolioImage}
       />

@@ -34,7 +34,6 @@ $mobile-banner-height: styles.to-rem(300);
 
     @include styles.breakpoint(max-width, device-desktop) {
       max-height: $mobile-banner-height;
-      object-fit: cover;
     }
   }
 }
