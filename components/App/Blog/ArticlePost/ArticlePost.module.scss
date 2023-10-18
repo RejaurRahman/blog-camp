@@ -1,5 +1,13 @@
 @use "../../../../styles/base.scss" as styles;
 
+.card {
+  filter: blur(styles.to-rem(2));
+
+  &:hover {
+    filter: blur(0);
+  }
+}
+
 .title {
   font-size: styles.to-rem(30);
   line-height: styles.to-rem(33);
