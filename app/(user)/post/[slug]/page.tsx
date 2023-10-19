@@ -5,6 +5,9 @@ import { client } from "@/lib/client";
 import urlFor from "@/lib/urlFor";
 
 import PostBanner from "@/components/App/PostBanner/PostBanner.component";
+import BlogHeader from "@/components/App/Blog/BlogHeader/BlogHeader.component";
+
+import styles from "./post.module.scss";
 
 type Props = {
   params: {
@@ -29,6 +32,9 @@ export default async function Post({ params: {slug} }: Props) {
         imageAltText={post.title}
         imageSrc={urlFor(post.mainImage).url()}
       />
+      <div className={styles.container}>
+        <BlogHeader post={post} />
+      </div>
     </article>
   )
 }

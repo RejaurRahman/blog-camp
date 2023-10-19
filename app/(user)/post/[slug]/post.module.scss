@@ -1,0 +1,23 @@
+@use "../../../../styles/base.scss" as styles;
+
+$nav-width: styles.to-rem(96);
+
+.container {
+  width: calc(100% - $nav-width);
+
+  @include styles.breakpoint(max-width, device-mobile) {
+    padding: {
+      top: styles.to-rem(45);
+      right: styles.to-rem(15);
+      left: calc($nav-width + styles.to-rem(15));
+    }
+  }
+
+  @include styles.breakpoint(min-width, device-mobile) {
+    padding: {
+      top: styles.to-rem(96);
+      right: styles.to-rem(45);
+      left: calc($nav-width + styles.to-rem(45));
+    }
+  }
+}
