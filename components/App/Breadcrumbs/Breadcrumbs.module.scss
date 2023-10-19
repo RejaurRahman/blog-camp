@@ -1,0 +1,46 @@
+@use "../../../styles/base.scss" as styles;
+
+.breadcrumbs {
+  li {
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      height: 50%;
+      width: 100%;
+      border-left: styles.to-rem(1) solid styles.$supernova;
+      border-right: styles.to-rem(1) solid styles.$supernova;
+      z-index: -2;
+    }
+
+    &::before {
+      top: 0;
+      transform: skew(30deg);
+      border-top: styles.to-rem(1) solid styles.$supernova;
+    }
+
+    &::after {
+      bottom: 0;
+      transform: skew(-30deg);
+      border-bottom: styles.to-rem(1) solid styles.$supernova;
+    }
+
+    &:first-child {
+      border-left: styles.to-rem(1) solid styles.$supernova;
+
+      &::before,
+      &::after {
+        left: styles.to-rem(5);
+        border-left: styles.to-rem(1) solid transparent;
+      }
+    }
+
+    &:last-child {
+      &::before,
+      &::after {
+        background-color: styles.$supernova;
+      }
+    }
+  }
+}

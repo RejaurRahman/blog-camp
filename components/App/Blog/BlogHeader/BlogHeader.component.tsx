@@ -1,5 +1,7 @@
 import React from "react";
 
+import Breadcrumbs from "../../Breadcrumbs/Breadcrumbs.component";
+
 import blogListStyles from "../BlogList/BlogList.module.scss";
 import styles from "./BlogHeader.module.scss";
 
@@ -10,6 +12,7 @@ type Props = {
 export default function BlogHeader({ post }: Props) {
   return (
     <>
+      <Breadcrumbs pageTitle={post.title} />
       <div className="flex items-center pb-7">
         <div
           className="flex flex-col md:flex-row gap-y-2 md:gap-x-2 items-center"
