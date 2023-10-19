@@ -3,7 +3,7 @@
 $nav-width: styles.to-rem(96);
 
 .container {
-  width: calc(100% - $nav-width);
+  width: 100%;
 
   @include styles.breakpoint(max-width, device-mobile) {
     padding: {
@@ -13,10 +13,17 @@ $nav-width: styles.to-rem(96);
     }
   }
 
-  @include styles.breakpoint(min-width, device-mobile) {
+  @include styles.mix-breakpoint(device-mobile, device-tablet) {
+    padding: {
+      top: styles.to-rem(45);
+      right: styles.to-rem(45);
+      left: calc($nav-width + styles.to-rem(15));
+    }
+  }
+
+  @include styles.breakpoint(min-width, device-tablet) {
     padding: {
       top: styles.to-rem(96);
-      right: styles.to-rem(45);
       left: calc($nav-width + styles.to-rem(45));
     }
   }

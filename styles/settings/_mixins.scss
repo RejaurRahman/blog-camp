@@ -23,6 +23,15 @@
   }
 }
 
+@mixin mix-breakpoint($first-breakpoint, $second-breakpoint) {
+  $first-breakpoint-value: map-get($breakpoints, $first-breakpoint);
+  $second-breakpoint-value: map-get($breakpoints, $second-breakpoint);
+
+  @media screen and (min-width: $first-breakpoint-value) and (max-width: ($second-breakpoint-value - 1)) {
+    @content;
+  }
+}
+
 @function to-rem($value) {
   $rem-value: (math.div($value, 16)) + rem;
   @return $rem-value;
