@@ -1,5 +1,31 @@
 @use "../../../../styles/base.scss" as styles;
 
+.left {
+  @include styles.breakpoint(min-width, device-tablet) {
+    width: 70%;
+  }
+}
+
+.right {
+  @include styles.breakpoint(min-width, device-tablet) {
+    width: 30%;
+    border: {
+      top: styles.to-rem(1) solid styles.$buddha-gold;
+      bottom: styles.to-rem(1) solid styles.$buddha-gold;
+      left: styles.to-rem(1) solid styles.$buddha-gold;
+    }
+    padding: {
+      right: styles.to-rem(20);
+      left: styles.to-rem(20);
+    }
+  }
+
+  padding: {
+    top: styles.to-rem(50);
+    bottom: styles.to-rem(50);
+  }
+}
+
 .title {
   @include styles.breakpoint(max-width, device-desktop) {
     font-size: styles.to-rem(34);
@@ -15,5 +41,14 @@
 .description {
   font-size: styles.to-rem(21);
   line-height: styles.to-rem(28);
+}
+
+.writtenText,
+.description {
   font-style: italic;
+}
+
+.writtenText {
+  font-size: styles.to-rem(14);
+  line-height: styles.to-rem(19);
 }

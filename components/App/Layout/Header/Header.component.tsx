@@ -12,7 +12,7 @@ import styles from "./Header.module.scss";
 export default function Header() {
   return (
     <header
-      className={`fixed top-0 left-0 w-24 min-h-full ${styles.header}`}
+      className={`fixed top-0 left-0 w-24 min-h-full z-10 ${styles.header}`}
     >
       <NavigationMenu.Root>
         <HeaderLogo />

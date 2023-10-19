@@ -1,4 +1,8 @@
+import Image from "next/image";
+import { PortableText } from "@portabletext/react";
 import React from "react";
+
+import urlFor from "@/lib/urlFor";
 
 import Breadcrumbs from "../../Breadcrumbs/Breadcrumbs.component";
 
@@ -11,45 +15,64 @@ type Props = {
 
 export default function BlogHeader({ post }: Props) {
   return (
-    <>
-      <Breadcrumbs pageTitle={post.title} />
-      <div className="flex items-center pb-7">
-        <div
-          className="flex flex-col md:flex-row gap-y-2 md:gap-x-2 items-center"
-        >
-          {
-            post.categories?.map((category) => (
-              <div
-                className="bg-[#FFCC00] text-center text-black px-3 py-1 rounded-full text-sm font-semibold"
-                key={category._id}
-              >
-                <p>{category.title}</p>
-              </div>
-            ))
-          }
-        </div>
-        <p
-          className={`uppercase relative ml-2.5 ${blogListStyles.date}`}
-        >
-          <span className="ml-4">
+    <div className="flex">
+      <div className={styles.left}>
+        <Breadcrumbs pageTitle={post.title} />
+        <div className="flex items-center pb-7">
+          <div
+            className="flex flex-col md:flex-row gap-y-2 md:gap-x-2 items-center"
+          >
             {
-              new Date(post._createdAt).toLocaleDateString("en-US", {
-                day: "numeric",
-                month: "long",
-                year: "numeric"
-              })
+              post.categories?.map((category) => (
+                <div
+                  className="bg-[#FFCC00] text-center text-black px-3 py-1 rounded-full text-sm font-semibold"
+                  key={category._id}
+                >
+                  <p>{category.title}</p>
+                </div>
+              ))
             }
-          </span>
-        </p>
+          </div>
+          <p
+            className={`uppercase relative ml-2.5 ${blogListStyles.date}`}
+          >
+            <span className="ml-4">
+              {
+                new Date(post._createdAt).toLocaleDateString("en-US", {
+                  day: "numeric",
+                  month: "long",
+                  year: "numeric"
+                })
+              }
+            </span>
+          </p>
+        </div>
+        <h1 className={`font-bold pb-5 ${styles.title}`}>
+          {post.title}
+        </h1>
+        <div className="mt-5 flex-1">
+          <p className={`text-gray-500 ${styles.description}`}>
+            {post.description}
+          </p>
+        </div>
       </div>
-      <h1 className={`font-bold pb-5 ${styles.title}`}>
-        {post.title}
-      </h1>
-      <div className="mt-5 flex-1">
-        <p className={`text-gray-500 ${styles.description}`}>
-          {post.description}
+      <div className={styles.right}>
+        <div className="relative h-32 w-32 mb-6">
+          <Image
+            alt={post.author.name}
+            className="object-cover object-center rounded-full"
+            fill
+            src={
+              urlFor(post.author.image).url()
+            }
+          />
+        </div>
+        <p className={`mb-4 ${styles.writtenText}`}>
+          Written By
         </p>
+        <p className="font-bold mb-6">{post.author.name}</p>
+        <PortableText value={post.author.bio} />
       </div>
-    </>
+    </div>
   )
 }
