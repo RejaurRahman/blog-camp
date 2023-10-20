@@ -1,7 +1,10 @@
+"use client"
+
 import Image from "next/image";
 import { PortableText } from "@portabletext/react";
-import React from "react";
+import React, { useCallback, useEffect, useState } from "react";
 
+import { ClockIcon } from "@heroicons/react/24/outline";
 import urlFor from "@/lib/urlFor";
 
 import Breadcrumbs from "../../Breadcrumbs/Breadcrumbs.component";
@@ -14,8 +17,27 @@ type Props = {
 }
 
 export default function BlogHeader({ post }: Props) {
+  const [calculateWords, setCalculateWords] = useState(0);
+
+  const wordCalculate = useCallback(() => {
+    let numberOfWords = 0;
+    const averageWPM = 190;
+
+    const words = document.querySelectorAll("p, h1, h2, h3, h4, h5, h6");
+    words.forEach((word) => {
+      numberOfWords += word.innerHTML.trim().split(" ").length;
+    });
+
+    const readTime = Math.ceil(numberOfWords / averageWPM);
+    setCalculateWords(readTime);
+  }, []);
+
+  useEffect(() => {
+    wordCalculate();
+  }, [calculateWords, wordCalculate]);
+
   return (
-    <div className="flex">
+    <div className={`flex ${styles.wrapper}`}>
       <div className={styles.left}>
         <Breadcrumbs pageTitle={post.title} />
         <div className="flex items-center pb-7">
@@ -46,6 +68,12 @@ export default function BlogHeader({ post }: Props) {
               }
             </span>
           </p>
+          <span className={`relative pl-2.5 ${styles.readTime}`}>
+            <span className={`flex items-center pl-4 ${styles.readTimeText}`}>
+              <ClockIcon />
+              {calculateWords} min read
+            </span>
+          </span>
         </div>
         <h1 className={`font-bold pb-5 ${styles.title}`}>
           {post.title}

@@ -1,5 +1,13 @@
 @use "../../../../styles/base.scss" as styles;
 
+$divider-size: styles.to-rem(8);
+
+.wrapper {
+  @include styles.breakpoint(max-width, device-tablet) {
+    flex-flow: column;
+  }
+}
+
 .left {
   @include styles.breakpoint(min-width, device-tablet) {
     width: 70%;
@@ -43,12 +51,34 @@
   line-height: styles.to-rem(28);
 }
 
-.writtenText,
-.description {
+.description,
+.readTimeText,
+.writtenText {
   font-style: italic;
 }
 
+.readTimeText,
 .writtenText {
   font-size: styles.to-rem(14);
   line-height: styles.to-rem(19);
+}
+
+.readTime {
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: $divider-size;
+    height: $divider-size;
+    border-radius: 50%;
+    background-color: styles.$black;
+  }
+}
+
+.readTimeText {
+  svg {
+    width: styles.to-rem(24);
+    margin-right: styles.to-rem(5);
+  }
 }

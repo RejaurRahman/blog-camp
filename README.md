@@ -9,15 +9,14 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 ## Tasks on Blog Posts
 
 1. Sticky Headings Nav
-2. Read time on posts
+2. Similar posts section
 3. Progress bar on post
-4. Similar posts section
-5. Authors page
 
 ## Other Pages
 
 1. About Us
 2. Contact
+3. Authors page
 
 ## Getting Started
 
