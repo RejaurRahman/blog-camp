@@ -4,8 +4,9 @@ import { client } from "@/lib/client";
 
 import urlFor from "@/lib/urlFor";
 
-import PostBanner from "@/components/App/PostBanner/PostBanner.component";
 import BlogHeader from "@/components/App/Blog/BlogHeader/BlogHeader.component";
+import PostBanner from "@/components/App/PostBanner/PostBanner.component";
+import SharePosts from "@/components/App/SharePosts/SharePosts.component";
 
 import styles from "./post.module.scss";
 
@@ -34,6 +35,7 @@ export default async function Post({ params: {slug} }: Props) {
       />
       <div className={styles.container}>
         <BlogHeader post={post} />
+        <SharePosts post={post} />
       </div>
     </article>
   )

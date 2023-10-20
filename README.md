@@ -10,10 +10,9 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 1. Sticky Headings Nav
 2. Read time on posts
-3. Share posts
+3. Progress bar on post
 4. Similar posts section
 5. Authors page
-6. Progress bar on post
 
 ## Other Pages
 
