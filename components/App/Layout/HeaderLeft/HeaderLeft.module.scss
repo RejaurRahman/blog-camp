@@ -4,7 +4,21 @@ $block-height: styles.to-rem(96);
 
 .formField,
 .title {
-  height: $block-height;
+  @include styles.breakpoint(min-width, device-mobile) {
+    height: $block-height;
+  }
+}
+
+.formField {
+  @include styles.breakpoint(max-width, device-mobile) {
+    height: styles.to-rem(90);
+  }
+}
+
+.title {
+  @include styles.breakpoint(max-width, device-mobile) {
+    height: styles.to-rem(45);
+  }
 }
 
 .formField,
@@ -47,7 +61,14 @@ $block-height: styles.to-rem(96);
 }
 
 .bottom {
+  @include styles.breakpoint(max-width, device-mobile) {
+    height: calc(100% - styles.to-rem(90) - styles.to-rem(45));
+  }
+
+  @include styles.breakpoint(min-width, device-mobile) {
+    height: calc(100% - $block-height * 2);
+  }
+
   flex-flow: column;
-  height: calc(100% - $block-height * 2);
   padding-bottom: styles.to-rem(30);
 }

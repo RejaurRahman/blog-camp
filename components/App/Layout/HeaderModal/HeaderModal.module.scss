@@ -56,6 +56,10 @@ $modal-left-width: styles.to-rem(320);
 }
 
 .content {
+  @include styles.breakpoint(max-width, device-mobile) {
+    width: calc(100% - $logo-size-mobile);
+  }
+
   &[data-state="open"] {
     animation: slideIn 300ms ease-out;
   }
