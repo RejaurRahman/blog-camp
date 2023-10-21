@@ -15,6 +15,8 @@ const query = groq`
   } | order(_publishedAt desc)
 `
 
+export const revalidate = 30;
+
 export default async function HomePage() {
   const posts = await client.fetch(query);
 
