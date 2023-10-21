@@ -18,10 +18,6 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 2. Contact
 3. Authors page
 
-## Speed Issues
-
-1. Load issue with Font Awesome Icons on load
-
 ## Getting Started
 
 First, run the development server:

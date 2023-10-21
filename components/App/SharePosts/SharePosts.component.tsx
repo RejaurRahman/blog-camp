@@ -5,12 +5,14 @@ import React, { useState } from "react";
 import ClientSideRoute from "../ClientSideRoute/ClientSideRoute";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 
-import { library } from "@fortawesome/fontawesome-svg-core";
+import { config, library } from "@fortawesome/fontawesome-svg-core";
 import { faCopy, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { fab } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 library.add(faCopy, faEnvelope, fab);
+
+config.autoAddCss = false;
 
 import styles from "./SharePosts.module.scss";
 

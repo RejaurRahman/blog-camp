@@ -1,10 +1,12 @@
 import React from "react";
 
-import { library } from "@fortawesome/fontawesome-svg-core";
+import { config, library } from "@fortawesome/fontawesome-svg-core";
 import { fab } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 library.add(fab);
+
+config.autoAddCss = false;
 
 import SocialIcon from "./SocialIcon/SocialIcon.component";
 
