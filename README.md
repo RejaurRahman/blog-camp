@@ -18,6 +18,10 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 2. Contact
 3. Authors page
 
+## Issues
+
+1. Post Body empty <p></p> populating
+
 ## Getting Started
 
 First, run the development server:

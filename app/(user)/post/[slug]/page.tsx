@@ -18,15 +18,30 @@ type Props = {
   }
 }
 
-const query = groq`
-  *[_type=="post" && slug.current == $slug][0] {
-    ...,
-    author->,
-    categories[]->
-  }
-`
+export async function generateStaticParams() {
+  const query = groq`
+    *[_type=="post"] {
+      slug
+    }
+  `
+
+  const slugs: Post[] = await client.fetch(query);
+  const slugRoutes = slugs.map((slug) => slug.slug.current);
+
+  return slugRoutes.map((slug) => ({
+    slug
+  }))
+}
 
 export default async function Post({ params: {slug} }: Props) {
+  const query = groq`
+    *[_type=="post" && slug.current == $slug][0] {
+      ...,
+      author->,
+      categories[]->
+    }
+  `
+
   const post: Post = await client.fetch(query, { slug })
 
   return (
