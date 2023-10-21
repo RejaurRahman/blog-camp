@@ -15,10 +15,10 @@ export default function HeaderModal() {
     <Dialog.Root>
       <Dialog.Trigger asChild>
         <button
-          className={`w-24 h-24 flex items-center ${styles.burgerMenu}`}
+          className={`flex items-center ${styles.burgerMenu}`}
         >
           <span
-            className={`flex relative mx-auto h-5 w-11 ${styles.menuIcon}`}
+            className={`flex relative mx-auto h-5 ${styles.menuIcon}`}
           >
             <span className="absolute top-1/2 h-0.5" />
           </span>
@@ -34,12 +34,12 @@ export default function HeaderModal() {
           <div className={styles.left}>
             <HeaderLeft />
           </div>
-          <div className={`w-24 ${styles.right}`}>
+          <div className={styles.right}>
             <HeaderLogo />
             <Dialog.Close asChild>
               <button
                 aria-label="Close"
-                className={`w-24 h-24 flex items-center ${styles.burgerMenu}`}
+                className={`flex items-center ${styles.burgerMenu}`}
               >
                 <motion.span
                   initial={{ opacity: 0 }}

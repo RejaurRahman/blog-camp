@@ -1,15 +1,17 @@
 @use "../../../../styles/base.scss" as styles;
 
-$nav-width: styles.to-rem(96);
+$nav-width-desktop: styles.to-rem(96);
+$nav-width-mobile: styles.to-rem(45);
 
 .container {
   width: 100%;
 
   @include styles.breakpoint(max-width, device-mobile) {
     padding: {
-      top: styles.to-rem(45);
+      top: styles.to-rem(50);
       right: styles.to-rem(15);
-      left: calc($nav-width + styles.to-rem(15));
+      bottom: styles.to-rem(50);
+      left: calc($nav-width-mobile + styles.to-rem(15));
     }
   }
 
@@ -17,14 +19,39 @@ $nav-width: styles.to-rem(96);
     padding: {
       top: styles.to-rem(45);
       right: styles.to-rem(45);
-      left: calc($nav-width + styles.to-rem(15));
+      left: calc($nav-width-desktop + styles.to-rem(15));
     }
   }
 
   @include styles.breakpoint(min-width, device-tablet) {
     padding: {
       top: styles.to-rem(96);
-      left: calc($nav-width + styles.to-rem(45));
+      left: calc($nav-width-desktop + styles.to-rem(45));
     }
+  }
+}
+
+.left {
+  @include styles.breakpoint(min-width, device-tablet) {
+    padding-right: styles.to-rem(15);
+    width: 70%;
+  }
+
+  @include styles.mix-breakpoint(device-tablet, device-small-desktop) {
+    margin-top: calc(0px - styles.to-rem(335));
+  }
+
+  @include styles.mix-breakpoint(device-small-desktop, device-desktop) {
+    margin-top: calc(0px - styles.to-rem(285));
+  }
+
+  @include styles.breakpoint(min-width, device-desktop) {
+    margin-top: calc(0px - styles.to-rem(235));
+  }
+}
+
+.right {
+  @include styles.breakpoint(min-width, device-tablet) {
+    width: 30%;
   }
 }

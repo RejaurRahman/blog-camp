@@ -40,7 +40,9 @@ export default function BlogHeader({ post }: Props) {
     <div className={`flex ${styles.wrapper}`}>
       <div className={styles.left}>
         <Breadcrumbs pageTitle={post.title} />
-        <div className="flex items-center pb-7">
+        <div
+          className={`flex items-center pb-7 ${styles.contentWrapper}`}
+        >
           <div
             className="flex flex-col md:flex-row gap-y-2 md:gap-x-2 items-center"
           >
@@ -56,9 +58,9 @@ export default function BlogHeader({ post }: Props) {
             }
           </div>
           <p
-            className={`uppercase relative ml-2.5 ${blogListStyles.date}`}
+            className={`uppercase relative ${blogListStyles.date}`}
           >
-            <span className="ml-4">
+            <span className={blogListStyles.dateWrapper}>
               {
                 new Date(post._createdAt).toLocaleDateString("en-US", {
                   day: "numeric",
@@ -68,8 +70,8 @@ export default function BlogHeader({ post }: Props) {
               }
             </span>
           </p>
-          <span className={`relative pl-2.5 ${styles.readTime}`}>
-            <span className={`flex items-center pl-4 ${styles.readTimeText}`}>
+          <span className={`relative ${styles.readTime}`}>
+            <span className={`flex items-center ${styles.readTimeText}`}>
               <ClockIcon />
               {calculateWords} min read
             </span>

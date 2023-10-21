@@ -22,9 +22,9 @@ export default function SharePosts({ post }: Props) {
   const [copied, setCopied] = useState(false);
 
   return (
-    <nav>
+    <nav className={styles.wrapper}>
       <ul className="flex">
-        <li className="mr-5">
+        <li className="mr-3">
           <ClientSideRoute
             className={`flex items-center justify-center w-10 h-10 rounded-full ${styles.socialLink}`}
             route={`https://www.facebook.com/sharer/sharer.php?u=${post.slug}`}
@@ -32,7 +32,7 @@ export default function SharePosts({ post }: Props) {
             <FontAwesomeIcon icon={["fab", "facebook-f"]} />
           </ClientSideRoute>
         </li>
-        <li className="mr-5">
+        <li className="mr-3">
           <ClientSideRoute
             className={`flex items-center justify-center w-10 h-10 rounded-full ${styles.socialLink}`}
             route={`https://twitter.com/intent/tweet?text=${post.title}&amp;url=${post.slug}&amp;via=Rejaur_3Ronny`}
@@ -40,7 +40,7 @@ export default function SharePosts({ post }: Props) {
             <FontAwesomeIcon icon={["fab", "twitter"]} />
           </ClientSideRoute>
         </li>
-        <li className="mr-5">
+        <li className="mr-3">
           <ClientSideRoute
             className={`flex items-center justify-center w-10 h-10 rounded-full ${styles.socialLink}`}
             route={`https://www.linkedin.com/shareArticle?mini=true&amp;url=${post.slug}&amp;summary=${post.title}&amp;source=rejaur-rahman-a938a657`}
@@ -48,7 +48,7 @@ export default function SharePosts({ post }: Props) {
             <FontAwesomeIcon icon={["fab", "linkedin-in"]} />
           </ClientSideRoute>
         </li>
-        <li className="mr-5">
+        <li className="mr-3">
           <ClientSideRoute
             className={`flex items-center justify-center w-10 h-10 rounded-full ${styles.socialLink}`}
             route={`mailto:?subject=${post.title}&amp;body=${post.slug}`}

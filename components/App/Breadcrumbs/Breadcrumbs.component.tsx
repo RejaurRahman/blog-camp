@@ -23,7 +23,7 @@ export default function Breadcrumbs({ pageTitle }: Props) {
           itemType="http://schema.org/ListItem"
         >
           <ClientSideRoute
-            className="flex items-center h-10 px-5"
+            className={`flex items-center h-10 px-5 ${styles.itemWrapper}`}
             itemProp="item"
             route="/"
           >
@@ -42,7 +42,7 @@ export default function Breadcrumbs({ pageTitle }: Props) {
           itemType="http://schema.org/ListItem"
         >
           <span
-            className="flex items-center h-10 px-5"
+            className={`flex items-center px-5 line-clamp-2 ${styles.itemWrapper}`}
             itemProp="name"
           >
             {pageTitle}

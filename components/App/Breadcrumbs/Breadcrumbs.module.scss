@@ -44,3 +44,13 @@
     }
   }
 }
+
+.itemWrapper {
+  @include styles.breakpoint(max-width, device-mobile) {
+    height: styles.to-rem(55);
+  }
+
+  @include styles.breakpoint(min-width, device-mobile) {
+    height: styles.to-rem(40);
+  }
+}

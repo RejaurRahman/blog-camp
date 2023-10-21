@@ -2,16 +2,35 @@
 
 $icon-line-height: styles.to-rem(2);
 $icon-top-width: styles.to-rem(15);
-$logo-size: styles.to-rem(96);
+$logo-size-desktop: styles.to-rem(96);
+$logo-size-mobile: styles.to-rem(45);
 $modal-left-width: styles.to-rem(320);
 
 .burgerMenu {
+  @include styles.breakpoint(max-width, device-mobile) {
+    height: $logo-size-mobile;
+    width: $logo-size-mobile;
+  }
+
+  @include styles.breakpoint(min-width, device-mobile) {
+    height: $logo-size-desktop;
+    width: $logo-size-desktop;
+  }
+
   &[type="button"] {
     background-color: styles.$supernova;
   }
 }
 
 .menuIcon {
+  @include styles.breakpoint(max-width, device-mobile) {
+    width: styles.to-rem(35);
+  }
+
+  @include styles.breakpoint(min-width, device-mobile) {
+    width: styles.to-rem(44);
+  }
+
   &::before,
   &::after {
     content: "";
@@ -60,7 +79,7 @@ $modal-left-width: styles.to-rem(320);
 
 .left {
   @include styles.breakpoint(max-width, device-mobile) {
-    width: calc(100% - $logo-size);
+    width: calc(100% - $logo-size-mobile);
   }
 
   @include styles.breakpoint(min-width, device-mobile) {
@@ -71,7 +90,15 @@ $modal-left-width: styles.to-rem(320);
 }
 
 .right {
-  background-image: linear-gradient(styles.$transparent 0%, styles.$transparent $logo-size, styles.$buddha-gold $logo-size);
+  @include styles.breakpoint(max-width, device-mobile) {
+    background-image: linear-gradient(styles.$transparent 0%, styles.$transparent $logo-size-mobile, styles.$buddha-gold $logo-size-mobile);
+    width: $logo-size-mobile;
+  }
+
+  @include styles.breakpoint(min-width, device-mobile) {
+    background-image: linear-gradient(styles.$transparent 0%, styles.$transparent $logo-size-desktop, styles.$buddha-gold $logo-size-desktop);
+    width: $logo-size-desktop;
+  }
 }
 
 :not([data-state="open"]) {

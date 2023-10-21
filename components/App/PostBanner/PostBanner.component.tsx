@@ -13,7 +13,7 @@ export default function PostBanner({ imageSrc, imageAltText }: Props) {
     <div className={`relative h-full w-full ${styles.wrapper}`}>
       <Image
         alt={imageAltText}
-        className={`object-cover object-center ${styles.image}`}
+        className="object-cover object-center"
         fill
         src={imageSrc}
       />

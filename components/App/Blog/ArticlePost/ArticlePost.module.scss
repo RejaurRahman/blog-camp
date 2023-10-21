@@ -1,14 +1,49 @@
 @use "../../../../styles/base.scss" as styles;
 
 .card {
-  filter: blur(styles.to-rem(2));
+  @include styles.breakpoint(min-width, device-desktop) {
+    filter: blur(styles.to-rem(2));
+  }
 
   &:hover {
-    filter: blur(0);
+    @include styles.breakpoint(min-width, device-desktop) {
+      filter: blur(0);
+    }
   }
 }
 
 .title {
   font-size: styles.to-rem(30);
   line-height: styles.to-rem(33);
+}
+
+.imageWrapper {
+  @include styles.breakpoint(max-width, device-mobile) {
+    width: 100%;
+  }
+
+  @include styles.breakpoint(min-width, device-mobile) {
+    width: 25%;
+  }
+}
+
+.cardWrapper,
+.contentWrapper {
+  @include styles.breakpoint(max-width, device-mobile) {
+    flex-flow: column;
+  }
+}
+
+.contentWrapper {
+  @include styles.breakpoint(max-width, device-mobile) {
+    align-items: flex-start;
+    padding-top: styles.to-rem(20);
+  }
+}
+
+.cardContent {
+  @include styles.breakpoint(min-width, device-mobile) {
+    padding-left: styles.to-rem(20);
+    width: 75%;
+  }
 }

@@ -1,14 +1,37 @@
 @use "../../../../styles/base.scss" as styles;
 
 $divider-size: styles.to-rem(8);
-$nav-width: styles.to-rem(96);
+$nav-width-desktop: styles.to-rem(96);
+$nav-width-mobile: styles.to-rem(45);
+
+.wrapper {
+  @include styles.breakpoint(max-width, device-mobile) {
+    padding-top: styles.to-rem(50);
+  }
+
+  @include styles.breakpoint(min-width, device-mobile) {
+    padding-top: $nav-width-desktop;
+  }
+}
 
 .grid {
-  @include styles.breakpoint(max-width, device-desktop) {
+  @include styles.breakpoint(max-width, device-mobile) {
     padding: {
-      right: styles.to-rem(15);
-      left: calc($nav-width + styles.to-rem(15));
+      bottom: styles.to-rem(50);
+      left: calc($nav-width-mobile + styles.to-rem(15));
     }
+  }
+
+  @include styles.breakpoint(min-width, device-mobile) {
+    padding-bottom: $nav-width-desktop;
+  }
+
+  @include styles.mix-breakpoint(device-mobile, device-desktop) {
+    padding-left: calc($nav-width-desktop + styles.to-rem(15));
+  }
+
+  @include styles.breakpoint(max-width, device-desktop) {
+    padding-right: styles.to-rem(15);
   }
 
   @include styles.breakpoint(min-width, device-desktop) {
@@ -19,8 +42,26 @@ $nav-width: styles.to-rem(96);
   }
 }
 
+.dateWrapper {
+  @include styles.breakpoint(min-width, device-mobile) {
+    margin-left: styles.to-rem(16);
+  }
+}
+
 .date {
+  @include styles.breakpoint(max-width, device-mobile) {
+    margin-top: styles.to-rem(10);
+  }
+
+  @include styles.breakpoint(min-width, device-mobile) {
+    margin-left: styles.to-rem(10);
+  }
+
   &::before {
+    @include styles.breakpoint(max-width, device-mobile) {
+      content: none;
+    }
+
     content: "";
     position: absolute;
     top: 50%;

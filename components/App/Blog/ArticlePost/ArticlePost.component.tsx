@@ -19,8 +19,10 @@ export default function ArticlePost({ post }: Props) {
       <h2 className={`font-bold pb-5 ${styles.title}`}>
         {post.title}
       </h2>
-      <div className="flex">
-        <div className="relative w-1/4 h-32 overflow-hidden">
+      <div className={`flex ${styles.cardWrapper}`}>
+        <div
+          className={`relative h-32 overflow-hidden ${styles.imageWrapper}`}
+        >
           <Image
             alt={post.title}
             className="object-cover object-center group-hover:scale-150 duration-300 ease-out"
@@ -30,8 +32,12 @@ export default function ArticlePost({ post }: Props) {
             }
           />
         </div>
-        <div className="relative w-9/12 pl-5">
-          <div className="flex items-center pb-4">
+        <div
+          className={`relative ${styles.cardContent}`}
+        >
+          <div
+            className={`flex items-center pb-4 ${styles.contentWrapper}`}
+          >
             <div
               className="flex flex-col md:flex-row gap-y-2 md:gap-x-2 items-center"
             >
@@ -47,9 +53,9 @@ export default function ArticlePost({ post }: Props) {
               }
             </div>
             <p
-              className={`uppercase relative ml-2.5 ${blogListStyles.date}`}
+              className={`uppercase relative ${blogListStyles.date}`}
             >
-              <span className="ml-4">
+              <span className={blogListStyles.dateWrapper}>
                 {
                   new Date(post._createdAt).toLocaleDateString("en-US", {
                     day: "numeric",

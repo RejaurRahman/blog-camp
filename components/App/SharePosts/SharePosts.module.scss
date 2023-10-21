@@ -1,5 +1,13 @@
 @use "../../../styles/base.scss" as styles;
 
+.wrapper {
+  @include styles.breakpoint(min-width, device-mobile) {
+    padding-bottom: styles.to-rem(50);
+  }
+
+  padding-top: styles.to-rem(50);
+}
+
 .socialLink {
   color: styles.$black;
   border: styles.to-rem(1) solid styles.$black;

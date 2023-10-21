@@ -12,9 +12,9 @@ type Props = {
 
 export default function BlogList({ posts }: Props) {
   return (
-    <div className="w-full pt-24">
+    <div className={`w-full ${styles.wrapper}`}>
       <div
-        className={`grid grid-cols-1 px-10 gap-10 gap-y-16 pb-24 ${styles.grid}`}
+        className={`grid grid-cols-1 px-10 gap-10 gap-y-16 ${styles.grid}`}
       >
         {posts.map((post, index) => (
           <ClientSideRoute

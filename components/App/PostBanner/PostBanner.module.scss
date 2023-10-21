@@ -4,8 +4,5 @@ $mobile-banner-height: styles.to-rem(300);
 
 .wrapper {
   height: $mobile-banner-height;
-}
-
-.image {
   z-index: -1;
 }

@@ -8,6 +8,13 @@ $divider-size: styles.to-rem(8);
   }
 }
 
+.contentWrapper {
+  @include styles.breakpoint(max-width, device-mobile) {
+    flex-flow: column;
+    align-items: flex-start;
+  }
+}
+
 .left {
   @include styles.breakpoint(min-width, device-tablet) {
     width: 70%;
@@ -64,7 +71,19 @@ $divider-size: styles.to-rem(8);
 }
 
 .readTime {
+  @include styles.breakpoint(max-width, device-mobile) {
+    padding-top: styles.to-rem(10);
+  }
+
+  @include styles.breakpoint(min-width, device-mobile) {
+    padding-left: styles.to-rem(10);
+  }
+
   &::before {
+    @include styles.breakpoint(max-width, device-mobile) {
+      content: none;
+    }
+
     content: "";
     position: absolute;
     top: 50%;
@@ -77,6 +96,10 @@ $divider-size: styles.to-rem(8);
 }
 
 .readTimeText {
+  @include styles.breakpoint(min-width, device-mobile) {
+    padding-left: styles.to-rem(16);
+  }
+
   svg {
     width: styles.to-rem(24);
     margin-right: styles.to-rem(5);

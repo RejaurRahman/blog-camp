@@ -1,5 +1,12 @@
 @use "../../../../styles/base.scss" as styles;
 
+.wrapper {
+  @include styles.breakpoint(max-width, device-mobile) {
+    flex-flow: column;
+    align-items: flex-start;
+  }
+}
+
 .title {
   @include styles.breakpoint(max-width, device-desktop) {
     font-size: styles.to-rem(34);

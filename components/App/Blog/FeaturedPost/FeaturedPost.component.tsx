@@ -16,7 +16,9 @@ export default function FeaturedPost({ post }: Props) {
     <div
       className="flex flex-col group cursor-pointer"
     >
-      <div className="flex items-center pb-7">
+      <div
+        className={`flex items-center pb-7 ${styles.wrapper}`}
+      >
         <div
           className="flex flex-col md:flex-row gap-y-2 md:gap-x-2 items-center"
         >
@@ -32,9 +34,9 @@ export default function FeaturedPost({ post }: Props) {
           }
         </div>
         <p
-          className={`uppercase relative ml-2.5 ${blogListStyles.date}`}
+          className={`uppercase relative ${blogListStyles.date}`}
         >
-          <span className="ml-4">
+          <span className={blogListStyles.dateWrapper}>
             {
               new Date(post._createdAt).toLocaleDateString("en-US", {
                 day: "numeric",

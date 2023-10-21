@@ -9,6 +9,7 @@ import PostBanner from "@/components/App/PostBanner/PostBanner.component";
 import SharePosts from "@/components/App/SharePosts/SharePosts.component";
 
 import styles from "./post.module.scss";
+import { PortableText } from "@portabletext/react";
 
 type Props = {
   params: {
@@ -35,7 +36,13 @@ export default async function Post({ params: {slug} }: Props) {
       />
       <div className={styles.container}>
         <BlogHeader post={post} />
-        <SharePosts post={post} />
+        <div className="flex">
+          <div className={styles.left}>
+            <PortableText value={post.body} />
+            <SharePosts post={post} />
+          </div>
+          <div className={styles.right} />
+        </div>
       </div>
     </article>
   )
