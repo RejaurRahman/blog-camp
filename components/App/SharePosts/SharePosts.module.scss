@@ -1,11 +1,19 @@
 @use "../../../styles/base.scss" as styles;
 
 .wrapper {
-  @include styles.breakpoint(min-width, device-mobile) {
-    padding-bottom: styles.to-rem(50);
+  @include styles.breakpoint(max-width, device-tablet) {
+    padding: {
+      top: styles.to-rem(30);
+      bottom: styles.to-rem(30);
+    }
   }
 
-  padding-top: styles.to-rem(50);
+  @include styles.breakpoint(min-width, device-tablet) {
+    padding: {
+      top: styles.to-rem(50);
+      bottom: styles.to-rem(50);
+    }
+  }
 }
 
 .socialLink {

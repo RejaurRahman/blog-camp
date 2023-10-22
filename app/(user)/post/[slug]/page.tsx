@@ -2,15 +2,16 @@ import React from "react";
 import { groq } from "next-sanity";
 import { client } from "@/lib/client";
 
+import { PortableText } from "@portabletext/react";
 import urlFor from "@/lib/urlFor";
 
+import BlogAuthor from "@/components/App/Blog/BlogAuthor/BlogAuthor.component";
 import BlogHeader from "@/components/App/Blog/BlogHeader/BlogHeader.component";
 import PostBanner from "@/components/App/PostBanner/PostBanner.component";
 import { RichTextComponents } from "@/components/App/RichTextComponents/RichTextComponents.component"
 import SharePosts from "@/components/App/SharePosts/SharePosts.component";
 
 import styles from "./post.module.scss";
-import { PortableText } from "@portabletext/react";
 
 type Props = {
   params: {
@@ -53,16 +54,19 @@ export default async function Post({ params: {slug} }: Props) {
         imageSrc={urlFor(post.mainImage).url()}
       />
       <div className={styles.container}>
-        <BlogHeader post={post} />
-        <div className="flex">
+        <div className={`flex ${styles.wrapper}`}>
           <div className={styles.left}>
+            <BlogHeader post={post} />
+            <SharePosts post={post} />
+            <BlogAuthor displayDesktop={false} post={post} />
             <PortableText
               value={post.body}
               components={RichTextComponents}
             />
-            <SharePosts post={post} />
           </div>
-          <div className={styles.right} />
+          <div className={styles.right}>
+            <BlogAuthor displayDesktop post={post} />
+          </div>
         </div>
       </div>
     </article>

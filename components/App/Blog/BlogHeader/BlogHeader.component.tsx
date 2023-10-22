@@ -1,11 +1,8 @@
 "use client"
 
-import Image from "next/image";
-import { PortableText } from "@portabletext/react";
 import React, { useCallback, useEffect, useState } from "react";
 
 import { ClockIcon } from "@heroicons/react/24/outline";
-import urlFor from "@/lib/urlFor";
 
 import Breadcrumbs from "../../Breadcrumbs/Breadcrumbs.component";
 
@@ -38,70 +35,51 @@ export default function BlogHeader({ post }: Props) {
 
   return (
     <div className={`flex ${styles.wrapper}`}>
-      <div className={styles.left}>
-        <Breadcrumbs pageTitle={post.title} />
+      <Breadcrumbs pageTitle={post.title} />
+      <div
+        className={`flex items-center pb-7 ${styles.contentWrapper}`}
+      >
         <div
-          className={`flex items-center pb-7 ${styles.contentWrapper}`}
+          className="flex flex-col md:flex-row gap-y-2 md:gap-x-2 items-center"
         >
-          <div
-            className="flex flex-col md:flex-row gap-y-2 md:gap-x-2 items-center"
-          >
+          {
+            post.categories?.map((category) => (
+              <div
+                className="bg-[#FFCC00] text-center text-black px-3 py-1 rounded-full text-sm font-semibold"
+                key={category._id}
+              >
+                <p>{category.title}</p>
+              </div>
+            ))
+          }
+        </div>
+        <p
+          className={`uppercase relative ${blogListStyles.date}`}
+        >
+          <span className={blogListStyles.dateWrapper}>
             {
-              post.categories?.map((category) => (
-                <div
-                  className="bg-[#FFCC00] text-center text-black px-3 py-1 rounded-full text-sm font-semibold"
-                  key={category._id}
-                >
-                  <p>{category.title}</p>
-                </div>
-              ))
+              new Date(post._createdAt).toLocaleDateString("en-US", {
+                day: "numeric",
+                month: "long",
+                year: "numeric"
+              })
             }
-          </div>
-          <p
-            className={`uppercase relative ${blogListStyles.date}`}
-          >
-            <span className={blogListStyles.dateWrapper}>
-              {
-                new Date(post._createdAt).toLocaleDateString("en-US", {
-                  day: "numeric",
-                  month: "long",
-                  year: "numeric"
-                })
-              }
-            </span>
-          </p>
-          <span className={`relative ${styles.readTime}`}>
-            <span className={`flex items-center ${styles.readTimeText}`}>
-              <ClockIcon />
-              {calculateWords} min read
-            </span>
           </span>
-        </div>
-        <h1 className={`font-bold pb-5 ${styles.title}`}>
-          {post.title}
-        </h1>
-        <div className="mt-5 flex-1">
-          <p className={`text-gray-500 ${styles.description}`}>
-            {post.description}
-          </p>
-        </div>
-      </div>
-      <div className={styles.right}>
-        <div className="relative h-32 w-32 mb-6">
-          <Image
-            alt={post.author.name}
-            className="object-cover object-center rounded-full"
-            fill
-            src={
-              urlFor(post.author.image).url()
-            }
-          />
-        </div>
-        <p className={`mb-4 ${styles.writtenText}`}>
-          Written By
         </p>
-        <p className="font-bold mb-6">{post.author.name}</p>
-        <PortableText value={post.author.bio} />
+        <span className={`relative ${styles.readTime}`}>
+          <span className={`flex items-center ${styles.readTimeText}`}>
+            <ClockIcon />
+            {calculateWords} min read
+          </span>
+        </span>
+      </div>
+      <h1 className={`font-bold pb-5 ${styles.title}`}>
+        {post.title}
+      </h1>
+      <div className="mt-5 flex-1">
+        <p className={`text-gray-500 ${styles.description}`}>
+          {post.description}
+        </p>
       </div>
     </div>
   )

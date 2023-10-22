@@ -5,12 +5,15 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 1. Favicon
 2. Live Preview Mode
 3. Search Functionality
+4. Sitemap generating
+5. Back to top/ Scroll to next
 
 ## Tasks on Blog Posts
 
 1. Sticky Headings Nav
 2. Similar posts section
 3. Progress bar on post
+4. Comments
 
 ## Other Pages
 

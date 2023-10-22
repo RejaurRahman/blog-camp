@@ -1,0 +1,52 @@
+@use "../../../../styles/base.scss" as styles;
+
+.wrapper {
+  @include styles.breakpoint(max-width, device-tablet) {
+    margin-bottom: styles.to-rem(50);
+    padding: {
+      top: styles.to-rem(20);
+      bottom: styles.to-rem(20);
+    }
+  }
+
+  @include styles.breakpoint(min-width, device-tablet) {
+    border-left: styles.to-rem(1) solid styles.$buddha-gold;
+    padding: {
+      top: styles.to-rem(50);
+      right: styles.to-rem(20);
+      bottom: styles.to-rem(50);
+      left: styles.to-rem(20);
+    }
+  }
+
+  border: {
+    top: styles.to-rem(1) solid styles.$buddha-gold;
+    bottom: styles.to-rem(1) solid styles.$buddha-gold;
+  }
+
+  &[data-desktop="true"] {
+    @include styles.breakpoint(max-width, device-tablet) {
+      display: none;
+    }
+
+    @include styles.breakpoint(min-width, device-tablet) {
+      display: inherit;
+    }
+  }
+
+  &[data-desktop="false"] {
+    @include styles.breakpoint(max-width, device-tablet) {
+      display: inherit;
+    }
+
+    @include styles.breakpoint(min-width, device-tablet) {
+      display: none;
+    }
+  }
+}
+
+.writtenText {
+  font-size: styles.to-rem(14);
+  font-style: italic;
+  line-height: styles.to-rem(19);
+}

@@ -31,22 +31,16 @@ $nav-width-mobile: styles.to-rem(45);
   }
 }
 
+.wrapper {
+  @include styles.breakpoint(max-width, device-tablet) {
+    flex-flow: column;
+  }
+}
+
 .left {
   @include styles.breakpoint(min-width, device-tablet) {
     padding-right: styles.to-rem(15);
     width: 70%;
-  }
-
-  @include styles.mix-breakpoint(device-tablet, device-small-desktop) {
-    margin-top: calc(0px - styles.to-rem(335));
-  }
-
-  @include styles.mix-breakpoint(device-small-desktop, device-desktop) {
-    margin-top: calc(0px - styles.to-rem(285));
-  }
-
-  @include styles.breakpoint(min-width, device-desktop) {
-    margin-top: calc(0px - styles.to-rem(235));
   }
 }
 
