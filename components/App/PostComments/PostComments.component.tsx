@@ -23,6 +23,17 @@ export default function PostComments({ post }: Props) {
     formState: {errors}
   } = useForm<FormInput>()
 
+  const onSubmit: SubmitHandler<FormInput> = async(data) => {
+    await fetch("/api/createComment", {
+      method: "POST",
+      body: JSON.stringify(data)
+    }).then(() => {
+      console.log(data)
+    }).catch((error) => {
+      console.log(error)
+    })
+  }
+
   return (
     <>
       <hr
@@ -35,6 +46,7 @@ export default function PostComments({ post }: Props) {
       </h3>
       <form
         className={`flex flex-col items-center p-5 mb-10 ${styles.form}`}
+        onSubmit={handleSubmit(onSubmit)}
       >
         <input
           {...register("_id")}
