@@ -10,18 +10,17 @@
   }
 
   @include styles.breakpoint(min-width, device-tablet) {
-    border-left: styles.to-rem(1) solid styles.$buddha-gold;
+    border: {
+      top: styles.to-rem(1) solid styles.$buddha-gold;
+      bottom: styles.to-rem(1) solid styles.$buddha-gold;
+      left: styles.to-rem(1) solid styles.$buddha-gold;
+    }
     padding: {
       top: styles.to-rem(50);
       right: styles.to-rem(20);
       bottom: styles.to-rem(50);
       left: styles.to-rem(20);
     }
-  }
-
-  border: {
-    top: styles.to-rem(1) solid styles.$buddha-gold;
-    bottom: styles.to-rem(1) solid styles.$buddha-gold;
   }
 
   &[data-desktop="true"] {
@@ -42,6 +41,28 @@
     @include styles.breakpoint(min-width, device-tablet) {
       display: none;
     }
+  }
+
+  &::before,
+  &::after {
+    @include styles.breakpoint(min-width, device-tablet) {
+      content: none;
+    }
+
+    content: "";
+    position: absolute;
+    left: calc(0px - styles.to-rem(15));
+    width: calc(100% + styles.to-rem(60));
+    height: styles.to-rem(1);
+    background-color: styles.$buddha-gold;
+  }
+
+  &::before {
+    top: 0;
+  }
+
+  &::after {
+    bottom: 0;
   }
 }
 

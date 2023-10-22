@@ -13,7 +13,7 @@ type Props = {
 
 export default function BlogAuthor({ displayDesktop, post }: Props) {
   return (
-    <div className={styles.wrapper} data-desktop={displayDesktop}>
+    <div className={`relative ${styles.wrapper}`} data-desktop={displayDesktop}>
       <div className="relative h-32 w-32 mb-6">
         <Image
           alt={post.author.name}
