@@ -78,7 +78,7 @@ I selected Github, but you choose the option you use to login to Sanity
 sanity start
 ```
 
-It will say _'Content Studio successfully compiled! Go to http://localhost:3333'_
+It will say _"Content Studio successfully compiled! Go to http://localhost:3333"_
 
 A browser page will open to login to your Sanity account.
 
@@ -90,7 +90,7 @@ sanity deploy
 
 ## Setup Sanity initialization
 
-Create _'.env.local'_ in the root of the repository
+Create _".env.local"_ in the root of the repository
 
 You will need to add the following code:
 
