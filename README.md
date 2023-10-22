@@ -14,6 +14,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 2. Similar posts section
 3. Progress bar on post
 4. Comments
+5. Update classes on rich text components types
 
 ## Other Pages
 
@@ -24,6 +25,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 ## Issues
 
 1. Post Body empty <p></p> populating
+2. Hydration issue with post comments form
 
 ## Getting Started
 

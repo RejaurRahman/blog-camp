@@ -8,6 +8,7 @@ import urlFor from "@/lib/urlFor";
 import BlogAuthor from "@/components/App/Blog/BlogAuthor/BlogAuthor.component";
 import BlogHeader from "@/components/App/Blog/BlogHeader/BlogHeader.component";
 import PostBanner from "@/components/App/PostBanner/PostBanner.component";
+import PostComments from "@/components/App/PostComments/PostComments.component";
 import { RichTextComponents } from "@/components/App/RichTextComponents/RichTextComponents.component"
 import SharePosts from "@/components/App/SharePosts/SharePosts.component";
 
@@ -63,6 +64,7 @@ export default async function Post({ params: {slug} }: Props) {
               value={post.body}
               components={RichTextComponents}
             />
+            <PostComments />
           </div>
           <div className={styles.right}>
             <BlogAuthor displayDesktop post={post} />

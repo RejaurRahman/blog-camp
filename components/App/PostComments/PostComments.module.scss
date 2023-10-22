@@ -1,0 +1,18 @@
+@use "../../../styles/base.scss" as styles;
+
+.seperator {
+  border-color: styles.$buddha-gold;
+}
+
+.form {
+  background-color: styles.$supernova;
+}
+
+.field {
+  background-color: styles.$black;
+  color: styles.$supernova;
+
+  &::placeholder {
+    color: styles.$supernova;
+  }
+}
