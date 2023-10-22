@@ -64,7 +64,7 @@ export default async function Post({ params: {slug} }: Props) {
               value={post.body}
               components={RichTextComponents}
             />
-            <PostComments />
+            <PostComments post={post} />
           </div>
           <div className={styles.right}>
             <BlogAuthor displayDesktop post={post} />

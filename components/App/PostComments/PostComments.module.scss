@@ -16,3 +16,14 @@
     color: styles.$supernova;
   }
 }
+
+.button {
+  background-color: styles.$buddha-gold;
+  color: styles.$black;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background-color: styles.$black;
+    color: styles.$supernova;
+  }
+}
