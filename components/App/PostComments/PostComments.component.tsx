@@ -60,10 +60,10 @@ export default function PostComments({ post }: Props) {
       {
         submitted ? (
           <div
-            className="flex flex-col py-10 my-10 bg-yellow-500 text-white max-w-2xl mx-auto"
+            className={`flex flex-col mt-7 mb-12 py-10 px-4 ${styles.successBox}`}
           >
             <h3
-              className="text-3xl font-bold"
+              className="text-3xl font-bold pb-1.5"
             >
               Thank you for submitting your comment!
             </h3>

@@ -4,7 +4,8 @@
   border-color: styles.$buddha-gold;
 }
 
-.form {
+.form,
+.successBox {
   background-color: styles.$supernova;
 }
 
@@ -14,6 +15,13 @@
 
   &::placeholder {
     color: styles.$supernova;
+  }
+}
+
+.successBox {
+  h3,
+  p {
+    color: styles.$white;
   }
 }
 

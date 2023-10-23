@@ -7,6 +7,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 3. Search Functionality
 4. Sitemap generating
 5. Back to top/ Scroll to next
+6. Load more posts on homepage
 
 ## Tasks on Blog Posts
 
@@ -15,18 +16,21 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 3. Progress bar on post
 4. Comments
 5. Update classes on rich text components types
+6. Add tags
+7. Image Slider
+8. Image with caption
 
 ## Other Pages
 
 1. About Us
 2. Contact
 3. Authors page
+4. Categories page
 
 ## Issues
 
 1. Post Body empty <p></p> populating
 2. Hydration issue with post comments form
-3. Use createClient instead of SanityClient in createComments
 
 ## Getting Started
 
