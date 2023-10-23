@@ -16,9 +16,8 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 3. Progress bar on post
 4. Comments
 5. Update classes on rich text components types
-6. Add tags
+6. Image with caption
 7. Image Slider
-8. Image with caption
 
 ## Other Pages
 

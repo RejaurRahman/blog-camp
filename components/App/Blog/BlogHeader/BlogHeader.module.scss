@@ -75,3 +75,13 @@ $divider-size: styles.to-rem(8);
     margin-right: styles.to-rem(5);
   }
 }
+
+.tagItem {
+  background-color: styles.$vermillion;
+  color: styles.$white;
+  margin-right: styles.to-rem(16);
+
+  &:last-child {
+    margin-right: 0;
+  }
+}

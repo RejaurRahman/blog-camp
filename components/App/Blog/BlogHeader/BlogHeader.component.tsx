@@ -74,12 +74,13 @@ export default function BlogHeader({ post }: Props) {
         </span>
       </div>
       {
-        post.tags && post.tags.length < 0 && (
+        post.tags && post.tags.length > 0 && (
           <div className="flex flex-col pb-7">
-            <ul>
+            <ul className="flex flex-wrap">
               {
                 post.tags?.map((tag) => (
                   <li
+                    className={`py-2 px-4 mt-4 rounded-full ${styles.tagItem}`}
                     key={tag._id}
                   >
                     {tag.title}
