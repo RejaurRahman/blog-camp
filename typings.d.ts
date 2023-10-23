@@ -11,6 +11,7 @@ interface Post extends Base {
   author: Author;
   body: Block[];
   categories: Category[];
+  tags: Tag[];
   comments: Comment[];
   description: string;
   mainImage: Image;
@@ -68,6 +69,10 @@ interface Span {
 
 interface Category extends Base {
   description: string;
+  title: string;
+}
+
+interface Tag extends Base {
   title: string;
 }
 

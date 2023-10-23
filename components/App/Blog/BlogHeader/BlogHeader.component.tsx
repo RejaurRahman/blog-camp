@@ -73,6 +73,23 @@ export default function BlogHeader({ post }: Props) {
           </span>
         </span>
       </div>
+      {
+        post.tags && post.tags.length < 0 && (
+          <div className="flex flex-col pb-7">
+            <ul>
+              {
+                post.tags?.map((tag) => (
+                  <li
+                    key={tag._id}
+                  >
+                    {tag.title}
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+        )
+      }
       <h1 className={`font-bold pb-5 ${styles.title}`}>
         {post.title}
       </h1>

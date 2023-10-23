@@ -42,7 +42,8 @@ export default async function Post({ params: {slug} }: Props) {
     *[_type=="post" && slug.current == $slug][0] {
       ...,
       author->,
-      categories[]->
+      categories[]->,
+      tags[]->
     }
   `
 
