@@ -2,12 +2,10 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Global Tasks
 
-1. Favicon
+1. Load more posts on homepage
 2. Live Preview Mode
 3. Search Functionality
 4. Sitemap generating
-5. Back to top/ Scroll to next
-6. Load more posts on homepage
 
 ## Tasks on Blog Posts
 
