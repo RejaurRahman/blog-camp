@@ -86,3 +86,15 @@ $nav-width-mobile: styles.to-rem(45);
     transition: color 0.3s ease-in-out;
   }
 }
+
+.loadMore {
+  background-color: styles.$transparent;
+  border: styles.to-rem(2) solid styles.$vermillion;
+  color: styles.$vermillion;
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+
+  &:hover {
+    background-color: styles.$vermillion;
+    color: styles.$white;
+  }
+}
