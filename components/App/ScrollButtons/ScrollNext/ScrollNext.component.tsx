@@ -4,7 +4,8 @@ import React, { useState, useEffect } from "react";
 
 import { ArrowDownIcon } from "@heroicons/react/24/solid";
 
-import styles from "./ScrollNext.module.scss"
+import baseStyles from "../ScrollButtons.module.scss";
+import styles from "./ScrollNext.module.scss";
 
 export default function ScrollNext() {
   const [isVisible, setIsVisible] = useState(false);
@@ -23,7 +24,7 @@ export default function ScrollNext() {
 
   return (
     <div
-      className={`absolute flex items-center justify-center bottom-7 left-1/2 h-7 w-7 rounded-full ${styles.wrapper}`}
+      className={`absolute flex items-center justify-center bottom-7 left-1/2 h-7 w-7 rounded-full ${baseStyles.wrapper} ${styles.wrapper}`}
       data-hidden-visibility={isVisible}
     >
       <ArrowDownIcon

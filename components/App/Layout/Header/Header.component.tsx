@@ -6,6 +6,7 @@ import React from "react";
 import HeaderLogo from "../HeaderLogo/HeaderLogo.component";
 import HeaderModal from "../HeaderModal/HeaderModal.component";
 import HeaderSocial from "../HeaderSocial/HeaderSocial.component";
+import ScrollButtons from "../../ScrollButtons/ScrollButtons.component";
 
 import styles from "./Header.module.scss";
 
@@ -18,6 +19,7 @@ export default function Header() {
         <HeaderLogo />
         <HeaderModal />
         <HeaderSocial />
+        <ScrollButtons />
       </NavigationMenu.Root>
     </header>
   )

@@ -18,6 +18,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 5. Update classes on rich text components types
 6. Image with caption
 7. Image Slider
+8. Videos
 
 ## Other Pages
 

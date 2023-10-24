@@ -1,0 +1,17 @@
+@use "../../../styles/base.scss" as styles;
+
+.wrapper {
+  box-shadow: 0px 0px 1px 1px styles.$pulse-shadow;
+  transform: translateX(-50%);
+  transition: opacity 0.3s ease-in-out;
+  animation: pulse-animation 2s infinite;
+}
+
+@keyframes pulse-animation {
+  0% {
+    box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.2);
+  }
+  100% {
+    box-shadow: 0 0 0 20px rgba(0, 0, 0, 0);
+  }
+}
