@@ -2,7 +2,9 @@
 
 $divider-size: styles.to-rem(8);
 
-.wrapper {
+.wrapper,
+.innerWrapper,
+.tags {
   flex-flow: column;
 }
 

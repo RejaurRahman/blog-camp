@@ -1,6 +1,44 @@
 @use "../../../../styles/base.scss" as styles;
 
-.wrapper {
+.wrapper,
+.innerWrapper,
+.bottomWrapper {
+  flex-flow: column;
+}
+
+.mainWrapper {
+  @include styles.breakpoint(max-width, device-tablet) {
+    flex-flow: column;
+  }
+
+  @include styles.mix-breakpoint(device-tablet, device-desktop) {
+    flex-flow: row;
+  }
+
+  @include styles.breakpoint(min-width, device-desktop) {
+    flex-flow: column;
+  }
+}
+
+.mainWrapperLeft {
+  @include styles.mix-breakpoint(device-tablet, device-desktop) {
+    width: 60%;
+  }
+}
+
+.mainWrapperRight {
+  @include styles.mix-breakpoint(device-tablet, device-desktop) {
+    width: 40%;
+  }
+}
+
+.bottomWrapper {
+  @include styles.mix-breakpoint(device-tablet, device-desktop) {
+    padding-left: styles.to-rem(15);
+  }
+}
+
+.container {
   @include styles.breakpoint(max-width, device-mobile) {
     flex-flow: column;
     align-items: flex-start;

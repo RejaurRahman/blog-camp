@@ -24,7 +24,7 @@ export default function BlogList({ posts }: Props) {
   return (
     <div className={`w-full ${styles.wrapper}`}>
       <div
-        className={`grid grid-cols-1 px-10 gap-10 gap-y-16 ${styles.grid}`}
+        className={`flex px-10 gap-10 gap-y-16 ${styles.grid}`}
       >
         {posts.slice(0, visible).map((post, index) => (
           <ClientSideRoute
@@ -40,7 +40,7 @@ export default function BlogList({ posts }: Props) {
           </ClientSideRoute>
         ))}
         {moreLoadedPosts && (
-          <div className="flex justify-center">
+          <div className={`flex justify-center ${styles.loadWrapper}`}>
             <button
               className={`py-3 px-10 mt-4 w-fit font-bold ${styles.loadMore}`}
               onClick={showMoreItems}

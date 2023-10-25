@@ -40,7 +40,7 @@ export default function BlogHeader({ post }: Props) {
         className={`flex items-center pb-7 ${styles.contentWrapper}`}
       >
         <div
-          className="flex flex-col md:flex-row gap-y-2 md:gap-x-2 items-center"
+          className={`flex md:flex-row gap-y-2 md:gap-x-2 items-center ${styles.innerWrapper}`}
         >
           {
             post.categories?.map((category) => (
@@ -75,7 +75,7 @@ export default function BlogHeader({ post }: Props) {
       </div>
       {
         post.tags && post.tags.length > 0 && (
-          <div className="flex flex-col pb-7">
+          <div className={`flex pb-7 ${styles.tags}`}>
             <ul className="flex flex-wrap">
               {
                 post.tags?.map((tag) => (

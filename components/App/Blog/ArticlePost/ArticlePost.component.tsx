@@ -14,7 +14,7 @@ type Props = {
 export default function ArticlePost({ post }: Props) {
   return (
     <div
-      className={`flex flex-col group cursor-pointer ${styles.card}`}
+      className={`flex group cursor-pointer ${styles.card}`}
     >
       <h2 className={`font-bold pb-5 ${styles.title}`}>
         {post.title}
@@ -39,7 +39,7 @@ export default function ArticlePost({ post }: Props) {
             className={`flex items-center pb-4 ${styles.contentWrapper}`}
           >
             <div
-              className="flex flex-col md:flex-row gap-y-2 md:gap-x-2 items-center"
+              className={`flex md:flex-row gap-y-2 md:gap-x-2 items-center ${styles.innerWrapper}`}
             >
               {
                 post.categories?.map((category) => (

@@ -14,13 +14,13 @@ type Props = {
 export default function FeaturedPost({ post }: Props) {
   return (
     <div
-      className="flex flex-col group cursor-pointer"
+      className={`flex group cursor-pointer ${styles.wrapper}`}
     >
       <div
-        className={`flex items-center pb-7 ${styles.wrapper}`}
+        className={`flex items-center pb-7 ${styles.container}`}
       >
         <div
-          className="flex flex-col md:flex-row gap-y-2 md:gap-x-2 items-center"
+          className={`flex md:flex-row gap-y-2 md:gap-x-2 items-center ${styles.innerWrapper}`}
         >
           {
             post.categories?.map((category) => (
@@ -50,29 +50,35 @@ export default function FeaturedPost({ post }: Props) {
       <h1 className={`font-bold pb-5 ${styles.title}`}>
         {post.title}
       </h1>
-      <div className="relative w-full h-80 overflow-hidden">
-        <Image
-          alt={post.title}
-          className="object-cover object-center group-hover:scale-150 duration-300 ease-out"
-          fill
-          src={
-            urlFor(post.mainImage).url()
-          }
-        />
+      <div className={`flex ${styles.mainWrapper}`}>
+        <div
+          className={`relative w-full h-80 overflow-hidden ${styles.mainWrapperLeft}`}
+        >
+          <Image
+            alt={post.title}
+            className="object-cover object-center group-hover:scale-150 duration-300 ease-out"
+            fill
+            src={
+              urlFor(post.mainImage).url()
+            }
+          />
+        </div>
+        <div className={`flex ${styles.bottomWrapper} ${styles.mainWrapperRight}`}>
+          <div className="mt-5">
+            <p className="line-clamp-3 text-gray-500">
+              {post.description}
+            </p>
+          </div>
+          <p
+            className="mt-5 font-bold flex items-center"
+          >
+            Read Post
+            <ArrowUpRightIcon
+              className="ml-2 h-4 w-4 group-hover:rotate-45 duration-300 ease-out"
+            />
+          </p>
+        </div>
       </div>
-      <div className="mt-5 flex-1">
-        <p className="line-clamp-3 text-gray-500">
-          {post.description}
-        </p>
-      </div>
-      <p
-        className="mt-5 font-bold flex items-center"
-      >
-        Read Post
-        <ArrowUpRightIcon
-          className="ml-2 h-4 w-4 group-hover:rotate-45 duration-300 ease-out"
-        />
-      </p>
     </div>
   )
 }

@@ -42,7 +42,7 @@ export default function PostComments({ post }: Props) {
         className={`my-5 mx-auto border border-yellow-500 ${styles.seperator}`}
       />
       {post.comments && post.comments.length > 0 && (
-        <div className="flex flex-col p-10 my-10 max-w-2xl mx-auto shadow-yellow-500 shadow space-y-2">
+        <div className={`flex p-10 my-10 max-w-2xl mx-auto shadow-yellow-500 shadow space-y-2 ${styles.comments}`}>
           <h3 className="text-4xl">Comments</h3>
           <hr className="pb-2" />
           {
@@ -60,7 +60,7 @@ export default function PostComments({ post }: Props) {
       {
         submitted ? (
           <div
-            className={`flex flex-col mt-7 mb-12 py-10 px-4 ${styles.successBox}`}
+            className={`flex mt-7 mb-12 py-10 px-4 ${styles.successBox}`}
           >
             <h3
               className="text-3xl font-bold pb-1.5"
@@ -77,7 +77,7 @@ export default function PostComments({ post }: Props) {
               Leave a comment below!
             </h3>
             <form
-              className={`flex flex-col items-center p-5 mb-10 ${styles.form}`}
+              className={`flex items-center p-5 mb-10 ${styles.form}`}
               onSubmit={handleSubmit(onSubmit)}
             >
               <input
@@ -89,21 +89,27 @@ export default function PostComments({ post }: Props) {
               <>
                 {
                   errors.name && (
-                    <span className="flex flex-col w-full pb-5 text-red-500">
+                    <span
+                      className={`flex w-full pb-5 text-red-500 ${styles.error}`}
+                    >
                       * The Name Field is required
                     </span>
                   )
                 }
                 {
                   errors.email && (
-                    <span className="flex flex-col w-full pb-5 text-red-500">
+                    <span
+                      className={`flex w-full pb-5 text-red-500 ${styles.error}`}
+                    >
                       * The Email Field is required
                     </span>
                   )
                 }
                 {
                   errors.comment && (
-                    <span className="flex flex-col w-full pb-5 text-red-500">
+                    <span
+                      className={`flex w-full pb-5 text-red-500 ${styles.error}`}
+                    >
                       * The Comment Field is required
                     </span>
                   )
