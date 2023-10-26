@@ -1,0 +1,6 @@
+@use "../../../styles/base.scss" as styles;
+
+.imageCaption {
+  background-color: styles.$black;
+  color: styles.$white;
+}

@@ -4,19 +4,28 @@ import React from "react";
 
 import urlFor from "@/lib/urlFor";
 
+import styles from "./RichTextComponents.module.scss";
+
 export const RichTextComponents = {
   types: {
     image: ({ value }: any) => {
       return (
-        <div
-          className="relative w-full h-96 m-10 mx-auto"
-        >
-          <Image
-            alt={value.alt || ""}
-            className="object-contain"
-            fill
-            src={urlFor(value).url()}
-          />
+        <div className="mb-12">
+          <div
+            className="relative w-full h-96"
+          >
+            <Image
+              alt={value.alt || ""}
+              className="object-cover"
+              fill
+              src={urlFor(value).url()}
+            />
+          </div>
+          {value.caption && (
+            <div className={`p-4 ${styles.imageCaption}`}>
+              {value.caption}
+            </div>
+          )}
         </div>
       )
     }

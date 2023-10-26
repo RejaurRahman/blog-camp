@@ -1,10 +1,20 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+## Blog Functionality
+
+- Comments displaying on blog posts after approval in Sanity Studio
+- Tags and Categories
+- Sharing posts
+- On homepage the recent 4 blog posts display and Load More button displays older posts
+- Blog post read time calculation
+- Images in posts have an option to add caption
+
 ## Global Tasks
 
 1. Sitemap generating
 2. Live Preview Mode
 3. Search Functionality
+4. Update Read Me about Sanity setup
 
 ## Tasks on Blog Posts
 
@@ -13,9 +23,9 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 3. Progress bar on post
 4. Comments
 5. Update classes on rich text components types
-6. Image with caption
+6. Videos
 7. Image Slider
-8. Videos
+8. Fill content on all blog posts
 
 ## Other Pages
 
@@ -28,6 +38,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 1. Post Body empty <p></p> populating
 2. Hydration issue with post comments form
+3. Image width/height and preloading
 
 ## Getting Started
 
@@ -62,34 +73,6 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-
-## Sanity Integration
-
-```bash
-sanity login
-```
-
-I selected Github, but you choose the option you use to login to Sanity
-
-```bash
-sanity start
-```
-
-It will say _"Content Studio successfully compiled! Go to http://localhost:3333"_
-
-A browser page will open to login to your Sanity account.
-
-To deploy sanity cms to production you need to run:
-
-```bash
-sanity deploy
-```
-
 ## Setup Sanity initialization
 
 Create _".env.local"_ in the root of the repository
@@ -99,5 +82,6 @@ You will need to add the following code:
 ```bash
 NEXT_PUBLIC_SANITY_DATASET={value}
 NEXT_PUBLIC_SANITY_PROJECT_ID={value}
+NEXT_PUBLIC_SANITY_API_VERSION={value}
 SANITY_API_TOKEN={token}
 ```
