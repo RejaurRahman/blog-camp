@@ -18,10 +18,11 @@ export default function BlogAuthor({ displayDesktop, post }: Props) {
         <Image
           alt={post.author.name}
           className="object-cover object-center rounded-full"
-          fill
+          height={128}
           src={
             urlFor(post.author.image).url()
           }
+          width={128}
         />
       </div>
       <p className={`mb-4 ${styles.writtenText}`}>

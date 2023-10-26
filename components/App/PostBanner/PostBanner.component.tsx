@@ -15,6 +15,7 @@ export default function PostBanner({ imageSrc, imageAltText }: Props) {
         alt={imageAltText}
         className="object-cover object-center"
         fill
+        priority={true}
         src={imageSrc}
       />
     </div>

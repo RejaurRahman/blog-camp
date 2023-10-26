@@ -44,7 +44,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Issues
 
-1. Image width/height and preloading
+1. Image preloading
 2. Hydration issue with post comments form
 
 ## Getting Started

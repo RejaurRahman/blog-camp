@@ -18,6 +18,7 @@ export default function MainBanner() {
         alt="Rejaur Rahman"
         className="object-cover object-center h-full"
         data-desktop="true"
+        priority={true}
         src={PortfolioImage}
       />
     </div>
