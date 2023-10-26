@@ -1,13 +1,21 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Blog Functionality
+## Global Blog Functionality
+
+- Tags and Categories
+
+## Blog Homepage Functionality
+
+- On homepage the recent 4 blog posts display and Load More button displays older posts
+
+## Blog Post Functionality
 
 - Comments displaying on blog posts after approval in Sanity Studio
-- Tags and Categories
 - Sharing posts
-- On homepage the recent 4 blog posts display and Load More button displays older posts
-- Blog post read time calculation
-- Images in posts have an option to add caption
+- Read time calculation
+- Option to add caption to images
+- Videos Embed
+- Breadcrumbs
 
 ## Global Tasks
 
@@ -15,6 +23,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 2. Live Preview Mode
 3. Search Functionality
 4. Update Read Me about Sanity setup
+5. Favicon
 
 ## Tasks on Blog Posts
 
@@ -23,9 +32,8 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 3. Progress bar on post
 4. Comments
 5. Update classes on rich text components types
-6. Videos
-7. Image Slider
-8. Fill content on all blog posts
+6. Image Slider
+7. Fill content on all blog posts
 
 ## Other Pages
 
@@ -36,9 +44,8 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Issues
 
-1. Post Body empty <p></p> populating
+1. Image width/height and preloading
 2. Hydration issue with post comments form
-3. Image width/height and preloading
 
 ## Getting Started
 

@@ -4,6 +4,8 @@ import React from "react";
 
 import urlFor from "@/lib/urlFor";
 
+import VideoEmbed from "../VideoEmbed/VideoEmbed.component";
+
 import styles from "./RichTextComponents.module.scss";
 
 export const RichTextComponents = {
@@ -22,11 +24,20 @@ export const RichTextComponents = {
             />
           </div>
           {value.caption && (
-            <div className={`p-4 ${styles.imageCaption}`}>
+            <div className={`p-4 ${styles.mediaCaption}`}>
               {value.caption}
             </div>
           )}
         </div>
+      )
+    },
+    youtube: ({ value }: any) => {
+      return (
+        <VideoEmbed
+          caption={value.caption}
+          captionClass={`p-4 mb-12 ${styles.mediaCaption}`}
+          url={value.url}
+        />
       )
     }
   },
