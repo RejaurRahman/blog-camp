@@ -39,7 +39,7 @@ export default function PostComments({ post }: Props) {
   return (
     <>
       <hr
-        className={`my-5 mx-auto border border-yellow-500 ${styles.seperator}`}
+        className={`inline-block w-full my-5 mx-auto border ${styles.seperator}`}
       />
       {post.comments && post.comments.length > 0 && (
         <div className={`flex p-10 my-10 max-w-2xl mx-auto shadow-yellow-500 shadow space-y-2 ${styles.comments}`}>

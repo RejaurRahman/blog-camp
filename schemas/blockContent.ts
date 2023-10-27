@@ -1,4 +1,4 @@
-import {defineType, defineArrayMember} from "sanity"
+import { defineType, defineArrayMember } from "sanity";
 
 /**
  * This is the schema type for block content used in the post document type

@@ -24,6 +24,8 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 3. Search Functionality
 4. Update Read Me about Sanity setup
 5. Favicon
+6. Sitewide section in Sanity
+7. Replace shortcode text in CMS
 
 ## Tasks on Blog Posts
 
@@ -38,8 +40,8 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 1. About Us
 2. Contact
-3. Authors page
-4. Categories page
+3. Authors
+4. Categories
 
 ## Issues
 
