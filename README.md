@@ -10,12 +10,12 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Blog Post Functionality
 
-- Comments displaying on blog posts after approval in Sanity Studio
-- Sharing posts
-- Read time calculation
-- Option to add caption to images
-- Videos Embed
 - Breadcrumbs
+- Comments displaying on blog posts after approval in Sanity Studio
+- Option to add caption to images
+- Read time calculation
+- Sharing posts
+- Videos Embed
 
 ## Global Tasks
 
@@ -31,7 +31,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 2. Similar posts section
 3. Progress bar on post
 4. Comments
-5. Update classes on rich text components types
+5. Update classes on rich text components types (Lists and Links)
 6. Image Slider
 7. Fill content on all blog posts
 

@@ -4,3 +4,20 @@
   background-color: styles.$black;
   color: styles.$white;
 }
+
+.quote {
+  border-left: styles.to-rem(4) solid styles.$vermillion;
+  color: styles.$vermillion;
+  font-size: styles.to-rem(22);
+  font-style: italic;
+  line-height: styles.to-rem(30);
+
+  &::before{
+    content: open-quote;
+    color: styles.$vermillion;
+    font-size: styles.to-rem(50);
+    left: styles.to-rem(10);
+    position: absolute;
+    top: 0;
+  }
+}
