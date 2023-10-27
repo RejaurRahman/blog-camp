@@ -21,3 +21,41 @@
     top: 0;
   }
 }
+
+.list {
+  li {
+    color: styles.$buddha-gold;
+    font-style: italic;
+  }
+}
+
+.heading,
+.quote,
+.text {
+  em,
+  strong {
+    color: styles.$vermillion;
+  }
+}
+
+.link {
+  color: styles.$black;
+
+  &::before {
+    content: "";
+    background-color: currentcolor;
+    bottom: calc(0px - styles.to-rem(3));
+    height: styles.to-rem(2);
+    position: absolute;
+    transition: color 0.3s ease-out, transform 0.3s ease-out;
+    width: 100%;
+  }
+
+  &:hover {
+    color: styles.$vermillion;
+
+    &::before {
+      transform: translateY(4px) scale(1);
+    }
+  }
+}

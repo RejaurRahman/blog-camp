@@ -44,14 +44,14 @@ export const RichTextComponents = {
   list: {
     bullet: ({ children }: any) => (
       <ul
-        className="ml-10 py-5 list-disc space-y-5"
+        className={`ml-3.5 pb-10 list-disc space-y-5 ${styles.list}`}
       >
         {children}
       </ul>
     ),
     number: ({ children }: any) => (
       <ol
-        className="mt-lg list-decimal"
+        className={`ml-3.5 pb-10 list-decimal space-y-5 ${styles.list}`}
       >
         {children}
       </ol>
@@ -60,49 +60,49 @@ export const RichTextComponents = {
   block: {
     h1: ({ children }: any) => (
       <h1
-        className="text-6xl pb-10 font-bold"
+        className={`text-6xl pb-10 font-bold ${styles.heading}`}
       >
         {children}
       </h1>
     ),
     h2: ({ children }: any) => (
       <h2
-        className="text-5xl pb-10 font-bold"
+        className={`text-5xl pb-10 font-bold ${styles.heading}`}
       >
         {children}
       </h2>
     ),
     h3: ({ children }: any) => (
       <h3
-        className="text-4xl pb-8 font-bold"
+        className={`text-4xl pb-8 font-bold ${styles.heading}`}
       >
         {children}
       </h3>
     ),
     h4: ({ children }: any) => (
       <h4
-        className="text-3xl pb-8 font-bold"
+        className={`text-3xl pb-8 font-bold ${styles.heading}`}
       >
         {children}
       </h4>
     ),
     h5: ({ children }: any) => (
       <h4
-        className="text-2xl pb-7 font-bold"
+        className={`text-2xl pb-7 font-bold ${styles.heading}`}
       >
         {children}
       </h4>
     ),
     h6: ({ children }: any) => (
       <h4
-        className="text-xl pb-7 font-bold"
+        className={`text-xl pb-7 font-bold ${styles.heading}`}
       >
         {children}
       </h4>
     ),
     normal: ({ children }: any) => (
       <p
-        className="text-lg pb-6"
+        className={`text-lg pb-6 ${styles.text}`}
       >
         {children}
       </p>
@@ -125,7 +125,7 @@ export const RichTextComponents = {
           href={value.href}
           rel={rel}
           target={target}
-          className="underline decoration-[#F7AB04] hover:decoration-black"
+          className={`no-underline relative w-fit ${styles.link}`}
         >
           {children}
         </Link>

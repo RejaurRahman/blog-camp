@@ -31,9 +31,8 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 2. Similar posts section
 3. Progress bar on post
 4. Comments
-5. Update classes on rich text components types (Lists and Links)
-6. Image Slider
-7. Fill content on all blog posts
+5. Image Slider
+6. Fill content on all blog posts
 
 ## Other Pages
 
