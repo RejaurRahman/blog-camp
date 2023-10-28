@@ -13,6 +13,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 - Breadcrumbs
 - Comments displaying on blog posts after approval in Sanity Studio
 - Option to add caption to images
+- Progress bar calculating reading post
 - Read time calculation
 - Sharing posts
 - Videos Embed
@@ -31,10 +32,9 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 1. Sticky Headings Nav
 2. Similar posts section
-3. Progress bar on post
+3. Image Slider
 4. Comments
-5. Image Slider
-6. Fill content on all blog posts
+5. Fill content on all blog posts
 
 ## Other Pages
 

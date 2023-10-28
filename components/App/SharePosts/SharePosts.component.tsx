@@ -24,7 +24,7 @@ export default function SharePosts({ post }: Props) {
   const [copied, setCopied] = useState(false);
 
   return (
-    <nav className={styles.wrapper}>
+    <nav className={`relative ${styles.wrapper}`}>
       <ul className="flex">
         <li className="mr-3">
           <ClientSideRoute

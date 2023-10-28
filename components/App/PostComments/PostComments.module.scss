@@ -16,6 +16,16 @@
   flex-flow: column;
 }
 
+.form {
+  @include styles.breakpoint(max-width, device-mobile) {
+    margin-bottom: styles.to-rem(40);
+  }
+
+  @include styles.breakpoint(min-width, device-mobile) {
+    margin-bottom: styles.to-rem(100);
+  }
+}
+
 .field {
   background-color: styles.$black;
   color: styles.$supernova;

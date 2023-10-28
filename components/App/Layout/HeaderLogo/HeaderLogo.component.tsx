@@ -6,7 +6,10 @@ import Logo from "../../../../assets/images/logo.png";
 
 export default function HeaderLogo() {
   return (
-    <Link href="/">
+    <Link
+      className="relative z-10"
+      href="/"
+    >
       <Image
         alt="Blog Camp"
         height={96}

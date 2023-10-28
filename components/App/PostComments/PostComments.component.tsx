@@ -42,7 +42,7 @@ export default function PostComments({ post }: Props) {
         className={`inline-block w-full my-5 mx-auto border ${styles.seperator}`}
       />
       {post.comments && post.comments.length > 0 && (
-        <div className={`flex p-10 my-10 max-w-2xl mx-auto shadow-yellow-500 shadow space-y-2 ${styles.comments}`}>
+        <div className={`flex p-10 my-10 space-y-2 ${styles.comments}`}>
           <h3 className="text-4xl">Comments</h3>
           <hr className="pb-2" />
           {
