@@ -17,7 +17,7 @@ export default function VideoEmbed({ caption, captionClass, url }: Props) {
     setIsLoaded(true)
   }, [])
 
-  return(
+  return (
     <>
       {
         isLoaded ? (

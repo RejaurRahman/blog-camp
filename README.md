@@ -23,18 +23,19 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 1. Sitemap generating
 2. Live Preview Mode
 3. Search Functionality
-4. Update Read Me about Sanity setup
-5. Favicon
-6. Sitewide section in Sanity
-7. Replace shortcode text in CMS
+4. Favicon
+5. Sitewide section in Sanity
+6. Replace shortcode text in CMS
 
 ## Tasks on Blog Posts
 
 1. Sticky Headings Nav
 2. Similar posts section
-3. Image Slider
-4. Comments
-5. Fill content on all blog posts
+3. Comments
+4. Fill content on all blog posts
+5. Form option to Rich Text
+6. Image slider option
+7. Two Column Text option
 
 ## Other Pages
 
@@ -45,10 +46,15 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Issues
 
-1. Image preloading
-2. Hydration issue with post comments form
+1. Hydration issue with post comments form
 
 ## Getting Started
+
+Project needs to run in Node Version 18. Install Next.JS with TailwindCSS
+
+```bash
+npx create-next-app@latest {project-name} --typescript --eslint
+```
 
 First, run the development server:
 
@@ -80,6 +86,14 @@ To learn more about Next.js, take a look at the following resources:
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+
+## Sanity Setup
+
+Run the following command and run through the steps in the terminal:
+
+```bash
+yarn create sanity@latest
+```
 
 ## Setup Sanity initialization
 

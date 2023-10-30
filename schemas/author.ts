@@ -1,14 +1,16 @@
 import { defineField, defineType } from "sanity";
+import { UserIcon } from "@sanity/icons";
 
 export default defineType({
   name: "author",
   title: "Author",
   type: "document",
+  icon: UserIcon,
   fields: [
     defineField({
       name: "name",
       title: "Name",
-      type: "string",
+      type: "string"
     }),
     defineField({
       name: "slug",
@@ -16,21 +18,21 @@ export default defineType({
       type: "slug",
       options: {
         source: "name",
-        maxLength: 96,
-      },
+        maxLength: 96
+      }
     }),
     defineField({
       name: "image",
       title: "Image",
       type: "image",
       options: {
-        hotspot: true,
+        hotspot: true
       },
       fields: [
         {
           name: "alt",
           type: "string",
-          title: "Alternative Text",
+          title: "Alternative Text"
         }
       ]
     }),
@@ -43,15 +45,15 @@ export default defineType({
           title: "Block",
           type: "block",
           styles: [{title: "Normal", value: "normal"}],
-          lists: [],
-        },
-      ],
-    }),
+          lists: []
+        }
+      ]
+    })
   ],
   preview: {
     select: {
       title: "name",
-      media: "image",
-    },
-  },
+      media: "image"
+    }
+  }
 })
