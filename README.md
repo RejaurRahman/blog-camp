@@ -12,6 +12,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 - Breadcrumbs
 - Comments displaying on blog posts after approval in Sanity Studio
+- Gallery Slider
 - Option to add caption to images
 - Progress bar calculating reading post
 - Read time calculation
@@ -34,8 +35,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 3. Comments
 4. Fill content on all blog posts
 5. Form option to Rich Text
-6. Image slider option
-7. Two Column Text option
+6. Two Column Text option
 
 ## Other Pages
 

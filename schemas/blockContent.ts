@@ -1,4 +1,5 @@
 import { defineType, defineArrayMember } from "sanity";
+import { ImageIcon } from "@sanity/icons";
 
 /**
  * This is the schema type for block content used in the post document type
@@ -29,7 +30,9 @@ export default defineType({
         {title: "H2", value: "h2"},
         {title: "H3", value: "h3"},
         {title: "H4", value: "h4"},
-        {title: "Quote", value: "blockquote"},
+        {title: "H5", value: "h5"},
+        {title: "H6", value: "h6"},
+        {title: "Quote", value: "blockquote"}
       ],
       lists: [
         {
@@ -47,7 +50,7 @@ export default defineType({
         // preference or highlighting
         decorators: [
           {title: "Strong", value: "strong"},
-          {title: "Emphasis", value: "em"},
+          {title: "Emphasis", value: "em"}
         ],
         // Annotations can be any object structure – e.g. a link or a footnote.
         annotations: [
@@ -59,34 +62,38 @@ export default defineType({
               {
                 title: "URL",
                 name: "href",
-                type: "url",
-              },
-            ],
-          },
-        ],
-      },
+                type: "url"
+              }
+            ]
+          }
+        ]
+      }
     }),
     // You can add additional types here. Note that you can"t use
     // primitive types such as "string" and "number" in the same array
     // as a block type.
     defineArrayMember({
       type: "image",
+      icon: ImageIcon,
       options: {hotspot: true},
       fields: [
         {
           name: "alt",
           type: "string",
-          title: "Alternative Text",
+          title: "Alternative Text"
         },
         {
           name: "caption",
           type: "string",
-          title: "Caption",
+          title: "Caption"
         }
       ]
     }),
     defineArrayMember({
       type: "youtube"
     }),
-  ],
+    defineArrayMember({
+      type: "gallery"
+    })
+  ]
 })

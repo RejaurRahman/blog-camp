@@ -4,6 +4,7 @@ import React from "react";
 
 import urlFor from "@/lib/urlFor";
 
+import Gallery from "../Gallery/Gallery.component";
 import VideoEmbed from "../VideoEmbed/VideoEmbed.component";
 
 import styles from "./RichTextComponents.module.scss";
@@ -29,6 +30,11 @@ export const RichTextComponents = {
             </div>
           )}
         </div>
+      )
+    },
+    gallery: ({ value}: any) => {
+      return (
+        <Gallery gallery={value} />
       )
     },
     youtube: ({ value }: any) => {

@@ -1,0 +1,7 @@
+@use "../../../styles/base.scss" as styles;
+
+$media-max-height: styles.to-rem(600);
+
+.media {
+  max-height: $media-max-height;
+}
