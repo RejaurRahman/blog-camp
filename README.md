@@ -25,11 +25,10 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 1. Sitemap generating
 2. Live Preview Mode
 3. Search Functionality
-4. Favicon
+4. Category and Author page description info block
 5. Sitewide section in Sanity
 6. Replace shortcode text in CMS
 7. Redirect urls in next.config
-8. Category and Author page description info block
 
 ## Tasks on Blog Posts
 
