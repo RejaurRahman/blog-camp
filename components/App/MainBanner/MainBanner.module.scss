@@ -5,10 +5,10 @@ $mobile-banner-height: styles.to-rem(300);
 
 .banner {
   @include styles.breakpoint(min-width, device-desktop) {
-    width: calc(50% - $nav-width / 2);
+    height: 100%;
     position: fixed;
     right: 0;
-    height: 100%;
+    width: calc(50% - $nav-width / 2);
   }
 
   img {

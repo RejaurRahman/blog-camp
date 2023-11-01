@@ -1,0 +1,44 @@
+@use "../../../styles/base.scss" as styles;
+
+$nav-width: styles.to-rem(96);
+$mobile-banner-height: styles.to-rem(300);
+
+.banner {
+  @include styles.breakpoint(max-width, device-desktop) {
+    min-height: $mobile-banner-height;
+    padding: {
+      top: styles.to-rem(25);
+      right: styles.to-rem(15);
+      bottom: styles.to-rem(25);
+      left: styles.to-rem(15);
+    }
+  }
+
+  @include styles.breakpoint(min-width, device-desktop) {
+    height: 100%;
+    padding: {
+      right: styles.to-rem(45);
+      left: styles.to-rem(45);
+    }
+    position: fixed;
+    right: 0;
+    width: calc(50% - $nav-width / 2);
+  }
+
+  background-color: styles.$supernova;
+  flex-flow: column;
+}
+
+.heading {
+  @include styles.breakpoint(max-width, device-desktop) {
+    font-size: styles.to-rem(34);
+    line-height: styles.to-rem(36);
+  }
+
+  @include styles.breakpoint(min-width, device-desktop) {
+    font-size: styles.to-rem(45);
+    line-height: styles.to-rem(48);
+  }
+
+  color: styles.$black;
+}

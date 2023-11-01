@@ -1,5 +1,15 @@
 @use "../../../styles/base.scss" as styles;
 
+.image {
+  @include styles.breakpoint(max-width, device-mobile) {
+    height: styles.to-rem(200);
+  }
+
+  @include styles.breakpoint(min-width, device-mobile) {
+    height: styles.to-rem(384);
+  }
+}
+
 .mediaCaption {
   background-color: styles.$black;
   color: styles.$white;

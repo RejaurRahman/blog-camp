@@ -15,7 +15,7 @@ export const RichTextComponents = {
       return (
         <div className="mb-12">
           <div
-            className="relative w-full h-96"
+            className={`relative w-full ${styles.image}`}
           >
             <Image
               alt={value.alt || ""}
