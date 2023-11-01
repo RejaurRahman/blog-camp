@@ -3,6 +3,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 ## Global Blog Functionality
 
 - Tags and Categories
+- Author page
 
 ## Blog Homepage Functionality
 
@@ -27,26 +28,35 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 4. Favicon
 5. Sitewide section in Sanity
 6. Replace shortcode text in CMS
+7. Redirect urls in next.config
+8. Category and Author page description info block
 
 ## Tasks on Blog Posts
 
 1. Sticky Headings Nav
 2. Similar posts section
 3. Comments
-4. Fill content on all blog posts
+4. Fill content on all blog posts/pages
 5. Form option to Rich Text
 6. Two Column Text option
+7. Replace Image Slider
+8. Links for Category, post and author
 
 ## Other Pages
 
 1. About Us
 2. Contact
-3. Authors
-4. Categories
+3. Category
+4. 404 Error
 
 ## Issues
 
 1. Hydration issue with post comments form
+2. Inspect element can't on post article
+3. Text Banner displaying category and author title
+4. Video height screens
+5. Dynamic alt tag displaying on gallery
+6. Image width and height attribute console warning issue
 
 ## Getting Started
 

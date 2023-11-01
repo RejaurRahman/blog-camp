@@ -21,13 +21,11 @@ export default async function HomePage() {
   const posts = await client.fetch(query);
 
   return (
-    <>
-      <div className={`flex ml-auto ${styles.container}`}>
-        <MainBanner />
-        <div className={`flex ${styles.content}`}>
-          <BlogList posts={posts} />
-        </div>
+    <div className={`flex ml-auto ${styles.container}`}>
+      <MainBanner />
+      <div className={`flex ${styles.content}`}>
+        <BlogList posts={posts} />
       </div>
-    </>
+    </div>
   )
 }
