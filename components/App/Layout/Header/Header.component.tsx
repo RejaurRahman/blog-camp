@@ -3,10 +3,10 @@
 import * as NavigationMenu from "@radix-ui/react-navigation-menu";
 import React from "react";
 
-import HeaderLogo from "../HeaderLogo/HeaderLogo.component";
-import HeaderModal from "../HeaderModal/HeaderModal.component";
-import HeaderSocial from "../HeaderSocial/HeaderSocial.component";
-import ScrollButtons from "../../ScrollButtons/ScrollButtons.component";
+import HeaderLogo from "@/components/App/Layout/HeaderLogo/HeaderLogo.component";
+import HeaderModal from "@/components/App/Layout/HeaderModal/HeaderModal.component";
+import HeaderSocial from "@/components/App/Layout/HeaderSocial/HeaderSocial.component";
+import ScrollButtons from "@/components/App/ScrollButtons/ScrollButtons.component";
 
 import styles from "./Header.module.scss";
 

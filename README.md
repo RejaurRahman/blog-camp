@@ -41,7 +41,6 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 5. Form option to Rich Text
 6. Two Column Text option
 7. Replace Image Slider
-8. Links for Category, post and author
 
 ## Other Pages
 
@@ -50,7 +49,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 ## Issues
 
 1. Hydration issue with post comments form
-2. Inspect element can't on post article
+2. Inspect element does not work on post page article tag
 3. Text Banner displaying category and author title
 4. Video height across all screens
 5. Dynamic alt tag displaying on gallery

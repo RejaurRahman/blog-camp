@@ -4,7 +4,8 @@ import React, { useCallback, useEffect, useState } from "react";
 
 import { ClockIcon } from "@heroicons/react/24/outline";
 
-import Breadcrumbs from "../../Breadcrumbs/Breadcrumbs.component";
+import Breadcrumbs from "@/components/App/Breadcrumbs/Breadcrumbs.component";
+import ClientSideRoute from "@/components/App/ClientSideRoute/ClientSideRoute";
 
 import blogListStyles from "../BlogList/BlogList.module.scss";
 import styles from "./BlogHeader.module.scss";
@@ -44,12 +45,13 @@ export default function BlogHeader({ post }: Props) {
         >
           {
             post.categories?.map((category) => (
-              <div
+              <ClientSideRoute
                 className="bg-[#FFCC00] text-center text-black px-3 py-1 rounded-full text-sm font-semibold"
+                route={`/category/${category.slug.current}`}
                 key={category._id}
               >
-                <p>{category.title}</p>
-              </div>
+                {category.title}
+              </ClientSideRoute>
             ))
           }
         </div>

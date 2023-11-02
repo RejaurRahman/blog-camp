@@ -4,8 +4,8 @@ import React from "react";
 
 import urlFor from "@/lib/urlFor";
 
-import Gallery from "../Gallery/Gallery.component";
-import VideoEmbed from "../VideoEmbed/VideoEmbed.component";
+import Gallery from "@/components/App/Gallery/Gallery.component";
+import VideoEmbed from "@/components/App/VideoEmbed/VideoEmbed.component";
 
 import styles from "./RichTextComponents.module.scss";
 

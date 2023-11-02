@@ -4,9 +4,9 @@ import * as Dialog from "@radix-ui/react-dialog";
 import { motion } from "framer-motion";
 import React from "react";
 
-import HeaderLeft from "../HeaderLeft/HeaderLeft.component";
-import HeaderLogo from "../HeaderLogo/HeaderLogo.component";
-import HeaderSocial from "../HeaderSocial/HeaderSocial.component";
+import HeaderLeft from "@/components/App/Layout/HeaderLeft/HeaderLeft.component";
+import HeaderLogo from "@/components/App/Layout/HeaderLogo/HeaderLogo.component";
+import HeaderSocial from "@/components/App/Layout/HeaderSocial/HeaderSocial.component";
 
 import styles from "./HeaderModal.module.scss";
 

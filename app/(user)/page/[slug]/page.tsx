@@ -5,6 +5,7 @@ import { client } from "@/lib/client";
 import { PortableText } from "@portabletext/react";
 import urlFor from "@/lib/urlFor";
 
+import Breadcrumbs from "@/components/App/Breadcrumbs/Breadcrumbs.component";
 import PostBanner from "@/components/App/PostBanner/PostBanner.component";
 import { RichTextComponents } from "@/components/App/RichTextComponents/RichTextComponents.component";
 
@@ -50,6 +51,10 @@ export default async function Page({ params: {slug} }: Props) {
       />
       <div className={`relative ${styles.container}`}>
         <div className={`flex ${styles.wrapper}`}>
+          <Breadcrumbs pageTitle={page.title} />
+          <h1 className={`font-bold pb-5 ${styles.title}`}>
+            {page.title}
+          </h1>
           <PortableText
             value={page.body}
             components={RichTextComponents}

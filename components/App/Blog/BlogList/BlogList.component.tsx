@@ -1,10 +1,10 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
-import ArticlePost from "../ArticlePost/ArticlePost.component";
-import FeaturedPost from "../FeaturedPost/FeaturedPost.component";
-import ClientSideRoute from "../../ClientSideRoute/ClientSideRoute";
+import ArticlePost from "@/components/App/Blog/ArticlePost/ArticlePost.component";
+import ClientSideRoute from "@/components/App/ClientSideRoute/ClientSideRoute";
+import FeaturedPost from "@/components/App/Blog/FeaturedPost/FeaturedPost.component";
 
 import styles from "./BlogList.module.scss"
 
