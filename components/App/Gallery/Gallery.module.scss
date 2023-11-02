@@ -12,6 +12,14 @@ $pagination-dots: 18px;
 
   :global(.swiper-pagination-gallery) {
     height: styles.to-rem(42);
+
+    @include styles.breakpoint(min-width, device-desktop) {
+      bottom: styles.to-rem(25);
+      left: 50%;
+      position: absolute;
+      transform: translateX(-50%);
+      z-index: 1;
+    }
   }
 
   :global(.swiper-pagination-bullet) {
@@ -29,6 +37,12 @@ $pagination-dots: 18px;
   }
 
   :global(.swiper-pagination-bullet-active) {
-    background-color: styles.$black;
+    @include styles.breakpoint(max-width, device-desktop) {
+      background-color: styles.$black;
+    }
+
+    @include styles.breakpoint(min-width, device-desktop) {
+      background-color: styles.$white;
+    }
   }
 }
