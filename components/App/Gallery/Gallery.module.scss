@@ -1,7 +1,34 @@
 @use "../../../styles/base.scss" as styles;
 
 $media-max-height: styles.to-rem(600);
+$pagination-dots: 18px;
 
 .media {
   max-height: $media-max-height;
+
+  img {
+    position: relative !important;
+  }
+
+  :global(.swiper-pagination-gallery) {
+    height: styles.to-rem(42);
+  }
+
+  :global(.swiper-pagination-bullet) {
+    background-color: styles.$supernova;
+    border-radius: 50%;
+    display: flex;
+    height: $pagination-dots;
+    margin-right: styles.to-rem(8);
+    transition: background-color 0.3s ease-in-out;
+    width: $pagination-dots;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  :global(.swiper-pagination-bullet-active) {
+    background-color: styles.$black;
+  }
 }

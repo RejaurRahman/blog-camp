@@ -27,20 +27,18 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 1. Sitemap generating
 2. Live Preview Mode
 3. Search Functionality
-4. Category and Author page description info block
+4. Redirect urls in next.config
 5. Sitewide section in Sanity
 6. Replace shortcode text in CMS
-7. Redirect urls in next.config
 
 ## Tasks on Blog Posts
 
 1. Sticky Headings Nav
 2. Similar posts section
 3. Comments
-4. Fill content on all blog posts/pages and category description
+4. Fill content on all blog posts/pages
 5. Form option to Rich Text
 6. Two Column Text option
-7. Replace Image Slider
 
 ## Other Pages
 
@@ -51,10 +49,9 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 1. Hydration issue with post comments form
 2. Inspect element does not work on post page article tag
 3. Text Banner displaying category and author title
-4. Video height across all screens
+4. Progress bar on posts not sticky on scroll
 5. Dynamic alt tag displaying on gallery
 6. Image width and height attribute console warning issue
-7. Progress bar on posts not sticky on scroll
 
 ## Getting Started
 

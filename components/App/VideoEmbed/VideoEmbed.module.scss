@@ -1,0 +1,9 @@
+@use "../../../styles/base.scss" as styles;
+
+.video {
+  div:first-child {
+    @include styles.breakpoint(max-width, device-mobile) {
+      max-height: styles.to-rem(200);
+    }
+  }
+}

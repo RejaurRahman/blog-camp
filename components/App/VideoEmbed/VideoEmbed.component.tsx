@@ -4,6 +4,8 @@ import React, { useEffect, useState } from "react";
 
 import ReactPlayer from "react-player";
 
+import styles from "./VideoEmbed.module.scss";
+
 interface Props {
   caption: string;
   captionClass: string;
@@ -21,7 +23,7 @@ export default function VideoEmbed({ caption, captionClass, url }: Props) {
     <>
       {
         isLoaded ? (
-          <>
+          <div className={styles.video}>
             <ReactPlayer
               url={url}
               width="100%"
@@ -29,7 +31,7 @@ export default function VideoEmbed({ caption, captionClass, url }: Props) {
             <div className={captionClass}>
               {caption}
             </div>
-          </>
+          </div>
         ) : null
       }
     </>

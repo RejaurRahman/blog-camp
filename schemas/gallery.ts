@@ -33,5 +33,10 @@ export default defineType({
         sortable: true
       }
     })
-  ]
+  ],
+  preview: {
+    select: {
+      title: "name",
+    }
+  }
 })

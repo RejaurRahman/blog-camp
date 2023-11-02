@@ -3,7 +3,7 @@
 import Image from "next/image";
 import React, { useRef } from "react";
 
-import { Autoplay } from "swiper/modules";
+import { Autoplay, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import urlFor from "@/lib/urlFor";
@@ -23,21 +23,29 @@ export default function Gallery({ gallery }: Props) {
   const swiperRef = useRef<SwiperCore>();
 
   return gallery.image.length ? (
-    <div className={`relative w-full h-full ${styles.media}`}>
+    <div className={`relative w-full h-full mb-6 ${styles.media}`}>
       <Swiper
         autoplay={gallery.image.length > 1}
         className="w-full h-full"
         enabled={gallery.image.length > 1}
-        modules={[Autoplay]}
+        modules={[Autoplay, Pagination]}
         onBeforeInit={(swiper) => {
           swiperRef.current = swiper;
         }}
+        pagination={{
+          el: ".swiper-pagination-gallery",
+          clickable: true,
+        }}
         slidesPerView="auto"
       >
+        {gallery.image.length > 1 && (
+          <div
+            className="swiper-pagination-gallery flex justify-center pt-6"
+          />
+        )}
         {gallery.image?.map((slide, index) => {
           return (
             <SwiperSlide
-              className="w-full"
               key={`image-${index + 1}`}
             >
               <Image
