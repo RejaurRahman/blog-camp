@@ -1,5 +1,5 @@
 import React from "react";
-import { usePathname } from "next/navigation"
+import { usePathname } from "next/navigation";
 
 import ScrollNext from "./ScrollNext/ScrollNext.component";
 import BackTop from "./BackTop/BackTop.component";

@@ -9,7 +9,7 @@ import BlogAuthor from "@/components/App/Blog/BlogAuthor/BlogAuthor.component";
 import BlogHeader from "@/components/App/Blog/BlogHeader/BlogHeader.component";
 import PostBanner from "@/components/App/PostBanner/PostBanner.component";
 import PostComments from "@/components/App/PostComments/PostComments.component";
-import { RichTextComponents } from "@/components/App/RichTextComponents/RichTextComponents.component"
+import { RichTextComponents } from "@/components/App/RichTextComponents/RichTextComponents.component";
 import SharePosts from "@/components/App/SharePosts/SharePosts.component";
 
 import styles from "./post.module.scss";

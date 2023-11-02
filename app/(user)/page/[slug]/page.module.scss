@@ -1,0 +1,39 @@
+@use "../../../../styles/base.scss" as styles;
+
+$nav-width-desktop: styles.to-rem(96);
+$nav-width-mobile: styles.to-rem(45);
+
+.container {
+  width: 100%;
+  z-index: -2;
+
+  @include styles.breakpoint(max-width, device-mobile) {
+    padding: {
+      top: styles.to-rem(50);
+      right: styles.to-rem(15);
+      bottom: styles.to-rem(50);
+      left: calc($nav-width-mobile + styles.to-rem(15));
+    }
+  }
+
+  @include styles.mix-breakpoint(device-mobile, device-tablet) {
+    padding: {
+      top: styles.to-rem(45);
+      right: styles.to-rem(45);
+      left: calc($nav-width-desktop + styles.to-rem(15));
+    }
+  }
+
+  @include styles.breakpoint(min-width, device-tablet) {
+    padding: {
+      top: styles.to-rem(96);
+      left: calc($nav-width-desktop + styles.to-rem(45));
+    }
+  }
+}
+
+.wrapper {
+  @include styles.breakpoint(max-width, device-tablet) {
+    flex-flow: column;
+  }
+}

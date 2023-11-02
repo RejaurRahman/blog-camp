@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { AnimatePresence, motion, useScroll } from "framer-motion";
+import { usePathname } from "next/navigation";
 import React from "react";
 
 import styles from "./PostBanner.module.scss";
@@ -12,6 +13,7 @@ type Props = {
 }
 
 export default function PostBanner({ imageSrc, imageAltText }: Props) {
+  const pathname = usePathname();
   const { scrollYProgress } = useScroll();
 
   return (
@@ -25,14 +27,16 @@ export default function PostBanner({ imageSrc, imageAltText }: Props) {
           src={imageSrc}
         />
       </div>
-      <AnimatePresence>
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          className={`sticky top-0 left-0 ${styles.progressBar}`}
-          style={{ scaleX: scrollYProgress }}
-        />
-      </AnimatePresence>
+      {pathname?.includes("/post") && (
+        <AnimatePresence>
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            className={`sticky top-0 left-0 ${styles.progressBar}`}
+            style={{ scaleX: scrollYProgress }}
+          />
+        </AnimatePresence>
+      )}
     </>
   )
 }

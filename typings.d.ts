@@ -7,6 +7,13 @@ type Base = {
   _updatedAt: string;
 };
 
+interface Page extends Base {
+  body: Block[];
+  mainImage: Image;
+  slug: Slug;
+  title: string;
+}
+
 interface Post extends Base {
   author: Author;
   body: Block[];
@@ -74,6 +81,7 @@ interface Span {
 interface Category extends Base {
   description: string;
   title: string;
+  slug: Slug;
 }
 
 interface Tag extends Base {

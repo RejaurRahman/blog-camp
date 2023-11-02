@@ -4,6 +4,8 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 - Tags and Categories
 - Author page
+- Category page
+- Pages like About Us and Contact Us
 
 ## Blog Homepage Functionality
 
@@ -13,12 +15,12 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 - Breadcrumbs
 - Comments displaying on blog posts after approval in Sanity Studio
-- Gallery Slider
+- Gallery slider
 - Option to add caption to images
 - Progress bar calculating reading post
 - Read time calculation
 - Sharing posts
-- Videos Embed
+- Videos embed
 
 ## Global Tasks
 
@@ -35,7 +37,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 1. Sticky Headings Nav
 2. Similar posts section
 3. Comments
-4. Fill content on all blog posts/pages
+4. Fill content on all blog posts/pages and category description
 5. Form option to Rich Text
 6. Two Column Text option
 7. Replace Image Slider
@@ -43,19 +45,17 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Other Pages
 
-1. About Us
-2. Contact
-3. Category
-4. 404 Error
+1. Custom 404 Error
 
 ## Issues
 
 1. Hydration issue with post comments form
 2. Inspect element can't on post article
 3. Text Banner displaying category and author title
-4. Video height screens
+4. Video height across all screens
 5. Dynamic alt tag displaying on gallery
 6. Image width and height attribute console warning issue
+7. Progress bar on posts not sticky on scroll
 
 ## Getting Started
 

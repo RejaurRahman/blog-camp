@@ -7,32 +7,54 @@ import TextBanner from "@/components/App/TextBanner/TextBanner.component";
 
 import styles from "../../index.module.scss";
 
+type Props = {
+  params: {
+    slug: string;
+  }
+}
+
+export async function generateStaticParams() {
+  const query = groq`
+    *[_type == "category"] {
+      slug
+    }
+  `
+
+  const categories: Category[] = await client.fetch(query);
+  const categorySlugs = categories.map((category) => category.slug.current);
+
+  const slugRoutes = categorySlugs.map((slug) => ({
+    slug
+  }));
+
+  return slugRoutes;
+}
+
 export const revalidate = 30;
 
-export default async function CategoryPosts({ params: { slug } }: any) {
+export default async function CategoryPosts({ params: { slug } }: Props) {
   const categoryQuery = groq`
-    *[_type == "category" && title == $slug][0] {
+    *[_type == "category" && slug.current == $slug][0] {
       _id
     }
   `
 
-  const category: { _id: string } | [] = await client.fetch(categoryQuery, {
-    slug
-  });
+  const category: Category = await client.fetch(categoryQuery, { slug });
 
   const postQuery = groq`
     *[_type == "post" && references("category", $category._id)] {
-      ...
+      ...,
+      author->,
+      categories[]->,
+      tags[]->
     }
   `
 
-  const post: Post[] = await client.fetch(postQuery, {
-    category
-  });
+  const post: Post[] = await client.fetch(postQuery, { category: category });
 
   return (
     <div className={`flex ml-auto ${styles.container}`}>
-      <TextBanner title={""} />
+      <TextBanner title={category.title} />
       <div className={`flex ${styles.content}`}>
         <BlogList posts={post} />
       </div>

@@ -1,20 +1,15 @@
 import { defineField, defineType } from "sanity";
-import { DocumentIcon } from "@sanity/icons"
+import { PresentationIcon } from "@sanity/icons"
 
 export default defineType({
-  name: "post",
-  title: "Post",
+  name: "page",
+  title: "Page",
   type: "document",
-  icon: DocumentIcon,
+  icon: PresentationIcon,
   fields: [
     defineField({
       name: "title",
       title: "Title",
-      type: "string"
-    }),
-    defineField({
-      name: "description",
-      title: "Description",
       type: "string"
     }),
     defineField({
@@ -25,12 +20,6 @@ export default defineType({
         source: "title",
         maxLength: 200
       }
-    }),
-    defineField({
-      name: "author",
-      title: "Author",
-      type: "reference",
-      to: {type: "author"}
     }),
     defineField({
       name: "mainImage",
@@ -48,18 +37,6 @@ export default defineType({
       ]
     }),
     defineField({
-      name: "categories",
-      title: "Categories",
-      type: "array",
-      of: [{type: "reference", to: {type: "category"}}]
-    }),
-    defineField({
-      name: "tags",
-      title: "Tags",
-      type: "array",
-      of: [{type: "reference", to: {type: "tag"}}]
-    }),
-    defineField({
       name: "publishedAt",
       title: "Published at",
       type: "datetime"
@@ -72,13 +49,7 @@ export default defineType({
   ],
   preview: {
     select: {
-      title: "title",
-      author: "author.name",
-      media: "mainImage"
-    },
-    prepare(selection) {
-      const {author} = selection
-      return {...selection, subtitle: author && `by ${author}`}
+      title: "title"
     }
   }
 })
