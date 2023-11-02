@@ -35,7 +35,8 @@ export const revalidate = 30;
 export default async function CategoryPosts({ params: { slug } }: Props) {
   const categoryQuery = groq`
     *[_type == "category" && slug.current == $slug][0] {
-      _id
+      _id,
+      title
     }
   `
 

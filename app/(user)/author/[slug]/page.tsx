@@ -35,7 +35,8 @@ export const revalidate = 30;
 export default async function AuthorPosts({ params: { slug } }: Props) {
   const authorQuery = groq`
     *[_type == "author" && slug.current == $slug][0] {
-      _id
+      _id,
+      name
     }
   `
 

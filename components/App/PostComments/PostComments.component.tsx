@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { useForm, SubmitHandler } from "react-hook-form"
+import { useForm, SubmitHandler } from "react-hook-form";
 
 import styles from "./PostComments.module.scss";
 
@@ -13,26 +13,34 @@ interface FormInput {
 }
 
 interface Props {
-  post: Post
+  post: Post,
+  comments: any
 }
 
-export default function PostComments({ post }: Props) {
-  const [submitted, setSubmitted] = useState(false)
+export default function PostComments({ post, comments }: Props) {
+  const [submitted, setSubmitted] = useState(false);
 
   const {
-    register,
+    formState: {errors},
+    getValues,
     handleSubmit,
-    formState: {errors}
+    register,
+    setValue,
   } = useForm<FormInput>()
 
   const onSubmit: SubmitHandler<FormInput> = async(data) => {
     await fetch("/api/createComment", {
       method: "POST",
-      body: JSON.stringify(data)
+      body: JSON.stringify(data),
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${process.env.SANITY_API_TOKEN}`
+      }
     }).then(() => {
       setSubmitted(true)
     }).catch((error) => {
       setSubmitted(false)
+      console.log(error)
     })
   }
 
@@ -41,20 +49,17 @@ export default function PostComments({ post }: Props) {
       <hr
         className={`inline-block w-full my-5 mx-auto border ${styles.seperator}`}
       />
-      {post.comments && post.comments.length > 0 && (
-        <div className={`flex p-10 my-10 space-y-2 ${styles.comments}`}>
-          <h3 className="text-4xl">Comments</h3>
-          <hr className="pb-2" />
-          {
-            post.comments.map((comment: any) => (
-              <div key={comment._id}>
-                <p>
-                  <span className="text-yellow-500">{comment.name}</span>
-                  :{comment.comment}
-                </p>
-              </div>
-            ))
-          }
+      {comments && comments.length > 0 && (
+        <div className={`bg-gray-100 rounded p-6 my-6 space-y-4 ${styles.comments}`}>
+          <h3 className="text-4xl font-bold text-gray-800">Comments</h3>
+          <hr className="border-b border-gray-300" />
+          {comments.map((comment: any) => (
+            <div key={comment._id} className="bg-white rounded p-4 shadow-md">
+              <p>
+                <span className="text-yellow-600 font-bold">{comment.name}</span>: {comment.comment}
+              </p>
+            </div>
+          ))}
         </div>
       )}
       {
@@ -119,24 +124,36 @@ export default function PostComments({ post }: Props) {
                 <input
                   {...register("name", { required: true })}
                   className={`rounded py-2 px-3 w-full form-input block outline-none ${styles.field}`}
+                  onChange={(e)=>{
+                    setValue("name", e.target.value)
+                  }}
                   placeholder="Your name"
                   type="text"
+                  value={getValues("name")}
                 />
               </label>
               <label className="block mb-5 w-full">
                 <input
                   {...register("email", { required: true })}
                   className={`rounded py-2 px-3 w-full form-input block outline-none ${styles.field}`}
+                  onChange={(e)=>{
+                    setValue("email", e.target.value)
+                  }}
                   placeholder="Your chosen email address"
                   type="email"
+                  value={getValues("email")}
                 />
               </label>
               <label className="block mb-5 w-full">
                 <textarea
                   {...register("comment", { required: true })}
                   className={`rounded py-2 px-3 w-full form-textarea block outline-none ${styles.field}`}
+                  onChange={(e)=>{
+                    setValue("comment", e.target.value)
+                  }}
                   placeholder="Add your comment here"
                   rows={8}
+                  value={getValues("comment")}
                 />
               </label>
               <button

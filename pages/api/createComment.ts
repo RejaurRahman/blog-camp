@@ -2,8 +2,8 @@
 import type {
   NextApiRequest,
   NextApiResponse
-} from "next"
-import { createClient } from "@sanity/client"
+} from "next";
+import { createClient } from "@sanity/client";
 
 const client = createClient({
   dataset: process.env.NEXT_PUBLIC_SANITY_DATASET,
@@ -16,9 +16,17 @@ export default async function createComment(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  const { _id, name, email, comment } = JSON.parse(req.body)
+  if (req.method !== "POST") {
+    return res.status(405).json({ message: "Method not allowed" });
+  }
 
   try {
+    const { _id, name, email, comment } = req.body;
+
+    if (!_id || !name || !email || !comment) {
+      return res.status(400).json({ message: "Invalid data" });
+    }
+
     await client.create({
       _type: "comment",
       name,
@@ -26,18 +34,12 @@ export default async function createComment(
       comment,
       post: {
         _type: "reference",
-        _ref: _id
+        _ref: _id,
       }
-    })
-  } catch (error) {
-    return res.status(500).json({
-      message: `Could not submit comment`, error
-    })
-  }
+    });
 
-  res.status(200).json(
-    {
-      message: "Comment submitted"
-    }
-  )
+    res.status(200).json({ message: "Comment submitted" });
+  } catch (error) {
+    return res.status(500).json({ message: "Could not submit comment", error });
+  }
 }

@@ -48,10 +48,11 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 1. Hydration issue with post comments form
 2. Inspect element does not work on post page article tag
-3. Text Banner displaying category and author title
+3. ES Lint Console log errors
 4. Progress bar on posts not sticky on scroll
 5. Dynamic alt tag displaying on gallery
 6. Image width and height attribute console warning issue
+7. Any types fixed across codebase
 
 ## Getting Started
 

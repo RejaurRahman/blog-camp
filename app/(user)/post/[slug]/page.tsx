@@ -47,7 +47,16 @@ export default async function Post({ params: {slug} }: Props) {
     }
   `
 
-  const post: Post = await client.fetch(query, { slug })
+  const post: Post = await client.fetch(query, { slug });
+
+  const commentsQuery = groq`
+    *[_type == "comment" && post._ref == $postId && approved == true] {
+      comment,
+      name
+    }
+  `
+
+  const comments = await client.fetch(commentsQuery, { postId: post._id });
 
   return (
     <article>
@@ -65,7 +74,10 @@ export default async function Post({ params: {slug} }: Props) {
               value={post.body}
               components={RichTextComponents}
             />
-            <PostComments post={post} />
+            <PostComments
+              comments={comments}
+              post={post}
+            />
           </div>
           <div className={styles.right}>
             <BlogAuthor displayDesktop post={post} />
