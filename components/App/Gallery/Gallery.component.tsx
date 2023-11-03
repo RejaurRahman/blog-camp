@@ -15,6 +15,14 @@ import type SwiperCore from "swiper";
 
 import styles from "./Gallery.module.scss";
 
+interface Image {
+  alt: string;
+}
+
+interface Gallery {
+  image: Image[];
+}
+
 interface Props {
   gallery: Gallery;
 }
@@ -44,12 +52,13 @@ export default function Gallery({ gallery }: Props) {
           />
         )}
         {gallery.image?.map((slide, index) => {
+          console.log(slide)
           return (
             <SwiperSlide
               key={`image-${index + 1}`}
             >
               <Image
-                alt=""
+                alt={slide.alt}
                 className="object-cover object-center w-full h-full"
                 fill
                 src={

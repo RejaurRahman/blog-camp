@@ -44,10 +44,6 @@ interface Author extends Base {
   slug: Slug;
 }
 
-interface Gallery {
-  image: Image[];
-}
-
 interface Image {
   _type: "image";
   asset: Reference;

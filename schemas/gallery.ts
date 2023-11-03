@@ -4,39 +4,27 @@ import { ImagesIcon } from "@sanity/icons";
 export default defineType({
   name: "gallery",
   title: "Gallery",
-  type: "object",
+  type: "array",
   icon: ImagesIcon,
-  fields: [
+  of: [
     defineField({
       name: "image",
       title: "Image",
-      type: "array",
-      of: [
-        defineField({
-          name: "image",
-          title: "Image",
-          type: "image",
-          options: {
-            hotspot: true
-          },
-          fields: [
-            {
-              name: "alt",
-              type: "string",
-              title: "Alternative Text"
-            }
-          ]
-        })
-      ],
+      type: "image",
       options: {
-        layout: "grid",
-        sortable: true
-      }
+        hotspot: true
+      },
+      fields: [
+        {
+          name: "alt",
+          type: "string",
+          title: "Alternative Text"
+        }
+      ]
     })
   ],
-  preview: {
-    select: {
-      title: "name",
-    }
+  options: {
+    layout: "grid",
+    sortable: true
   }
 })
