@@ -36,9 +36,8 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 1. Sticky Headings Nav
 2. Similar posts section
 3. Comments
-4. Fill content on all blog posts/pages
+4. Two Column Text option
 5. Form option to Rich Text
-6. Two Column Text option
 
 ## Other Pages
 

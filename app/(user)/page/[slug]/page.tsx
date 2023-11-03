@@ -49,17 +49,15 @@ export default async function Page({ params: {slug} }: Props) {
         imageAltText={page.title}
         imageSrc={urlFor(page.mainImage).url()}
       />
-      <div className={`relative ${styles.container}`}>
-        <div className={`flex ${styles.wrapper}`}>
-          <Breadcrumbs pageTitle={page.title} />
-          <h1 className={`font-bold pb-5 ${styles.title}`}>
-            {page.title}
-          </h1>
-          <PortableText
-            value={page.body}
-            components={RichTextComponents}
-          />
-        </div>
+      <div className={styles.container}>
+        <Breadcrumbs pageTitle={page.title} />
+        <h1 className={`font-bold pb-5 ${styles.title}`}>
+          {page.title}
+        </h1>
+        <PortableText
+          value={page.body}
+          components={RichTextComponents}
+        />
       </div>
     </article>
   )

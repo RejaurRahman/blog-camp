@@ -64,7 +64,7 @@ export default async function Post({ params: {slug} }: Props) {
         imageAltText={post.title}
         imageSrc={urlFor(post.mainImage).url()}
       />
-      <div className={`relative ${styles.container}`}>
+      <div className={styles.container}>
         <div className={`flex ${styles.wrapper}`}>
           <div className={styles.left}>
             <BlogHeader post={post} />
