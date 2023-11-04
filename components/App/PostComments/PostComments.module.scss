@@ -38,8 +38,26 @@
 .successBox {
   h3,
   p {
-    color: styles.$white;
+    color: styles.$black;
   }
+}
+
+.commentBox {
+  border: 1px solid styles.$buddha-gold;
+}
+
+.authorName {
+  color: styles.$buddha-gold;
+  font-size: styles.to-rem(20);
+  line-height: styles.to-rem(28);
+}
+
+.comment {
+  line-height: styles.to-rem(26);
+}
+
+.dateWrapper {
+  font-size: styles.to-rem(14);
 }
 
 .button {

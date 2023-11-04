@@ -25,7 +25,7 @@ export default function PostComments({ post, comments }: Props) {
     getValues,
     handleSubmit,
     register,
-    setValue,
+    setValue
   } = useForm<FormInput>()
 
   const onSubmit: SubmitHandler<FormInput> = async(data) => {
@@ -38,29 +38,49 @@ export default function PostComments({ post, comments }: Props) {
       }
     }).then(() => {
       setSubmitted(true)
-    }).catch((error) => {
+    }).catch(() => {
       setSubmitted(false)
-      console.log(error)
     })
   }
 
   return (
     <>
       <hr
-        className={`inline-block w-full my-5 mx-auto border ${styles.seperator}`}
+        className={`inline-block w-full mt-5 mb-10 mx-auto border ${styles.seperator}`}
       />
       {comments && comments.length > 0 && (
-        <div className={`bg-gray-100 rounded p-6 my-6 space-y-4 ${styles.comments}`}>
-          <h3 className="text-4xl font-bold text-gray-800">Comments</h3>
-          <hr className="border-b border-gray-300" />
-          {comments.map((comment: any) => (
-            <div key={comment._id} className="bg-white rounded p-4 shadow-md">
-              <p>
-                <span className="text-yellow-600 font-bold">{comment.name}</span>: {comment.comment}
-              </p>
-            </div>
-          ))}
-        </div>
+        <>
+          <div className={`space-y-4 ${styles.comments}`}>
+            <h3
+              className="text-4xl font-bold mb-10"
+            >
+              {comments.length} Comment{comments.length > 1 ? "s" : null}
+            </h3>
+            {comments.map((comment: any) => (
+              <div
+                className={`p-4 ${styles.commentBox}`}
+                key={comment._id}
+              >
+                <h4 className={`font-bold mb-2 ${styles.authorName}`}>
+                  {comment.name}
+                </h4>
+                <p className={`mb-3 ${styles.comment}`}>{comment.comment}</p>
+                <span className={`capitalize ${styles.dateWrapper}`}>
+                  {
+                    new Date(comment._publishedAt).toLocaleDateString("en-US", {
+                      day: "numeric",
+                      month: "long",
+                      year: "numeric"
+                    })
+                  }
+                </span>
+              </div>
+            ))}
+          </div>
+          <hr
+            className={`inline-block w-full mt-12 mx-auto border ${styles.seperator}`}
+          />
+        </>
       )}
       {
         submitted ? (

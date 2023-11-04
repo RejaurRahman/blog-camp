@@ -27,20 +27,7 @@ export default defineType({
     defineField({
       name: "comment",
       title: "Comment",
-      type: "array",
-      of: [
-        {
-          title: "Block",
-          type: "block",
-          styles: [
-            {
-              title: "Normal",
-              value: "normal"
-            }
-          ],
-          lists: []
-        }
-      ]
+      type: "text"
     }),
     defineField({
       name: "post",

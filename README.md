@@ -35,9 +35,8 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 1. Sticky Headings Nav
 2. Similar posts section
-3. Comments
+3. Form option to Rich Text
 4. Two Column Text option
-5. Form option to Rich Text
 
 ## Other Pages
 
@@ -50,6 +49,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 3. Progress bar on posts not sticky on scroll
 4. Any types fixed across codebase
 5. Image width and height attribute console warning issue
+6. Invalid date on comments
 
 ## Getting Started
 

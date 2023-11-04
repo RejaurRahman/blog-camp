@@ -52,7 +52,6 @@ export default function Gallery({ gallery }: Props) {
           />
         )}
         {gallery.image?.map((slide, index) => {
-          console.log(slide)
           return (
             <SwiperSlide
               key={`image-${index + 1}`}
