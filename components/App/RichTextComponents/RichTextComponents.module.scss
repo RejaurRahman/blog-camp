@@ -32,11 +32,9 @@
   }
 }
 
-.list {
-  li {
-    color: styles.$buddha-gold;
-    font-style: italic;
-  }
+.listItem {
+  color: styles.$buddha-gold;
+  font-style: italic;
 }
 
 .heading,

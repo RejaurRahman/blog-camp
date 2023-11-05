@@ -52,7 +52,8 @@ export default async function Post({ params: {slug} }: Props) {
   const commentsQuery = groq`
     *[_type == "comment" && post._ref == $postId && approved == true] {
       comment,
-      name
+      name,
+      publishedAt
     }
   `
 

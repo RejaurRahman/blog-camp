@@ -67,7 +67,7 @@ export default function PostComments({ post, comments }: Props) {
                 <p className={`mb-3 ${styles.comment}`}>{comment.comment}</p>
                 <span className={`capitalize ${styles.dateWrapper}`}>
                   {
-                    new Date(comment._publishedAt).toLocaleDateString("en-US", {
+                    new Date(comment.publishedAt).toLocaleDateString("en-US", {
                       day: "numeric",
                       month: "long",
                       year: "numeric"

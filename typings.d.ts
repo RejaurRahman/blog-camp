@@ -18,23 +18,24 @@ interface Post extends Base {
   author: Author;
   body: Block[];
   categories: Category[];
-  tags: Tag[];
   comments: Comment[];
   description: string;
   mainImage: Image;
   slug: Slug;
+  tags: Tag[];
   title: string;
 }
 
-interface Comment extends Base {
+interface Comment {
   approved: boolean;
-  name: string;
-  email: string;
   comment: string;
+  email: string;
+  name: string;
   post: {
     _ref: string
     _type: string
   }
+  publishedAt: string;
 }
 
 interface Author extends Base {
@@ -76,8 +77,8 @@ interface Span {
 
 interface Category extends Base {
   description: string;
-  title: string;
   slug: Slug;
+  title: string;
 }
 
 interface Tag extends Base {

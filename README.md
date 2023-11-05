@@ -47,9 +47,8 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 ## Issues
 
 1. Hydration issue with post comments form
-2. Invalid date on comments
+2. Comments/form textarea displayed as array for multiline
 3. Progress bar on posts not sticky on scroll
-4. Comments/form textarea displayed as array for multiline
 
 ## Getting Started
 
