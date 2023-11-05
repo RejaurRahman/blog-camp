@@ -36,6 +36,10 @@ $nav-width-mobile: styles.to-rem(45);
   @include styles.breakpoint(max-width, device-tablet) {
     flex-flow: column;
   }
+
+  @include styles.breakpoint(min-width, device-tablet) {
+    flex-flow: wrap;
+  }
 }
 
 .left {

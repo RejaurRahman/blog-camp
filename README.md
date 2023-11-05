@@ -17,6 +17,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 - Comments displaying on blog posts after approval in Sanity Studio
 - Gallery slider
 - Option to add caption to images
+- Option to add Similar/Recent posts on blog post
 - Progress bar calculating reading post
 - Read time calculation
 - Sharing posts
@@ -34,10 +35,9 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 ## Tasks on Blog Posts
 
 1. Sticky Headings Nav
-2. Similar posts section
-3. Form option to Rich Text
-4. Two Column Text option
-5. Fill in content
+2. Form option to Rich Text
+3. Two Column Text option
+4. Fill in content in post pages
 
 ## Other Pages
 

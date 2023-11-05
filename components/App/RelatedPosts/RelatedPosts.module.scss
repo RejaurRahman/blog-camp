@@ -1,0 +1,59 @@
+@use "../../../styles/base.scss" as styles;
+
+.seperator {
+  border-color: styles.$buddha-gold;
+
+  @include styles.breakpoint(max-width, device-tablet) {
+    width: calc(100% - styles.to-rem(15));
+  }
+
+  @include styles.breakpoint(min-width, device-tablet) {
+    width: calc(100% - styles.to-rem(45));
+  }
+}
+
+.cardWrapper {
+  @include styles.breakpoint(max-width, device-mobile) {
+    margin-bottom: styles.to-rem(40);
+  }
+
+  @include styles.breakpoint(min-width, device-mobile) {
+    margin-bottom: styles.to-rem(100);
+  }
+
+  @include styles.breakpoint(min-width, device-tablet) {
+    gap: styles.to-rem(30);
+    padding-right: styles.to-rem(45);
+  }
+}
+
+.heading {
+  color: styles.$vermillion;
+}
+
+.articleLink {
+  &:hover {
+    h1,
+    h2 {
+      color: styles.$vermillion;
+    }
+  }
+
+  h1,
+  h2 {
+    transition: color 0.3s ease-in-out;
+  }
+
+  @include styles.breakpoint(max-width, device-tablet) {
+    padding-bottom: styles.to-rem(30);
+    width: 100%;
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+  }
+
+  @include styles.breakpoint(min-width, device-tablet) {
+    width: calc(50% - styles.to-rem(15));
+  }
+}

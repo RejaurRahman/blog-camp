@@ -29,8 +29,8 @@ export default function BlogList({ posts }: Props) {
         {posts.slice(0, visible).map((post, index) => (
           <ClientSideRoute
             className={styles.articleLink}
-            route={`/post/${post.slug.current}`}
             key={post._id}
+            route={`/post/${post.slug.current}`}
           >
             {index === 0 ? (
               <FeaturedPost post={post} />

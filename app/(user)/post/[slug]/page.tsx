@@ -9,6 +9,7 @@ import BlogAuthor from "@/components/App/Blog/BlogAuthor/BlogAuthor.component";
 import BlogHeader from "@/components/App/Blog/BlogHeader/BlogHeader.component";
 import PostBanner from "@/components/App/PostBanner/PostBanner.component";
 import PostComments from "@/components/App/PostComments/PostComments.component";
+import RelatedPosts from "@/components/App/RelatedPosts/RelatedPosts.component";
 import { RichTextComponents } from "@/components/App/RichTextComponents/RichTextComponents.component";
 import SharePosts from "@/components/App/SharePosts/SharePosts.component";
 
@@ -49,6 +50,22 @@ export default async function Post({ params: {slug} }: Props) {
 
   const post: Post = await client.fetch(query, { slug });
 
+  const relatedPostsReferences:any = post.relatedPost;
+
+  const relatedPostsQuery = groq`
+    *[_type == "post" && _id in $references] {
+      ...,
+      author->,
+      categories[]->,
+      tags[]->
+    }
+  `
+  const references:any = relatedPostsReferences.map(
+    (ref:any) => ref._ref
+  );
+
+  const relatedPosts = await client.fetch(relatedPostsQuery, { references });
+
   const commentsQuery = groq`
     *[_type == "comment" && post._ref == $postId && approved == true] {
       comment,
@@ -83,6 +100,7 @@ export default async function Post({ params: {slug} }: Props) {
           <div className={styles.right}>
             <BlogAuthor displayDesktop post={post} />
           </div>
+          <RelatedPosts relatedPosts={relatedPosts} />
         </div>
       </div>
     </article>

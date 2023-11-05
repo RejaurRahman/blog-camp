@@ -30,7 +30,9 @@ export default defineType({
       name: "author",
       title: "Author",
       type: "reference",
-      to: {type: "author"}
+      to: {
+        type: "author"
+      }
     }),
     defineField({
       name: "mainImage",
@@ -51,18 +53,43 @@ export default defineType({
       name: "categories",
       title: "Categories",
       type: "array",
-      of: [{type: "reference", to: {type: "category"}}]
+      of: [
+        {
+          type: "reference",
+          to: { type: "category" }
+        }
+      ]
     }),
     defineField({
       name: "tags",
       title: "Tags",
       type: "array",
-      of: [{type: "reference", to: {type: "tag"}}]
+      of: [
+        {
+          type: "reference",
+          to: { type: "tag" }
+        }
+      ]
     }),
     defineField({
       name: "publishedAt",
       title: "Published at",
       type: "datetime"
+    }),
+    defineField({
+      name: "relatedPost",
+      title: "Related Posts",
+      type: "array",
+      readOnly: false,
+      of: [
+        {
+          type: "reference",
+          to: { type: "post" }
+        }
+      ],
+      validation: (Rule) => Rule.max(4).error(
+        "You can select a maximum of 4 recent posts."
+      )
     }),
     defineField({
       name: "body",
