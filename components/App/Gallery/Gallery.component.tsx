@@ -20,7 +20,7 @@ interface Image {
 }
 
 interface Gallery {
-  image: Image[];
+  images: Image[];
 }
 
 interface Props {
@@ -30,12 +30,12 @@ interface Props {
 export default function Gallery({ gallery }: Props) {
   const swiperRef = useRef<SwiperCore>();
 
-  return gallery.image.length ? (
+  return gallery.images.length ? (
     <div className={`relative w-full h-full mb-6 ${styles.media}`}>
       <Swiper
-        autoplay={gallery.image.length > 1}
+        autoplay={gallery.images.length > 1}
         className="w-full h-full"
-        enabled={gallery.image.length > 1}
+        enabled={gallery.images.length > 1}
         modules={[Autoplay, Pagination]}
         onBeforeInit={(swiper) => {
           swiperRef.current = swiper;
@@ -46,12 +46,12 @@ export default function Gallery({ gallery }: Props) {
         }}
         slidesPerView="auto"
       >
-        {gallery.image.length > 1 && (
+        {gallery.images.length > 1 && (
           <div
             className="swiper-pagination-gallery flex justify-center pt-6"
           />
         )}
-        {gallery.image?.map((slide, index) => {
+        {gallery.images?.map((slide, index) => {
           return (
             <SwiperSlide
               key={`image-${index + 1}`}
@@ -59,10 +59,11 @@ export default function Gallery({ gallery }: Props) {
               <Image
                 alt={slide.alt}
                 className="object-cover object-center w-full h-full"
-                fill
+                height={138}
                 src={
                   urlFor(slide).url()
                 }
+                width={245}
               />
             </SwiperSlide>
           )

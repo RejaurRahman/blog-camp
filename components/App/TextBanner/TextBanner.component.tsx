@@ -13,8 +13,10 @@ export default function TextBanner({ title }: Props) {
   return (
     <div className={`flex items-center justify-center ${styles.banner}`}>
       <Image
-        alt="Rejaur Rahman"
+        alt="Blog Camp"
+        height={193}
         src={Logo}
+        width={150}
       />
       <h2 className={`font-bold pt-7 ${styles.heading}`}>{title}</h2>
     </div>

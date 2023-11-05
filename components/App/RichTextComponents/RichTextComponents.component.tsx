@@ -19,9 +19,10 @@ export const RichTextComponents = {
           >
             <Image
               alt={value.alt || ""}
-              className="object-cover"
-              fill
+              className="object-cover h-full w-full"
+              height={200}
               src={urlFor(value).url()}
+              width={245}
             />
           </div>
           {value.caption && (

@@ -45,11 +45,9 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 ## Issues
 
 1. Hydration issue with post comments form
-2. ES Lint Console log errors
+2. Invalid date on comments
 3. Progress bar on posts not sticky on scroll
 4. Any types fixed across codebase
-5. Image width and height attribute console warning issue
-6. Invalid date on comments
 
 ## Getting Started
 
@@ -108,5 +106,7 @@ You will need to add the following code:
 NEXT_PUBLIC_SANITY_DATASET={value}
 NEXT_PUBLIC_SANITY_PROJECT_ID={value}
 NEXT_PUBLIC_SANITY_API_VERSION={value}
-SANITY_API_TOKEN={token}
+SANITY_API_READ_TOKEN={token}
 ```
+
+When creating Sanity API Token, make sure the token has editor permissions set.

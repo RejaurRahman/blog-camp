@@ -4,13 +4,20 @@ $nav-width: styles.to-rem(96);
 $mobile-banner-height: styles.to-rem(300);
 
 .banner {
+  @include styles.breakpoint(max-width, device-mobile) {
+    padding-left: styles.to-rem(45);
+  }
+
+  @include styles.mix-breakpoint(device-mobile, device-desktop) {
+    padding-left: styles.to-rem(15);
+  }
+
   @include styles.breakpoint(max-width, device-desktop) {
     min-height: $mobile-banner-height;
     padding: {
       top: styles.to-rem(25);
       right: styles.to-rem(15);
       bottom: styles.to-rem(25);
-      left: styles.to-rem(15);
     }
   }
 

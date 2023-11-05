@@ -21,10 +21,11 @@ export default function PostBanner({ imageSrc, imageAltText }: Props) {
       <div className={`relative h-full w-full ${styles.wrapper}`}>
         <Image
           alt={imageAltText}
-          className="object-cover object-center"
-          fill
+          className="object-cover object-center h-full w-full"
+          height={300}
           priority={true}
           src={imageSrc}
+          width={320}
         />
       </div>
       {pathname?.includes("/post") && (

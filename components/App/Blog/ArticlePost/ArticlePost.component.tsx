@@ -25,11 +25,12 @@ export default function ArticlePost({ post }: Props) {
         >
           <Image
             alt={post.title}
-            className="object-cover object-center group-hover:scale-150 duration-300 ease-out"
-            fill
+            className="object-cover object-center group-hover:scale-150 duration-300 ease-out h-full w-full"
+            height={128}
             src={
               urlFor(post.mainImage).url()
             }
+            width={245}
           />
         </div>
         <div

@@ -25,6 +25,7 @@ $pagination-dots: 18px;
   :global(.swiper-pagination-bullet) {
     background-color: styles.$supernova;
     border-radius: 50%;
+    cursor: pointer;
     display: flex;
     height: $pagination-dots;
     margin-right: styles.to-rem(8);

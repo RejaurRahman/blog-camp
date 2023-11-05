@@ -19,7 +19,7 @@ $nav-width-mobile: styles.to-rem(45);
   @include styles.mix-breakpoint(device-mobile, device-tablet) {
     padding: {
       top: styles.to-rem(45);
-      right: styles.to-rem(45);
+      right: styles.to-rem(15);
       left: calc($nav-width-desktop + styles.to-rem(15));
     }
   }
