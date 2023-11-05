@@ -3,7 +3,12 @@ import React from "react";
 
 import LogoImage from "../../../assets/images/logo.png";
 
-export default function Logo(props: any) {
+interface LogoProps {
+  renderDefault: (props: LogoProps) => React.ReactNode;
+  title: string;
+}
+
+export default function Logo(props: LogoProps) {
   const { renderDefault, title } = props;
 
   return (

@@ -11,7 +11,7 @@ import styles from "./RichTextComponents.module.scss";
 
 export const RichTextComponents = {
   types: {
-    image: ({ value }: any) => {
+    image: ({ value }: RTEImageProps) => {
       return (
         <div className="mb-12">
           <div
@@ -33,12 +33,12 @@ export const RichTextComponents = {
         </div>
       )
     },
-    gallery: ({ value}: any) => {
+    gallery: ({ value}: RTEGalleryProps) => {
       return (
         <Gallery gallery={value} />
       )
     },
-    youtube: ({ value }: any) => {
+    youtube: ({ value }: RTEYoutubeProps) => {
       return (
         <VideoEmbed
           caption={value.caption}
@@ -49,14 +49,14 @@ export const RichTextComponents = {
     }
   },
   list: {
-    bullet: ({ children }: any) => (
+    bullet: ({ children }: RTEContentProps) => (
       <ul
         className={`ml-3.5 pb-10 list-disc space-y-5 ${styles.list}`}
       >
         {children}
       </ul>
     ),
-    number: ({ children }: any) => (
+    number: ({ children }: RTEContentProps) => (
       <ol
         className={`ml-3.5 pb-10 list-decimal space-y-5 ${styles.list}`}
       >
@@ -65,56 +65,56 @@ export const RichTextComponents = {
     )
   },
   block: {
-    h1: ({ children }: any) => (
+    h1: ({ children }: RTEContentProps) => (
       <h1
         className={`text-6xl pb-10 font-bold ${styles.heading}`}
       >
         {children}
       </h1>
     ),
-    h2: ({ children }: any) => (
+    h2: ({ children }: RTEContentProps) => (
       <h2
         className={`text-5xl pb-10 font-bold ${styles.heading}`}
       >
         {children}
       </h2>
     ),
-    h3: ({ children }: any) => (
+    h3: ({ children }: RTEContentProps) => (
       <h3
         className={`text-4xl pb-8 font-bold ${styles.heading}`}
       >
         {children}
       </h3>
     ),
-    h4: ({ children }: any) => (
+    h4: ({ children }: RTEContentProps) => (
       <h4
         className={`text-3xl pb-8 font-bold ${styles.heading}`}
       >
         {children}
       </h4>
     ),
-    h5: ({ children }: any) => (
+    h5: ({ children }: RTEContentProps) => (
       <h4
         className={`text-2xl pb-7 font-bold ${styles.heading}`}
       >
         {children}
       </h4>
     ),
-    h6: ({ children }: any) => (
+    h6: ({ children }: RTEContentProps) => (
       <h4
         className={`text-xl pb-7 font-bold ${styles.heading}`}
       >
         {children}
       </h4>
     ),
-    normal: ({ children }: any) => (
+    normal: ({ children }: RTEContentProps) => (
       <p
         className={`text-lg pb-6 ${styles.text}`}
       >
         {children}
       </p>
     ),
-    blockquote: ({ children }: any) => (
+    blockquote: ({ children }: RTEContentProps) => (
       <blockquote
         className={`relative pl-10 py-6 mt-5 mb-10 ${styles.quote}`}
       >
@@ -123,7 +123,7 @@ export const RichTextComponents = {
     )
   },
   marks: {
-    link: ({ children, value }: any) => {
+    link: ({ children, value }: RTELinkProps) => {
       const rel = !value.href.startsWith("/") ? "noreferrer noopener" : undefined;
       const target = !value.href.startsWith("/") ? "_blank" : undefined;
 

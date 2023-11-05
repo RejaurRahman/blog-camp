@@ -14,7 +14,7 @@ interface FormInput {
 
 interface Props {
   post: Post,
-  comments: any
+  comments: Comment[]
 }
 
 export default function PostComments({ post, comments }: Props) {
@@ -56,10 +56,10 @@ export default function PostComments({ post, comments }: Props) {
             >
               {comments.length} Comment{comments.length > 1 ? "s" : null}
             </h3>
-            {comments.map((comment: any) => (
+            {comments.map((comment, index) => (
               <div
                 className={`p-4 ${styles.commentBox}`}
-                key={comment._id}
+                key={index + 1}
               >
                 <h4 className={`font-bold mb-2 ${styles.authorName}`}>
                   {comment.name}

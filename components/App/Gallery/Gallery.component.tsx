@@ -15,12 +15,14 @@ import type SwiperCore from "swiper";
 
 import styles from "./Gallery.module.scss";
 
-interface Image {
+interface GalleryImage {
+  _type: "image";
+  asset: Reference;
   alt: string;
 }
 
 interface Gallery {
-  images: Image[];
+  images: GalleryImage[];
 }
 
 interface Props {

@@ -37,18 +37,19 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 2. Similar posts section
 3. Form option to Rich Text
 4. Two Column Text option
+5. Fill in content
 
 ## Other Pages
 
 1. Custom 404 Error
+2. Fill in content for About/Contact page
 
 ## Issues
 
 1. Hydration issue with post comments form
 2. Invalid date on comments
 3. Progress bar on posts not sticky on scroll
-4. Any types fixed across codebase
-5. Comments/form textarea displayed as array for multiline
+4. Comments/form textarea displayed as array for multiline
 
 ## Getting Started
 
