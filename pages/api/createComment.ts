@@ -32,9 +32,10 @@ export default async function createComment(
       name,
       email,
       comment,
+      publishedAt: new Date().toISOString(),
       post: {
         _type: "reference",
-        _ref: _id,
+        _ref: _id
       }
     });
 

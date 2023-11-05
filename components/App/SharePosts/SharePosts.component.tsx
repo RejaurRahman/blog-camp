@@ -2,7 +2,8 @@
 
 import React, { useState } from "react";
 
-import ClientSideRoute from "../ClientSideRoute/ClientSideRoute";
+import ClientSideRoute from "@/components/App/ClientSideRoute/ClientSideRoute";
+
 import { CopyToClipboard } from "react-copy-to-clipboard";
 
 import { config, library } from "@fortawesome/fontawesome-svg-core";

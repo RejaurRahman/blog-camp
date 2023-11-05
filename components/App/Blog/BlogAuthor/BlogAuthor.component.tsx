@@ -34,12 +34,12 @@ export default function BlogAuthor({ displayDesktop, post }: Props) {
       <p className="font-bold mb-6">{post.author.name}</p>
       <PortableText value={post.author.bio} />
       <ClientSideRoute
-        className="mt-5 font-bold flex items-center"
+        className={`mt-5 font-bold flex items-center ${styles.button}`}
         route={`/author/${post.author.slug.current}`}
       >
         View Bio
         <ArrowUpRightIcon
-          className="ml-2 h-4 w-4 group-hover:rotate-45 duration-300 ease-out"
+          className={`ml-2 h-4 w-4 ${styles.icon}`}
         />
       </ClientSideRoute>
     </div>

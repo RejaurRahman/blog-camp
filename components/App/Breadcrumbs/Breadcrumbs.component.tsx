@@ -1,6 +1,6 @@
 import React from "react";
 
-import ClientSideRoute from "../ClientSideRoute/ClientSideRoute";
+import ClientSideRoute from "@/components/App/ClientSideRoute/ClientSideRoute";
 
 import styles from "./Breadcrumbs.module.scss";
 

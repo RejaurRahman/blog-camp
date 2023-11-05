@@ -9,7 +9,7 @@ export default function Logo(props: any) {
   return (
     <div className="flex items-center space-x-2">
       <Image
-        alt="Blog Camp"
+        alt={title}
         className="rounded-full object-cover"
         height={96}
         src={LogoImage}

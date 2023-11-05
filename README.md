@@ -48,6 +48,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 2. Invalid date on comments
 3. Progress bar on posts not sticky on scroll
 4. Any types fixed across codebase
+5. Comments/form textarea displayed as array for multiline
 
 ## Getting Started
 

@@ -25,6 +25,14 @@ export default defineType({
       validation: Rule => Rule.email()
     }),
     defineField({
+      name: "publishedAt",
+      title: "Published at",
+      type: "datetime",
+      hidden: true,
+      readOnly: true,
+      initialValue: () => new Date().toLocaleString("en-US")
+    }),
+    defineField({
       name: "comment",
       title: "Comment",
       type: "text"
