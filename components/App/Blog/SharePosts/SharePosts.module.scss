@@ -1,4 +1,4 @@
-@use "../../../styles/base.scss" as styles;
+@use "../../../../styles/base.scss" as styles;
 
 .wrapper {
   @include styles.breakpoint(max-width, device-tablet) {

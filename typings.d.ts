@@ -21,6 +21,7 @@ interface Post extends Base {
   comments: Comment[];
   description: string;
   mainImage: Image;
+  relatedPost?: Post[];
   slug: Slug;
   tags: Tag[];
   title: string;
@@ -43,6 +44,11 @@ interface Author extends Base {
   image: Image;
   name: string;
   slug: Slug;
+}
+
+interface TextMedia {
+  copy: Block[];
+  image: Image;
 }
 
 interface Image {

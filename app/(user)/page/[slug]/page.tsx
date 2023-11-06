@@ -5,7 +5,7 @@ import { client } from "@/lib/client";
 import { PortableText } from "@portabletext/react";
 import urlFor from "@/lib/urlFor";
 
-import Breadcrumbs from "@/components/App/Breadcrumbs/Breadcrumbs.component";
+import Breadcrumbs from "@/components/App/Blog/Breadcrumbs/Breadcrumbs.component";
 import PostBanner from "@/components/App/PostBanner/PostBanner.component";
 import { RichTextComponents } from "@/components/App/RichTextComponents/RichTextComponents.component";
 

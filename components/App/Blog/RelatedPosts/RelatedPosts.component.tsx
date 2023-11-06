@@ -5,7 +5,12 @@ import ClientSideRoute from "@/components/App/ClientSideRoute/ClientSideRoute";
 
 import styles from "./RelatedPosts.module.scss";
 
-export default function RelatedPosts({ relatedPosts }: any) {
+
+interface Props {
+  relatedPosts: Post[]
+}
+
+export default function RelatedPosts({ relatedPosts }: Props) {
   return (
     <>
       {relatedPosts.length > 0 && (
@@ -21,7 +26,7 @@ export default function RelatedPosts({ relatedPosts }: any) {
           <div
             className={`flex flex-wrap ${styles.cardWrapper}`}
           >
-            {relatedPosts.map((post: any, index: number) => (
+            {relatedPosts.map((post: Post, index: number) => (
               <ClientSideRoute
                 className={styles.articleLink}
                 route={`/post/${post.slug.current}`}

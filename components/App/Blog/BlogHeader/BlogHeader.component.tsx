@@ -4,7 +4,7 @@ import React, { useCallback, useEffect, useState } from "react";
 
 import { ClockIcon } from "@heroicons/react/24/outline";
 
-import Breadcrumbs from "@/components/App/Breadcrumbs/Breadcrumbs.component";
+import Breadcrumbs from "@/components/App/Blog/Breadcrumbs/Breadcrumbs.component";
 import ClientSideRoute from "@/components/App/ClientSideRoute/ClientSideRoute";
 
 import blogListStyles from "../BlogList/BlogList.module.scss";
