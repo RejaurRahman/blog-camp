@@ -51,6 +51,12 @@ interface TextMedia {
   image: Image;
 }
 
+interface RelatedPostRef {
+  _key?: string;
+  _ref?: string;
+  _type?: string;
+}
+
 interface Image {
   _type: "image";
   asset: Reference;

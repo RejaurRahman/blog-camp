@@ -7,7 +7,9 @@ import comment from "./schemas/comment";
 import gallery from "./schemas/gallery";
 import page from "./schemas/page";
 import post from "./schemas/post";
+import sitewide from "./schemas/sitewide";
 import tag from "./schemas/tag";
+import textMedia from "./schemas/textMedia";
 import youtube from "./schemas/youtube";
 
 export const schema: { types: SchemaTypeDefinition[] } = {
@@ -19,7 +21,9 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     gallery,
     page,
     post,
+    sitewide,
     tag,
+    textMedia,
     youtube
   ]
 }

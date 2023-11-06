@@ -9,6 +9,7 @@ import Gallery from "@/components/App/Gallery/Gallery.component";
 import VideoEmbed from "@/components/App/VideoEmbed/VideoEmbed.component";
 
 import styles from "./RichTextComponents.module.scss";
+import TextMedia from "../TextMedia/TextMedia.component";
 
 export const RichTextComponents: PortableTextReactComponents = {
   types: {
@@ -36,6 +37,11 @@ export const RichTextComponents: PortableTextReactComponents = {
     gallery: ({ value }) => {
       return (
         <Gallery gallery={value} />
+      );
+    },
+    textMedia: ({ value }) => {
+      return (
+        <TextMedia textMedia={value} />
       );
     },
     youtube: ({ value }) => {

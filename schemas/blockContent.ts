@@ -94,6 +94,9 @@ export default defineType({
     }),
     defineArrayMember({
       type: "gallery"
+    }),
+    defineArrayMember({
+      type: "textMedia"
     })
   ]
 })

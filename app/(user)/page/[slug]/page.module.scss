@@ -20,6 +20,7 @@ $nav-width-mobile: styles.to-rem(45);
     padding: {
       top: styles.to-rem(45);
       right: styles.to-rem(15);
+      bottom: styles.to-rem(100);
       left: calc($nav-width-desktop + styles.to-rem(15));
     }
   }
@@ -28,6 +29,7 @@ $nav-width-mobile: styles.to-rem(45);
     padding: {
       top: styles.to-rem(96);
       right: styles.to-rem(45);
+      bottom: styles.to-rem(100);
       left: calc($nav-width-desktop + styles.to-rem(45));
     }
   }

@@ -60,8 +60,9 @@ export default async function Post({ params: {slug} }: Props) {
       tags[]->
     }
   `
-  const references:Post[] = relatedPostsReferences.map(
-    (ref:any) => ref._ref
+
+  const references = relatedPostsReferences.map(
+    (ref:RelatedPostRef) => ref._ref
   );
 
   const relatedPosts = await client.fetch(relatedPostsQuery, { references });

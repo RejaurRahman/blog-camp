@@ -1,0 +1,60 @@
+@use "../../../styles/base.scss" as styles;
+
+.wrapper {
+  max-width: styles.to-rem(1070);
+
+  @include styles.breakpoint(max-width, device-height-l) {
+    flex-flow: column;
+  }
+}
+
+.left,
+.right {
+  @include styles.breakpoint(min-width, device-height-l) {
+    width: 50%;
+  }
+}
+
+.right {
+  background-color: styles.$vermillion;
+
+  p {
+    &:first-child {
+      font-size: styles.to-rem(26);
+      line-height: styles.to-rem(34);
+    }
+
+    &:nth-child(2) {
+      font-size: styles.to-rem(14);
+      line-height: styles.to-rem(22);
+      padding: {
+        top: styles.to-rem(10);
+        bottom: styles.to-rem(40);
+      }
+    }
+
+    &:first-child,
+    &:nth-child(2) {
+      color: styles.$white;
+    }
+
+    &:nth-child(n+2) {
+      font-size: styles.to-rem(18);
+      line-height: styles.to-rem(26);
+      margin-bottom: styles.to-rem(20);
+    }
+  }
+
+  @include styles.breakpoint(max-width, device-mobile) {
+    padding: {
+      top: styles.to-rem(20);
+      right: styles.to-rem(20);
+      bottom: styles.to-rem(20);
+      left: styles.to-rem(20);
+    }
+  }
+
+  @include styles.breakpoint(min-width, device-mobile) {
+    padding: styles.to-rem(40);
+  }
+}
