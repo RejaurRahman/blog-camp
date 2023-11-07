@@ -10,7 +10,11 @@ import HeaderSocial from "@/components/App/Layout/HeaderSocial/HeaderSocial.comp
 
 import styles from "./HeaderModal.module.scss";
 
-export default function HeaderModal() {
+interface Props{
+  data?: SiteData;
+}
+
+export default function HeaderModal({ data }: Props) {
   return (
     <Dialog.Root>
       <Dialog.Trigger asChild>
@@ -32,7 +36,7 @@ export default function HeaderModal() {
           className={`fixed flex top-0 left-0 h-screen ${styles.content}`}
         >
           <div className={styles.left}>
-            <HeaderLeft />
+            <HeaderLeft data={data} />
           </div>
           <div className={styles.right}>
             <HeaderLogo />
@@ -50,7 +54,7 @@ export default function HeaderModal() {
                 />
               </button>
             </Dialog.Close>
-            <HeaderSocial />
+            <HeaderSocial data={data?.socialLinks} />
           </div>
         </Dialog.Content>
       </Dialog.Portal>

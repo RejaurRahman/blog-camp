@@ -21,6 +21,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 - Progress bar calculating reading post
 - Read time calculation
 - Sharing posts
+- Sitewide settings in Sanity for Social Media, Site Title and Menu Data
 - Videos embed
 
 ## Global Tasks
@@ -29,8 +30,6 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 2. Live Preview Mode
 3. Search Functionality
 4. Redirect urls in next.config
-5. Sitewide section in Sanity
-6. Replace shortcode text in CMS
 
 ## Tasks on Blog Posts
 

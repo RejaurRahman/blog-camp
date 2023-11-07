@@ -5,7 +5,56 @@ type Base = {
   _rev: string;
   _type: string;
   _updatedAt: string;
-};
+}
+
+interface Author extends Base {
+  bio: Block[];
+  image: Image;
+  name: string;
+  slug: Slug;
+}
+
+interface Block {
+  _key: string;
+  _type: "block";
+  children: Span[];
+  markDefs: [];
+  style: "normal" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "blockquote";
+}
+
+interface Category extends Base {
+  description: string;
+  slug: Slug;
+  title: string;
+}
+
+interface Comment {
+  approved: boolean;
+  comment: string;
+  email: string;
+  name: string;
+  post: {
+    _ref: string
+    _type: string
+  }
+  publishedAt: string;
+}
+
+interface Image {
+  _type: "image";
+  asset: Reference;
+}
+
+interface MainImage {
+  _type: "image";
+  asset: Reference;
+}
+
+interface MenuItem {
+  _key: string;
+  menuName: string;
+  slug: string;
+}
 
 interface Page extends Base {
   body: Block[];
@@ -27,28 +76,9 @@ interface Post extends Base {
   title: string;
 }
 
-interface Comment {
-  approved: boolean;
-  comment: string;
-  email: string;
-  name: string;
-  post: {
-    _ref: string
-    _type: string
-  }
-  publishedAt: string;
-}
-
-interface Author extends Base {
-  bio: Block[];
-  image: Image;
-  name: string;
-  slug: Slug;
-}
-
-interface TextMedia {
-  copy: Block[];
-  image: Image;
+interface Reference {
+  _ref: string;
+  _type: "reference";
 }
 
 interface RelatedPostRef {
@@ -57,27 +87,17 @@ interface RelatedPostRef {
   _type?: string;
 }
 
-interface Image {
-  _type: "image";
-  asset: Reference;
-}
-
-interface Reference {
-  _ref: string;
-  _type: "reference";
-}
-
 interface Slug {
   _type: "slug";
   current: string;
 }
 
-interface Block {
-  _key: string;
-  _type: "block";
-  children: Span[];
-  markDefs: [];
-  style: "normal" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "blockquote";
+interface SocialLinks {
+  fbLink: string;
+  linkedinLink: string;
+  pinterestLink: string;
+  redditLink: string;
+  twitterLink: string;
 }
 
 interface Span {
@@ -87,19 +107,23 @@ interface Span {
   text: string;
 }
 
-interface Category extends Base {
-  description: string;
-  slug: Slug;
-  title: string;
+interface SiteData {
+  headerText: string;
+  footerText: string;
+  metaDescription: string;
+  metaTitle: string;
+  menu: MenuItem[];
+  siteTitle: string;
+  socialLinks: SocialLinks;
 }
 
 interface Tag extends Base {
   title: string;
 }
 
-interface MainImage {
-  _type: "image";
-  asset: Reference;
+interface TextMedia {
+  copy: Block[];
+  image: Image;
 }
 
 interface Title {

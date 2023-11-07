@@ -3,7 +3,11 @@ import React from "react";
 
 import styles from "./HeaderLeft.module.scss";
 
-export default function HeaderLeft() {
+interface Props {
+  data?: SiteData;
+}
+
+export default function HeaderLeft({ data } : Props) {
   const currentYear = new Date().getFullYear();
 
   return (
@@ -18,41 +22,34 @@ export default function HeaderLeft() {
           />
         </label>
       </form>
-      <span className={`flex justify-center items-center text-3xl ${styles.title}`}>
-        Blog Camp
+      <span
+        className={`flex justify-center items-center text-3xl ${styles.title}`}
+      >
+        {data?.siteTitle}
       </span>
       <div className={`flex justify-between ${styles.bottom}`}>
         <span className={`text-sm ${styles.subtitle}`}>
-          Blog Camp is a platform where I share thoughts about life topics covering wide range of aspects.
+          {data?.headerText}
         </span>
         <ul>
-          <li className="pb-6">
-            <Link
-              className={`text-lg ${styles.menuItem} `}
-              href="/"
-            >
-              Home
-            </Link>
-          </li>
-          <li className="pb-6">
-            <Link
-              className={`text-lg ${styles.menuItem} `}
-              href="/about"
-            >
-              About
-            </Link>
-          </li>
-          <li>
-            <Link
-              className={`text-lg ${styles.menuItem} `}
-              href="/contact"
-            >
-              Contact
-            </Link>
-          </li>
+          {
+            data?.menu?.map(( item, index ) => (
+              <li
+                className="pb-6"
+                key={index}
+              >
+                <Link
+                  className={`text-lg ${styles.menuItem} `}
+                  href={item.slug}
+                >
+                  {item.menuName}
+                </Link>
+              </li>
+            ))
+          }
         </ul>
         <span className={`text-sm uppercase ${styles.copyright}`}>
-          Copyright &copy; {currentYear}. All rights reserved | Blog Camp
+          Copyright &copy; {currentYear}. {data?.footerText}
         </span>
       </div>
     </>
