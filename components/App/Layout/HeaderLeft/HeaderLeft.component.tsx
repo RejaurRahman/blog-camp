@@ -5,9 +5,10 @@ import styles from "./HeaderLeft.module.scss";
 
 interface Props {
   data?: SiteData;
+  setOpen?: (open: boolean) => void;
 }
 
-export default function HeaderLeft({ data } : Props) {
+export default function HeaderLeft({ data, setOpen } : Props) {
   const currentYear = new Date().getFullYear();
 
   return (
@@ -33,14 +34,15 @@ export default function HeaderLeft({ data } : Props) {
         </span>
         <ul>
           {
-            data?.menu?.map(( item, index ) => (
+            data?.menu?.map((item, index) => (
               <li
                 className="pb-6"
                 key={index}
               >
                 <Link
-                  className={`text-lg ${styles.menuItem} `}
+                  className={`text-lg ${styles.menuItem}`}
                   href={item.slug}
+                  onClick={() => { setOpen && setOpen(false) }}
                 >
                   {item.menuName}
                 </Link>

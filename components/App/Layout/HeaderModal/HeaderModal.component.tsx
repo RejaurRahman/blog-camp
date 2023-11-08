@@ -2,7 +2,7 @@
 
 import * as Dialog from "@radix-ui/react-dialog";
 import { motion } from "framer-motion";
-import React from "react";
+import React, { useState } from "react";
 
 import HeaderLeft from "@/components/App/Layout/HeaderLeft/HeaderLeft.component";
 import HeaderLogo from "@/components/App/Layout/HeaderLogo/HeaderLogo.component";
@@ -10,13 +10,22 @@ import HeaderSocial from "@/components/App/Layout/HeaderSocial/HeaderSocial.comp
 
 import styles from "./HeaderModal.module.scss";
 
-interface Props{
+interface Props {
   data?: SiteData;
 }
 
 export default function HeaderModal({ data }: Props) {
+  const [open, setOpen] = useState(false);
+
+  const openChange = () => {
+    setOpen(!open)
+  }
+
   return (
-    <Dialog.Root>
+    <Dialog.Root
+      open={open}
+      onOpenChange={openChange}
+    >
       <Dialog.Trigger asChild>
         <button
           className={`flex items-center ${styles.burgerMenu}`}
