@@ -110,8 +110,6 @@ interface Span {
 interface SiteData {
   headerText: string;
   footerText: string;
-  metaDescription: string;
-  metaTitle: string;
   menu: MenuItem[];
   siteTitle: string;
   socialLinks: SocialLinks;

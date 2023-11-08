@@ -14,18 +14,6 @@ export default defineType({
       description: "Title of the website"
     }),
     defineField({
-      name: "metaTitle",
-      title: "Meta Title",
-      type: "string",
-      description: "Meta Title for SEO Purposes"
-    }),
-    defineField({
-      name: "metaDescription",
-      title: "Meta Description",
-      type: "string",
-      description: "Meta Description for SEO Purposes"
-    }),
-    defineField({
       name: "headerText",
       title: "Header Text",
       type: "text",
