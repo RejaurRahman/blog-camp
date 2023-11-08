@@ -64,7 +64,10 @@ export default function PostComments({ post, comments }: Props) {
                 <h4 className={`font-bold mb-2 ${styles.authorName}`}>
                   {comment.name}
                 </h4>
-                <p className={`mb-3 ${styles.comment}`}>{comment.comment}</p>
+                <p
+                  className={`mb-3 ${styles.comment}`}
+                  dangerouslySetInnerHTML={{ __html: comment.comment }}
+                />
                 <span className={`capitalize italic ${styles.dateWrapper}`}>
                   {
                     new Date(comment.publishedAt).toLocaleDateString("en-US", {

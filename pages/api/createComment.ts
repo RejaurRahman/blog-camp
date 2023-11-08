@@ -21,7 +21,9 @@ export default async function createComment(
   }
 
   try {
-    const { _id, name, email, comment } = req.body;
+    const str = req.body.comment.replace(/(?:\r\n|\r|\n)/g, "<br>");
+    const { _id, name, email } = req.body;
+    const comment = str;
 
     if (!_id || !name || !email || !comment) {
       return res.status(400).json({ message: "Invalid data" });
