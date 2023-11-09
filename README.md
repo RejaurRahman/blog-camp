@@ -46,7 +46,6 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 ## Issues
 
 1. Hydration issue with post comments form
-2. Progress bar on posts not sticky on scroll
 
 ## Getting Started
 

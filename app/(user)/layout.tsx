@@ -16,8 +16,9 @@ export default function RootLayout({
 }) {
   return (
     <html
-      className="overflow-x-hidden"
+      className="scroll-smooth"
       lang="en"
+      style={{scrollBehavior:"smooth"}}
     >
       <body
         className="overflow-x-hidden"

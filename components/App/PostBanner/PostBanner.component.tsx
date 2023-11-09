@@ -30,12 +30,14 @@ export default function PostBanner({ imageSrc, imageAltText }: Props) {
       </div>
       {pathname?.includes("/post") && (
         <AnimatePresence>
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            className={`sticky top-0 left-0 ${styles.progressBar}`}
-            style={{ scaleX: scrollYProgress }}
-          />
+          <nav className={`sticky top-0 left-0 ${styles.nav}`}>
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              className={styles.progressBar}
+              style={{ scaleX: scrollYProgress }}
+            />
+          </nav>
         </AnimatePresence>
       )}
     </>

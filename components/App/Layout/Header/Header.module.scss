@@ -4,6 +4,14 @@ $logo-size-desktop: styles.to-rem(96);
 $logo-size-mobile: styles.to-rem(45);
 
 .header {
+  &:not([data-aria-hidden="true"]) {
+    z-index: 2;
+  }
+
+  &[data-aria-hidden="true"] + article nav {
+    z-index: 0;
+  }
+
   @include styles.breakpoint(max-width, device-mobile) {
     background-image: linear-gradient(styles.$transparent 0%, styles.$transparent $logo-size-mobile, styles.$buddha-gold $logo-size-mobile);
     width: $logo-size-mobile;
