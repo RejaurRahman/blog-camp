@@ -1,13 +1,12 @@
 import Link from "next/link";
-import React from "react";
-
+import React, { ReactNode } from "react";
 import { ArrowUturnLeftIcon } from "@heroicons/react/24/solid";
 
 interface StudioNavbarProps {
-  renderDefault: () => React.ReactNode;
+  renderDefault: () => ReactNode;
 }
 
-export default function StudioNavbar({ renderDefault }: StudioNavbarProps) {
+export default function StudioNavbar({ renderDefault }: StudioNavbarProps | any) {
   return (
     <div>
       <div className="flex items-center justify-between p-5">
@@ -21,9 +20,7 @@ export default function StudioNavbar({ renderDefault }: StudioNavbarProps) {
           Go To Website
         </Link>
       </div>
-      <>
-        {renderDefault()}
-      </>
+      <>{renderDefault()}</>
     </div>
-  )
+  );
 }

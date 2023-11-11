@@ -6,6 +6,30 @@ const nextConfig = {
   },
   images: {
     domains: ["cdn.sanity.io"]
+  },
+  async redirects() {
+    return [
+      {
+        source: "/category",
+        destination: "/",
+        permanent: false
+      },
+      {
+        source: "/author",
+        destination: "/",
+        permanent: false
+      },
+      {
+        source: "/post",
+        destination: "/",
+        permanent: false
+      },
+      {
+        source: "/page",
+        destination: "/",
+        permanent: false
+      }
+    ]
   }
 }
 

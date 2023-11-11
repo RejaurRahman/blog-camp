@@ -1,14 +1,13 @@
 import Image from "next/image";
-import React from "react";
-
+import React, { ReactNode } from "react";
 import LogoImage from "../../../assets/images/logo.png";
 
 interface LogoProps {
-  renderDefault: (props: LogoProps) => React.ReactNode;
+  renderDefault: () => ReactNode;
   title: string;
 }
 
-export default function Logo(props: LogoProps) {
+export default function Logo(props: LogoProps | any) {
   const { renderDefault, title } = props;
 
   return (
@@ -21,8 +20,8 @@ export default function Logo(props: LogoProps) {
         width={96}
       />
       <>
-        {renderDefault(props)}
+        {renderDefault()}
       </>
     </div>
-  )
+  );
 }
