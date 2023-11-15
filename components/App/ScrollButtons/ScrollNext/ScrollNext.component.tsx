@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 
 import { ArrowDownIcon } from "@heroicons/react/24/solid";
 
-import baseStyles from "../ScrollButtons.module.scss";
+import baseStyles from "@/components/App/ScrollButtons/ScrollButtons.module.scss";
 import styles from "./ScrollNext.module.scss";
 
 export default function ScrollNext() {

@@ -6,10 +6,10 @@ import React from "react";
 import urlFor from "@/lib/urlFor";
 
 import Gallery from "@/components/App/Gallery/Gallery.component";
+import TextMedia from "@/components/App/TextMedia/TextMedia.component";
 import VideoEmbed from "@/components/App/VideoEmbed/VideoEmbed.component";
 
 import styles from "./RichTextComponents.module.scss";
-import TextMedia from "../TextMedia/TextMedia.component";
 
 export const RichTextComponents: PortableTextReactComponents = {
   types: {

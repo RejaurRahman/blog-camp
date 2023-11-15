@@ -7,7 +7,7 @@ import { ClockIcon } from "@heroicons/react/24/outline";
 import Breadcrumbs from "@/components/App/Blog/Breadcrumbs/Breadcrumbs.component";
 import ClientSideRoute from "@/components/App/ClientSideRoute/ClientSideRoute";
 
-import blogListStyles from "../BlogList/BlogList.module.scss";
+import blogListStyles from "@/components/App/Blog/BlogList/BlogList.module.scss";
 import styles from "./BlogHeader.module.scss";
 
 type Props = {
