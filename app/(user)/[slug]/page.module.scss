@@ -1,4 +1,4 @@
-@use "../../../../styles/base.scss" as styles;
+@use "../../../styles/base.scss" as styles;
 
 $nav-width-desktop: styles.to-rem(96);
 $nav-width-mobile: styles.to-rem(45);

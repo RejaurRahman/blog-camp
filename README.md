@@ -30,7 +30,6 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 1. Sitemap generating
 2. Live Preview Mode
 3. Search Functionality
-4. Redirect urls in next.config
 
 ## Tasks on Blog Posts
 
