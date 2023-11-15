@@ -2,6 +2,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Global Blog Functionality
 
+- Custom 404 Error
 - Tags and Categories
 - Author page
 - Category page
@@ -40,8 +41,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Other Pages
 
-1. Custom 404 Error
-2. Fill in content for About/Contact page
+1. Fill in content for About/Contact page
 
 ## Issues
 

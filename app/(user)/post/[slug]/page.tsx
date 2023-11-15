@@ -1,6 +1,7 @@
 import React from "react";
 import { groq } from "next-sanity";
 import { client } from "@/lib/client";
+import { notFound } from "next/navigation";
 
 import { PortableText } from "@portabletext/react";
 import urlFor from "@/lib/urlFor";
@@ -49,6 +50,10 @@ export default async function Post({ params: {slug} }: Props) {
   `
 
   const post: Post = await client.fetch(query, { slug });
+
+  if (!post) {
+    notFound();
+  }
 
   const relatedPostsReferences:Post[] = post?.relatedPost || [];
 

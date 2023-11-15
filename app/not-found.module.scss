@@ -1,0 +1,61 @@
+@use "../styles/base.scss" as styles;
+
+$mobile-spacing-width: styles.to-rem(30);
+$desktop-spacing-width: styles.to-rem(100);
+
+.container {
+  flex-flow: column;
+  padding: {
+    top: styles.to-rem(30);
+    bottom: styles.to-rem(30);
+  }
+
+  @include styles.breakpoint(max-width, device-mobile) {
+    width: calc(100% - $mobile-spacing-width);
+  }
+
+  @include styles.breakpoint(min-width, device-mobile) {
+    height: 100vh;
+    width: calc(100% - $desktop-spacing-width);
+  }
+}
+
+.heading {
+  font-size: styles.to-rem(150);
+  line-height: styles.to-rem(156);
+}
+
+.text {
+  font-size: styles.to-rem(22);
+  line-height: styles.to-rem(30);
+}
+
+.buttonWrapper {
+  @include styles.breakpoint(max-width, device-mobile) {
+    flex-flow: column;
+  }
+}
+
+.button {
+  border: 1px solid styles.$buddha-gold;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+
+  &:hover {
+    color: styles.$white;
+    background-color: styles.$buddha-gold;
+
+    .icon {
+      transform: rotate(45deg);
+    }
+  }
+
+  &:first-child {
+    @include styles.breakpoint(min-width, device-mobile) {
+      margin-right: styles.to-rem(20);
+    }
+  }
+
+  .icon {
+    transition: transform 0.3s ease-in-out;
+  }
+}

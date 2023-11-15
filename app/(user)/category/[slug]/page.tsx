@@ -1,11 +1,12 @@
 import React from "react";
 import { groq } from "next-sanity";
 import { client } from "@/lib/client";
+import { notFound } from "next/navigation";
 
 import BlogList from "@/components/App/Blog/BlogList/BlogList.component";
 import TextBanner from "@/components/App/TextBanner/TextBanner.component";
 
-import styles from "../../index.module.scss";
+import styles from "@/app/index.module.scss";
 
 type Props = {
   params: {
@@ -41,6 +42,10 @@ export default async function CategoryPosts({ params: { slug } }: Props) {
   `
 
   const category: Category = await client.fetch(categoryQuery, { slug });
+
+  if (!category) {
+    notFound();
+  }
 
   const postQuery = groq`
     *[_type == "post" && references("category", $category._id)] {

@@ -1,7 +1,5 @@
 import React from "react";
 
-import Header from "@/components/App/Layout/Header/Header.component";
-
 import "@/styles/globals.css";
 
 export const metadata = {
@@ -18,13 +16,12 @@ export default function RootLayout({
     <html
       className="scroll-smooth"
       lang="en"
-      style={{scrollBehavior:"smooth"}}
+      style={{ scrollBehavior: "smooth" }}
     >
       <body
         className="overflow-x-hidden"
         suppressHydrationWarning={true}
       >
-        <Header />
         {children}
       </body>
     </html>

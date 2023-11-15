@@ -28,6 +28,16 @@ const nextConfig = {
         source: "/page",
         destination: "/",
         permanent: false
+      },
+      {
+        source: '/page/about-us',
+        destination: '/about-us',
+        permanent: false
+      },
+      {
+        source: '/page/contact-us',
+        destination: '/contact-us',
+        permanent: false
       }
     ]
   }

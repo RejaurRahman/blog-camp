@@ -5,7 +5,7 @@ import { client } from "@/lib/client";
 import BlogList from "@/components/App/Blog/BlogList/BlogList.component";
 import MainBanner from "@/components/App/MainBanner/MainBanner.component";
 
-import styles from "./index.module.scss";
+import styles from "@/app/index.module.scss";
 
 const query = groq`
   *[_type=="post"] {
