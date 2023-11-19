@@ -10,6 +10,7 @@ import post from "./schemas/post";
 import sitewide from "./schemas/sitewide";
 import tag from "./schemas/tag";
 import textMedia from "./schemas/textMedia";
+import twoColumnText from "./schemas/twoColumnText";
 import youtube from "./schemas/youtube";
 
 export const schema: { types: SchemaTypeDefinition[] } = {
@@ -24,6 +25,7 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     sitewide,
     tag,
     textMedia,
+    twoColumnText,
     youtube
   ]
 }

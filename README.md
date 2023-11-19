@@ -23,6 +23,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 - Read time calculation
 - Sharing posts
 - Sitewide settings in Sanity for Social Media, Site Title and Menu Data
+- Two Column Text option
 - Videos embed
 
 ## Global Tasks
@@ -34,10 +35,9 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 ## Tasks on Blog Posts
 
 1. Sticky Headings Nav
-2. Two Column Text option
-3. Form option
-4. Fill in content in post pages
-5. Blog post about family
+2. Form option
+3. Fill in content in post pages
+4. Blog post about family
 
 ## Other Pages
 

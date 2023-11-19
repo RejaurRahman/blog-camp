@@ -1,0 +1,52 @@
+@use "../../../styles/base.scss" as styles;
+
+.columns {
+  display: flex;
+
+  @include styles.breakpoint(max-width, device-height-l) {
+    flex-flow: column;
+    padding: {
+      top: styles.to-rem(15);
+      bottom: styles.to-rem(30);
+    }
+  }
+
+  @include styles.breakpoint(min-width, device-height-l) {
+    padding: {
+      top: styles.to-rem(30);
+      bottom: styles.to-rem(60);
+    }
+  }
+
+  .column {
+    &:first-child {
+      @include styles.breakpoint(min-width, device-height-l) {
+        padding-right: styles.to-rem(20);
+      }
+    }
+
+    &:last-child {
+      @include styles.breakpoint(min-width, device-height-l) {
+        padding-left: styles.to-rem(20);
+      }
+    }
+
+    @include styles.breakpoint(max-width, device-height-l) {
+      padding-bottom: styles.to-rem(20);
+    }
+
+    @include styles.breakpoint(min-width, device-height-l) {
+      width: 50%;
+    }
+  }
+
+  p {
+    font-size: styles.to-rem(18);
+    line-height: styles.to-rem(28);
+    padding-bottom: styles.to-rem(20);
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+  }
+}

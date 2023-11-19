@@ -7,6 +7,7 @@ import urlFor from "@/lib/urlFor";
 
 import Gallery from "@/components/App/Gallery/Gallery.component";
 import TextMedia from "@/components/App/TextMedia/TextMedia.component";
+import TwoColumnText from "@/components/App/TwoColumnText/TwoColumnText.component";
 import VideoEmbed from "@/components/App/VideoEmbed/VideoEmbed.component";
 
 import styles from "./RichTextComponents.module.scss";
@@ -43,6 +44,11 @@ export const RichTextComponents: PortableTextReactComponents = {
       return (
         <TextMedia textMedia={value} />
       );
+    },
+    twoColumnText: ({ value }) => {
+      return (
+        <TwoColumnText columns={value} />
+      )
     },
     youtube: ({ value }) => {
       return (

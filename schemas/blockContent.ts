@@ -97,6 +97,9 @@ export default defineType({
     }),
     defineArrayMember({
       type: "textMedia"
+    }),
+    defineArrayMember({
+      type: "twoColumnText"
     })
   ]
 })

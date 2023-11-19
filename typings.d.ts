@@ -130,5 +130,6 @@ interface Title {
 }
 
 interface TwoColumnText {
-  text: Block[];
+  leftColumn: Block;
+  rightColumn: Block;
 }
