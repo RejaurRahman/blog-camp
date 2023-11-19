@@ -1,5 +1,9 @@
 @use "../../../../styles/base.scss" as styles;
 
+.wrapper {
+  z-index: -2;
+}
+
 .breadcrumbs {
   li {
     &::before,

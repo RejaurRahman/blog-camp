@@ -12,7 +12,7 @@ type Props = {
 
 export default function TextMedia({ textMedia }: Props) {
   return (
-    <div className={`flex mx-auto ${styles.wrapper}`}>
+    <div className={`flex relative mx-auto ${styles.wrapper}`}>
       <div className={`relative ${styles.left}`}>
         <Image
           alt="Text Media image"

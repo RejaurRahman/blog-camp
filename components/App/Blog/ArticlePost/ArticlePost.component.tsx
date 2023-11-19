@@ -14,7 +14,7 @@ type Props = {
 export default function ArticlePost({ post }: Props) {
   return (
     <div
-      className={`flex group cursor-pointer ${styles.card}`}
+      className={`flex relative group cursor-pointer ${styles.card}`}
     >
       <h2 className={`font-bold pb-5 ${styles.title}`}>
         {post.title}

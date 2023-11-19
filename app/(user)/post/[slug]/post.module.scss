@@ -5,7 +5,6 @@ $nav-width-mobile: styles.to-rem(45);
 
 .container {
   width: 100%;
-  z-index: -2;
 
   @include styles.breakpoint(max-width, device-mobile) {
     padding: {

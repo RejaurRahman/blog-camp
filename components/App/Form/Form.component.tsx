@@ -40,7 +40,7 @@ export default function Form({ formFields }: FormProps) {
   const { register, handleSubmit } = useForm();
   const [loading, setLoading] = useState(false);
 
-  const FORMSPARK_ACTION_URL = `https://submit-form.com/${process.env.FORMSPARK_ID}`;
+  const FORMSPARK_ACTION_URL = "https://submit-form.com/xwHKYtXh7";
 
   const onSubmit: SubmitHandler<SubmitPayload> = async (data) => {
     setLoading(true);

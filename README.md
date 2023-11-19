@@ -38,10 +38,6 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 1. Sticky Headings Nav
 2. Fill in content in post pages
 
-## Other Pages
-
-1. Fill in content for About/Contact page
-
 ## Issues
 
 1. Hydration issue with every form

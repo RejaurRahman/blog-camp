@@ -10,7 +10,7 @@ type Props = {
 
 export default function Breadcrumbs({ pageTitle }: Props) {
   return (
-    <nav className="pb-7">
+    <nav className={`relative pb-7 ${styles.wrapper}`}>
       <ul
         className={`flex ${styles.breadcrumbs}`}
         itemScope

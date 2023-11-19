@@ -1,14 +1,16 @@
 @use "../../../../styles/base.scss" as styles;
 
 .card {
-  @include styles.breakpoint(min-width, device-desktop) {
-    filter: blur(styles.to-rem(2));
-  }
+  z-index: -2;
 
   &:hover {
     @include styles.breakpoint(min-width, device-desktop) {
       filter: blur(0);
     }
+  }
+
+  @include styles.breakpoint(min-width, device-desktop) {
+    filter: blur(styles.to-rem(2));
   }
 }
 

@@ -14,7 +14,7 @@ type Props = {
 export default function FeaturedPost({ post }: Props) {
   return (
     <div
-      className={`flex group cursor-pointer ${styles.wrapper}`}
+      className={`flex relative group cursor-pointer ${styles.wrapper}`}
     >
       <div
         className={`flex items-center pb-7 ${styles.container}`}
