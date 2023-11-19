@@ -87,6 +87,14 @@ interface RelatedPostRef {
   _type?: string;
 }
 
+interface SiteData {
+  headerText: string;
+  footerText: string;
+  menu: MenuItem[];
+  siteTitle: string;
+  socialLinks: SocialLinks;
+}
+
 interface Slug {
   _type: "slug";
   current: string;
@@ -107,14 +115,6 @@ interface Span {
   text: string;
 }
 
-interface SiteData {
-  headerText: string;
-  footerText: string;
-  menu: MenuItem[];
-  siteTitle: string;
-  socialLinks: SocialLinks;
-}
-
 interface Tag extends Base {
   title: string;
 }
@@ -127,4 +127,8 @@ interface TextMedia {
 interface Title {
   _type: "string";
   current: string;
+}
+
+interface TwoColumnText {
+  text: Block[];
 }

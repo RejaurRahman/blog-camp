@@ -1523,6 +1523,13 @@
   resolved "https://registry.yarnpkg.com/@floating-ui/utils/-/utils-0.1.4.tgz#19654d1026cc410975d46445180e70a5089b3e7d"
   integrity sha512-qprfWkn82Iw821mcKofJ5Pk9wgioHicxcQMxx+5zt5GSKoqdWvgG5AxVmpmUUjzTLPVSH5auBrhI93Deayn/DA==
 
+"@formspark/use-formspark@^0.1.39":
+  version "0.1.39"
+  resolved "https://registry.yarnpkg.com/@formspark/use-formspark/-/use-formspark-0.1.39.tgz#155af2f5f587d754e1541519e3d69691823770a8"
+  integrity sha512-3bIhw3z1eUzMXStgM3/WNNkjYuodk0PSrgrR3cQpCYifGmzkgRuy6mduCetqYK4vsTEaQO2RWFjNOK0eUEDGOQ==
+  dependencies:
+    whatwg-fetch "^3.6.2"
+
 "@fortawesome/fontawesome-common-types@6.4.2":
   version "6.4.2"
   resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-common-types/-/fontawesome-common-types-6.4.2.tgz#1766039cad33f8ad87f9467b98e0d18fbc8f01c5"
@@ -7428,6 +7435,11 @@ whatwg-encoding@^2.0.0:
   integrity sha512-p41ogyeMUrw3jWclHWTQg1k05DSVXPLcVxRTYsXUk+ZooOCZLcoYgPZ/HL/D/N+uQPOtcp1me1WhBEaX02mhWg==
   dependencies:
     iconv-lite "0.6.3"
+
+whatwg-fetch@^3.6.2:
+  version "3.6.19"
+  resolved "https://registry.yarnpkg.com/whatwg-fetch/-/whatwg-fetch-3.6.19.tgz#caefd92ae630b91c07345537e67f8354db470973"
+  integrity sha512-d67JP4dHSbm2TrpFj8AbO8DnL1JXL5J9u0Kq2xW6d0TFDbCA3Muhdt8orXC22utleTVj7Prqt82baN6RBvnEgw==
 
 whatwg-mimetype@^3.0.0:
   version "3.0.0"

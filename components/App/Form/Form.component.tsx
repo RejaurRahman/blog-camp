@@ -1,70 +1,116 @@
 "use client";
 
-import React, { useState, ChangeEvent, FormEvent } from "react";
+import { useFormspark } from "@formspark/use-formspark";
+import React, { InputHTMLAttributes, useState } from "react";
+import { FieldValues, UseFormRegister, useForm } from "react-hook-form";
 
-import commentsStyles from "@/components/App/PostComments/PostComments.module.scss";
+import styles from "@/components/App/Blog/PostComments/PostComments.module.scss";
 
-export default function Form() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: ""
-  });
+interface InputFieldProps extends InputHTMLAttributes<HTMLInputElement> {
+  id: string;
+  fieldName: string;
+  required?: boolean;
+  placeholder?: string;
+  register: UseFormRegister<FieldValues>;
+  type?: string;
+}
 
-  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
+interface FormProps {
+  formFields: any[];
+}
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-  };
+export function InputField({ type, id, fieldName, required, placeholder, register }: InputFieldProps) {
+  return (
+    <>
+      <label htmlFor={id}>{fieldName}</label>
+      <input
+        {...register(id)}
+        aria-describedby={type}
+        id={id}
+        className={`rounded py-2 px-3 w-full form-input block outline-none ${styles.field}`}
+        placeholder={placeholder}
+        required={!!required}
+        type={type}
+      />
+    </>
+  )
+}
+
+export default function Form({ formFields }: FormProps) {
+  const [submitted, setSubmitted] = useState(false);
+  const [submit, submitting] = useFormspark({ formId: process.env.FORMSPARK_ID || "" });
+  const { register, handleSubmit } = useForm();
+
+  function onSubmit(data: any) {
+    submit(data);
+    setSubmitted(true);
+  }
+
+  if (submitted) {
+    return (
+      <div
+        className={`flex mt-7 mb-12 py-10 px-4 ${styles.successBox}`}
+      >
+        <h3
+          className="text-3xl font-bold pb-1.5"
+        >
+          Thank you for submitting your message!
+        </h3>
+        <p>Someone from our team will reach out to you within 48 hours.</p>
+      </div>
+    )
+  }
 
   return (
     <>
       <hr
-        className={`inline-block w-full mt-5 mb-10 mx-auto border ${commentsStyles.seperator}`}
+        className={`inline-block w-full mt-5 mb-10 mx-auto border ${styles.seperator}`}
       />
-      <h3
-        className="text-3xl pt-7 pb-12"
-      >
-        Leave a message below!
-      </h3>
       <form
-        className={`flex items-center p-5 mb-10 ${commentsStyles.form}`}
-        onSubmit={handleSubmit}
+        className={`flex items-center p-5 mb-10 ${styles.form}`}
+        onSubmit={handleSubmit(onSubmit)}
       >
-        <label className="block mb-5 w-full">
-          <input
-            className={`rounded py-2 px-3 w-full form-input block outline-none ${commentsStyles.field}`}
-            onChange={handleChange}
-            placeholder="Your name"
-            type="text"
-            value={formData.name}
-          />
-        </label>
-        <label className="block mb-5 w-full">
-          <input
-            className={`rounded py-2 px-3 w-full form-input block outline-none ${commentsStyles.field}`}
-            onChange={handleChange}
-            placeholder="Your chosen email address"
-            type="email"
-            value={formData.email}
-          />
-        </label>
-        <label className="block mb-5 w-full">
-          <textarea
-            className={`rounded py-2 px-3 w-full form-textarea block outline-none ${commentsStyles.field}`}
-            onChange={handleChange}
-            placeholder="Add your message here"
-            rows={8}
-            value={formData.message}
-          />
-        </label>
+        {Array.isArray(formFields) &&
+          formFields.map((field) => {
+            const { inputType, _key, fieldId, placeholder, fieldName, required } = field ?? {};
+            const { current } = fieldId ?? {};
+
+            if (!inputType || !current) return null;
+
+            if (inputType === "textArea") {
+              return (
+                <div key={_key}>
+                  <label htmlFor={current}>{fieldName}</label>
+                  <textarea
+                    {...register(current)}
+                    className={`rounded py-2 px-3 w-full form-textarea block outline-none ${styles.field}`}
+                    aria-describedby="textarea"
+                    id={current}
+                    required={!!required}
+                    placeholder={placeholder}
+                  />
+                </div>
+              );
+            }
+
+            return (
+              <InputField
+                fieldName={fieldName}
+                id={current}
+                key={_key}
+                placeholder={placeholder}
+                register={register}
+                required={required}
+                type={inputType}
+              />
+            );
+          })}
         <button
-          className={`rounded px-8 w-fit h-11 ${commentsStyles.button}`}
+          className={`rounded px-8 w-fit h-11 ${styles.button}`}
+          disabled={submitting}
+          type="submit"
         >
-          Send Message
+          Submit
         </button>
       </form>
     </>
