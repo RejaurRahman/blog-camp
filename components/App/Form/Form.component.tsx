@@ -1,49 +1,62 @@
 "use client";
 
-import { useFormspark } from "@formspark/use-formspark";
+import { SubmitPayload } from "@formspark/use-formspark";
 import React, { InputHTMLAttributes, useState } from "react";
-import { FieldValues, UseFormRegister, useForm } from "react-hook-form";
+import { FieldValues, SubmitHandler, UseFormRegister, useForm } from "react-hook-form";
 
 import styles from "@/components/App/Blog/PostComments/PostComments.module.scss";
 
 interface InputFieldProps extends InputHTMLAttributes<HTMLInputElement> {
-  id: string;
   fieldName: string;
-  required?: boolean;
+  id: string;
   placeholder?: string;
   register: UseFormRegister<FieldValues>;
+  required?: boolean;
   type?: string;
 }
 
-interface FormProps {
-  formFields: any[];
-}
-
-export function InputField({ type, id, fieldName, required, placeholder, register }: InputFieldProps) {
+export function InputField({
+  id,
+  placeholder,
+  register,
+  required,
+  type
+}: InputFieldProps) {
   return (
-    <>
-      <label htmlFor={id}>{fieldName}</label>
-      <input
-        {...register(id)}
-        aria-describedby={type}
-        id={id}
-        className={`rounded py-2 px-3 w-full form-input block outline-none ${styles.field}`}
-        placeholder={placeholder}
-        required={!!required}
-        type={type}
-      />
-    </>
+    <input
+      {...register(id)}
+      aria-describedby={type}
+      className={`rounded py-2 px-3 mb-5 w-full form-input block outline-none ${styles.field}`}
+      id={id}
+      placeholder={placeholder}
+      required={!!required}
+      type={type}
+    />
   )
 }
 
 export default function Form({ formFields }: FormProps) {
   const [submitted, setSubmitted] = useState(false);
-  const [submit, submitting] = useFormspark({ formId: process.env.FORMSPARK_ID || "" });
   const { register, handleSubmit } = useForm();
+  const [loading, setLoading] = useState(false);
 
-  function onSubmit(data: any) {
-    submit(data);
+  const FORMSPARK_ACTION_URL = `https://submit-form.com/${process.env.FORMSPARK_ID}`;
+
+  const onSubmit: SubmitHandler<SubmitPayload> = async (data) => {
+    setLoading(true);
+
+    await fetch(FORMSPARK_ACTION_URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({
+        data
+      })
+    })
     setSubmitted(true);
+    setLoading(false);
   }
 
   if (submitted) {
@@ -66,35 +79,55 @@ export default function Form({ formFields }: FormProps) {
       <hr
         className={`inline-block w-full mt-5 mb-10 mx-auto border ${styles.seperator}`}
       />
+      <h3
+        className="text-3xl pb-7"
+      >
+        {formFields?.heading}
+      </h3>
+      <p
+        className="text-lg pb-12"
+      >
+        {formFields?.contactContent}
+      </p>
       <form
         className={`flex items-center p-5 mb-10 ${styles.form}`}
         onSubmit={handleSubmit(onSubmit)}
       >
-        {Array.isArray(formFields) &&
-          formFields.map((field) => {
-            const { inputType, _key, fieldId, placeholder, fieldName, required } = field ?? {};
-            const { current } = fieldId ?? {};
+        {Array.isArray(formFields.formFields) &&
+          formFields.formFields.map((field: FormFields) => {
+            const {
+              _key,
+              fieldName,
+              inputType,
+              placeholder,
+              required
+            } = field ?? {};
+            const current = fieldName ?? {};
 
-            if (!inputType || !current) return null;
+            if (!inputType) return null;
 
-            if (inputType === "textArea") {
+            if (inputType == "textArea") {
               return (
-                <div key={_key}>
-                  <label htmlFor={current}>{fieldName}</label>
+                <div
+                  className="w-full"
+                  key={_key}
+                >
                   <textarea
                     {...register(current)}
-                    className={`rounded py-2 px-3 w-full form-textarea block outline-none ${styles.field}`}
                     aria-describedby="textarea"
+                    className={`rounded py-2 px-3 mb-5 w-full form-textarea block outline-none ${styles.field}`}
                     id={current}
                     required={!!required}
+                    rows={8}
                     placeholder={placeholder}
                   />
                 </div>
-              );
+              )
             }
 
             return (
               <InputField
+                aria-describedby={inputType}
                 fieldName={fieldName}
                 id={current}
                 key={_key}
@@ -103,11 +136,11 @@ export default function Form({ formFields }: FormProps) {
                 required={required}
                 type={inputType}
               />
-            );
+            )
           })}
         <button
           className={`rounded px-8 w-fit h-11 ${styles.button}`}
-          disabled={submitting}
+          disabled={loading}
           type="submit"
         >
           Submit

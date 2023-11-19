@@ -16,6 +16,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 - Breadcrumbs
 - Comments displaying on blog posts after approval in Sanity Studio
+- Form builder option within Rich Text Editor
 - Gallery slider
 - Option to add caption to images
 - Option to add Similar/Recent posts on blog post
@@ -35,9 +36,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 ## Tasks on Blog Posts
 
 1. Sticky Headings Nav
-2. Form option
-3. Fill in content in post pages
-4. Blog post about family
+2. Fill in content in post pages
 
 ## Other Pages
 
@@ -45,7 +44,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Issues
 
-1. Hydration issue with post comments form
+1. Hydration issue with every form
 
 ## Getting Started
 

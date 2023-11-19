@@ -5,6 +5,7 @@ import React from "react";
 
 import urlFor from "@/lib/urlFor";
 
+import Form from "../Form/Form.component";
 import Gallery from "@/components/App/Gallery/Gallery.component";
 import TextMedia from "@/components/App/TextMedia/TextMedia.component";
 import TwoColumnText from "@/components/App/TwoColumnText/TwoColumnText.component";
@@ -34,6 +35,11 @@ export const RichTextComponents: PortableTextReactComponents = {
           )}
         </div>
       );
+    },
+    formBuilder: ({ value }) => {
+      return (
+        <Form formFields={value} />
+      )
     },
     gallery: ({ value }) => {
       return (

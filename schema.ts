@@ -4,6 +4,7 @@ import author from "./schemas/author";
 import blockContent from "./schemas/blockContent";
 import category from "./schemas/category";
 import comment from "./schemas/comment";
+import formBuilder from "./schemas/formBuilder";
 import gallery from "./schemas/gallery";
 import page from "./schemas/page";
 import post from "./schemas/post";
@@ -19,6 +20,7 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     blockContent,
     category,
     comment,
+    formBuilder,
     gallery,
     page,
     post,

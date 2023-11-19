@@ -40,6 +40,22 @@ interface Comment {
   publishedAt: string;
 }
 
+interface FormFields {
+  _key: string;
+  fieldName: string;
+  inputType: string;
+  placeholder?: string;
+  required?: boolean;
+}
+
+interface FormProps {
+  formFields: {
+    contactContent?: string;
+    formFields: FormFields[];
+    heading?: string;
+  }
+}
+
 interface Image {
   _type: "image";
   asset: Reference;

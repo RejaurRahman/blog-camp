@@ -100,6 +100,9 @@ export default defineType({
     }),
     defineArrayMember({
       type: "twoColumnText"
+    }),
+    defineArrayMember({
+      type: "formBuilder"
     })
   ]
 })
