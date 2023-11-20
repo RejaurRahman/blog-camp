@@ -2,11 +2,11 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Global Blog Functionality
 
-- Custom 404 Error
-- Tags and Categories
 - Author page
 - Category page
+- Custom 404 Error
 - Pages like About Us and Contact Us
+- Tags and Categories
 
 ## Blog Homepage Functionality
 

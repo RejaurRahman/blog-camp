@@ -96,15 +96,40 @@ $nav-width-mobile: styles.to-rem(45);
   }
 
   &:hover {
+    .buttonArrow {
+      transform: rotate(45deg);
+    }
+
+    .card {
+      @include styles.breakpoint(min-width, device-desktop) {
+        filter: blur(0);
+      }
+    }
+
     h1,
     h2 {
       color: styles.$vermillion;
+    }
+
+    .image {
+      transform: scale(1.5);
+    }
+  }
+
+  .card {
+    @include styles.breakpoint(min-width, device-desktop) {
+      filter: blur(styles.to-rem(2));
     }
   }
 
   h1,
   h2 {
     transition: color 0.3s ease-in-out;
+  }
+
+  .buttonArrow,
+  .image {
+    transition: transform 0.3s ease-in-out;
   }
 }
 

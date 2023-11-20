@@ -14,7 +14,7 @@ type Props = {
 export default function ArticlePost({ post }: Props) {
   return (
     <div
-      className={`flex relative group cursor-pointer ${styles.card}`}
+      className={`flex cursor-pointer relative ${styles.card} ${blogListStyles.card}`}
     >
       <h2 className={`font-bold pb-5 ${styles.title}`}>
         {post.title}
@@ -25,7 +25,7 @@ export default function ArticlePost({ post }: Props) {
         >
           <Image
             alt={post.title}
-            className="object-cover object-center group-hover:scale-150 duration-300 ease-out h-full w-full"
+            className={`object-cover object-center h-full w-full ${blogListStyles.image}`}
             height={128}
             src={
               urlFor(post.mainImage).url()
@@ -75,7 +75,7 @@ export default function ArticlePost({ post }: Props) {
           >
             Read Post
             <ArrowUpRightIcon
-              className="ml-2 h-4 w-4 group-hover:rotate-45 duration-300 ease-out"
+              className={`ml-2 h-4 w-4 ${blogListStyles.buttonArrow}`}
             />
           </p>
         </div>

@@ -14,7 +14,7 @@ type Props = {
 export default function FeaturedPost({ post }: Props) {
   return (
     <div
-      className={`flex relative group cursor-pointer ${styles.wrapper}`}
+      className={`flex relative cursor-pointer ${styles.wrapper}`}
     >
       <div
         className={`flex items-center pb-7 ${styles.container}`}
@@ -56,7 +56,7 @@ export default function FeaturedPost({ post }: Props) {
         >
           <Image
             alt={post.title}
-            className="object-cover object-center group-hover:scale-150 duration-300 ease-out h-full w-full"
+            className={`object-cover object-center h-full w-full ${blogListStyles.image}`}
             height={320}
             src={
               urlFor(post.mainImage).url()
@@ -75,7 +75,7 @@ export default function FeaturedPost({ post }: Props) {
           >
             Read Post
             <ArrowUpRightIcon
-              className="ml-2 h-4 w-4 group-hover:rotate-45 duration-300 ease-out"
+              className={`ml-2 h-4 w-4 ${blogListStyles.buttonArrow}`}
             />
           </p>
         </div>

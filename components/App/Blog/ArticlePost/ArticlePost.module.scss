@@ -2,16 +2,6 @@
 
 .card {
   z-index: -2;
-
-  &:hover {
-    @include styles.breakpoint(min-width, device-desktop) {
-      filter: blur(0);
-    }
-  }
-
-  @include styles.breakpoint(min-width, device-desktop) {
-    filter: blur(styles.to-rem(2));
-  }
 }
 
 .card,
