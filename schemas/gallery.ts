@@ -4,7 +4,7 @@ import { ImagesIcon } from "@sanity/icons";
 export default defineType({
   name: "gallery",
   title: "Gallery",
-  type: "document",
+  type: "object",
   icon: ImagesIcon,
   fields: [
     {
@@ -30,8 +30,12 @@ export default defineType({
       ]
     }
   ],
-  options: {
-    layout: "grid",
-    sortable: true
+  preview: {
+    prepare() {
+      return {
+        media: ImagesIcon,
+        title: "Gallery"
+      }
+    }
   }
 })

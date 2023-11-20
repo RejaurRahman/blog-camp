@@ -4,7 +4,7 @@ import { MobileDeviceIcon } from "@sanity/icons";
 export default defineType({
   name: "formBuilder",
   title: "Form Builder",
-  type: "document",
+  type: "object",
   icon: MobileDeviceIcon,
   fields: [
     defineField({

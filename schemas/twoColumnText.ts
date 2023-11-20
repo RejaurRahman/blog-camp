@@ -4,7 +4,7 @@ import { ImagesIcon } from "@sanity/icons";
 export default defineType({
   name: "twoColumnText",
   title: "Two Column Text",
-  type: "document",
+  type: "object",
   icon: ImagesIcon,
   fields: [
     defineField({
@@ -33,9 +33,5 @@ export default defineType({
         }
       ]
     })
-  ],
-  options: {
-    layout: "grid",
-    sortable: true
-  }
+  ]
 })

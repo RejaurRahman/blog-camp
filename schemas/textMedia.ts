@@ -37,8 +37,11 @@ export default defineType({
     })
   ],
   preview: {
-    select: {
-      media: "image"
+    prepare() {
+      return {
+        media: BlockContentIcon,
+        title: "Text Media"
+      }
     }
   }
 })
