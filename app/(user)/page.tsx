@@ -12,7 +12,7 @@ const query = groq`
     ...,
     author->,
     categories[]->
-  } | order(_publishedAt desc)
+  } | order(_publishedAt asc)
 `
 
 export const revalidate = 30;
