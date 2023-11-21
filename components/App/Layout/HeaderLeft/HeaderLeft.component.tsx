@@ -42,7 +42,7 @@ export default function HeaderLeft({ data, setOpen } : Props) {
                 <Link
                   className={`text-lg ${styles.menuItem}`}
                   href={item.slug}
-                  onClick={() => { setOpen && setOpen(false) }}
+                  onClick={() => setOpen && setOpen(false)}
                 >
                   {item.menuName}
                 </Link>

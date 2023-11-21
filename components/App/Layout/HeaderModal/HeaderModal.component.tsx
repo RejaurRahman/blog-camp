@@ -45,7 +45,10 @@ export default function HeaderModal({ data }: Props) {
           className={`fixed flex top-0 left-0 h-screen ${styles.content}`}
         >
           <div className={styles.left}>
-            <HeaderLeft data={data} />
+            <HeaderLeft
+              data={data}
+              setOpen={setOpen}
+            />
           </div>
           <div className={styles.right}>
             <HeaderLogo />
