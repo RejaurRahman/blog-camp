@@ -102,7 +102,13 @@ export default function Form({ formFields }: FormProps) {
               placeholder,
               required
             } = field ?? {};
-            const current = fieldName ?? {};
+            const current = fieldName.split(" ")
+            .map((word, index) =>
+              index === 0 ? word.charAt(0).toLowerCase() + word.slice(1) : word.charAt(0).toUpperCase() + word.slice(1)
+            )
+            .join("");
+
+            console.log(current);
 
             if (!inputType) return null;
 
