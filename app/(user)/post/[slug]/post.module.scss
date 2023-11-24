@@ -43,6 +43,7 @@ $nav-width-mobile: styles.to-rem(45);
 
 .left {
   @include styles.breakpoint(min-width, device-tablet) {
+    height: calc(100% + styles.to-rem(50));
     padding-right: styles.to-rem(15);
     width: 70%;
   }
@@ -52,4 +53,8 @@ $nav-width-mobile: styles.to-rem(45);
   @include styles.breakpoint(min-width, device-tablet) {
     width: 30%;
   }
+}
+
+.full {
+  width: 100%;
 }

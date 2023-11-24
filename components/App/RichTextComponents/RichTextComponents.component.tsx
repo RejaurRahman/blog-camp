@@ -26,7 +26,8 @@ export const RichTextComponents: PortableTextReactComponents = {
               className="object-cover h-full w-full"
               height={200}
               src={urlFor(value).url()}
-              width={245} />
+              width={245}
+            />
           </div>
           {value.caption && (
             <div className={`p-4 ${styles.mediaCaption}`}>
@@ -89,13 +90,27 @@ export const RichTextComponents: PortableTextReactComponents = {
         {children}
       </h1>
     ),
-    h2: ({ children }) => (
-      <h2
-        className={`text-5xl pb-10 font-bold ${styles.heading}`}
-      >
-        {children}
-      </h2>
-    ),
+    h2: ({ children }) => {
+      if (!children) {
+        return null;
+      }
+
+      const id =
+        typeof children.toString() === "string"
+          ? children.toString().split(" ").length > 1
+            ? children.toString().replace(/\s/g, "").toLowerCase()
+            : children.toString().toLowerCase()
+          : undefined;
+
+      return (
+        <h2
+          className={`text-5xl pb-10 font-bold ${styles.heading}`}
+          id={id}
+        >
+          {children}
+        </h2>
+      );
+    },
     h3: ({ children }) => (
       <h3
         className={`text-4xl pb-8 font-bold ${styles.heading}`}

@@ -13,6 +13,7 @@ import PostComments from "@/components/App/Blog/PostComments/PostComments.compon
 import RelatedPosts from "@/components/App/Blog/RelatedPosts/RelatedPosts.component";
 import { RichTextComponents } from "@/components/App/RichTextComponents/RichTextComponents.component";
 import SharePosts from "@/components/App/Blog/SharePosts/SharePosts.component";
+import SidebarNav from "@/components/App/Blog/SidebarNav/SidebarNav.component";
 
 import styles from "./post.module.scss";
 
@@ -93,7 +94,14 @@ export default async function Post({ params: {slug} }: Props) {
           <div className={styles.left}>
             <BlogHeader post={post} />
             <SharePosts post={post} />
-            <BlogAuthor displayDesktop={false} post={post} />
+            <BlogAuthor
+              displayDesktop={false}
+              post={post}
+            />
+            <SidebarNav
+              displayDesktop={false}
+              post={post}
+            />
             <PortableText
               value={post.body}
               components={RichTextComponents}
@@ -104,9 +112,18 @@ export default async function Post({ params: {slug} }: Props) {
             />
           </div>
           <div className={styles.right}>
-            <BlogAuthor displayDesktop post={post} />
+            <BlogAuthor
+              displayDesktop
+              post={post}
+            />
+            <SidebarNav
+              displayDesktop
+              post={post}
+            />
           </div>
-          <RelatedPosts relatedPosts={relatedPosts} />
+          <div className={styles.full}>
+            <RelatedPosts relatedPosts={relatedPosts} />
+          </div>
         </div>
       </div>
     </article>

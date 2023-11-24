@@ -1,0 +1,124 @@
+@use "../../../../styles/base.scss" as styles;
+
+.wrapper {
+  &[data-sticky="true"] {
+    position: sticky;
+
+    @include styles.breakpoint(max-width, device-tablet) {
+      top: styles.to-rem(5);
+    }
+
+    @include styles.breakpoint(min-width, device-tablet) {
+      top: 0;
+    }
+  }
+
+  @include styles.breakpoint(max-width, device-tablet) {
+    padding-bottom: styles.to-rem(50);
+    z-index: 1;
+  }
+
+  @include styles.breakpoint(min-width, device-tablet) {
+    padding: {
+      top: styles.to-rem(50);
+      right: styles.to-rem(20);
+      bottom: styles.to-rem(50);
+    }
+  }
+
+  &[data-desktop="true"] {
+    @include styles.breakpoint(max-width, device-tablet) {
+      display: none;
+    }
+
+    @include styles.breakpoint(min-width, device-tablet) {
+      display: inherit;
+    }
+  }
+
+  &[data-desktop="false"] {
+    @include styles.breakpoint(max-width, device-tablet) {
+      display: inherit;
+    }
+
+    @include styles.breakpoint(min-width, device-tablet) {
+      display: none;
+    }
+  }
+}
+
+.sidebarNav {
+  @include styles.breakpoint(max-width, device-tablet) {
+    display: none;
+  }
+
+  @include styles.breakpoint(min-width, device-tablet) {
+    display: inherit;
+  }
+
+  .listItem {
+    &:last-child {
+      .link {
+        border-bottom: styles.to-rem(1) solid styles.$buddha-gold;
+      }
+    }
+  }
+}
+
+.link {
+  border: {
+    top: styles.to-rem(1) solid styles.$buddha-gold;
+    right: styles.to-rem(1) solid styles.$buddha-gold;
+    bottom: styles.to-rem(1) solid styles.$buddha-gold;
+  }
+  color: styles.$buddha-gold;
+  font-size: styles.to-rem(18);
+  transition: all 300ms ease-in-out;
+
+  &:not(.active) {
+    border-left: styles.to-rem(1) solid styles.$buddha-gold;
+
+    @include styles.breakpoint(max-width, device-tablet) {
+      background-color: styles.$white;
+    }
+  }
+
+  &.active {
+    background-color: styles.$buddha-gold;
+    border-left: styles.to-rem(5) solid styles.$vermillion;
+    color: styles.$black;
+  }
+}
+
+.dropdownNav {
+  @include styles.breakpoint(max-width, device-tablet) {
+    display: inherit;
+  }
+
+  @include styles.breakpoint(min-width, device-tablet) {
+    display: none;
+  }
+
+  .dropdownButton {
+    background-color: styles.$buddha-gold;
+
+    svg {
+      transition: transform 0.3s ease-in-out;
+    }
+
+    &.openButton {
+      svg {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  .dropdownOptions {
+    transition: height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+
+    &.openDropdown {
+      height: 100%;
+      opacity: 1;
+    }
+  }
+}

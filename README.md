@@ -24,6 +24,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 - Read time calculation
 - Sharing posts
 - Sitewide settings in Sanity for Social Media, Site Title and Menu Data
+- Sticky Navigation Headings
 - Two Column Text option
 - Videos embed
 
@@ -35,8 +36,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Tasks on Blog Posts
 
-1. Sticky Headings Nav
-2. Fill in content in post pages
+1. Fill in content in post pages
 
 ## Issues
 
