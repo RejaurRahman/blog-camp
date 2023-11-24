@@ -36,7 +36,7 @@ export default function Gallery({ gallery }: Props) {
     <div className={`relative w-full h-full mb-6 ${styles.media}`}>
       <Swiper
         autoplay={gallery.images.length > 1}
-        className="w-full h-full"
+        className={`w-full h-full ${styles.mediaWrapper}`}
         enabled={gallery.images.length > 1}
         modules={[Autoplay, Pagination]}
         onBeforeInit={(swiper) => {

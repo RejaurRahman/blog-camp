@@ -10,6 +10,11 @@ $pagination-dots: 18px;
     position: relative !important;
   }
 
+  :global(.swiper-wrapper),
+  .mediaWrapper {
+    z-index: 0;
+  }
+
   :global(.swiper-pagination-gallery) {
     height: styles.to-rem(42);
 
