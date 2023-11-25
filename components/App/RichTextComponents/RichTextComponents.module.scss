@@ -1,5 +1,17 @@
 @use "../../../styles/base.scss" as styles;
 
+.headingNav {
+  top: calc(0px - styles.to-rem(64));
+
+  @include styles.breakpoint(max-width, device-tablet) {
+    display: inherit;
+  }
+
+  @include styles.breakpoint(min-width, device-tablet) {
+    display: none;
+  }
+}
+
 .image {
   @include styles.breakpoint(max-width, device-mobile) {
     height: styles.to-rem(200);
@@ -19,10 +31,9 @@
   border-left: styles.to-rem(4) solid styles.$vermillion;
   color: styles.$vermillion;
   font-size: styles.to-rem(22);
-  font-style: italic;
   line-height: styles.to-rem(30);
 
-  &::before{
+  &::before {
     content: open-quote;
     color: styles.$vermillion;
     font-size: styles.to-rem(50);
@@ -34,7 +45,6 @@
 
 .listItem {
   color: styles.$buddha-gold;
-  font-style: italic;
 }
 
 .heading,

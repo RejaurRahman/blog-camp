@@ -103,12 +103,17 @@ export const RichTextComponents: PortableTextReactComponents = {
           : undefined;
 
       return (
-        <h2
-          className={`text-5xl pb-10 font-bold ${styles.heading}`}
-          id={id}
-        >
-          {children}
-        </h2>
+        <div className="relative">
+          <div
+            className={`absolute pb-16 w-full ${styles.headingNav}`}
+            id={id}
+          />
+          <h2
+            className={`text-5xl pb-10 font-bold ${styles.heading}`}
+          >
+            {children}
+          </h2>
+        </div>
       );
     },
     h3: ({ children }) => (
@@ -148,7 +153,7 @@ export const RichTextComponents: PortableTextReactComponents = {
     ),
     blockquote: ({ children }) => (
       <blockquote
-        className={`relative pl-10 py-6 mt-5 mb-10 ${styles.quote}`}
+        className={`relative pl-10 py-6 mt-5 mb-10 italic ${styles.quote}`}
       >
         {children}
       </blockquote>
@@ -173,7 +178,7 @@ export const RichTextComponents: PortableTextReactComponents = {
   },
   hardBreak: false,
   listItem: ({ children }) => (
-    <li className={styles.listItem}>
+    <li className={`italic ${styles.listItem}`}>
       {children}
     </li>
   ),
