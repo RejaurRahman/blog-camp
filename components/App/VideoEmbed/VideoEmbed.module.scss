@@ -1,9 +1,21 @@
 @use "../../../styles/base.scss" as styles;
 
 .video {
+  flex-flow: column;
+
   div:first-child {
+    @include styles.breakpoint(min-width, device-mobile) {
+      max-width: styles.to-rem(640);
+    }
+
     @include styles.breakpoint(max-width, device-mobile) {
       max-height: styles.to-rem(200);
+    }
+  }
+
+  .videoCaption {
+    @include styles.breakpoint(min-width, device-mobile) {
+      max-width: styles.to-rem(640);
     }
   }
 }

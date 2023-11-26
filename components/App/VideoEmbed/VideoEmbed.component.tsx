@@ -23,13 +23,15 @@ export default function VideoEmbed({ caption, captionClass, url }: Props) {
     <>
       {
         isLoaded ? (
-          <div className={styles.video}>
+          <div className={`flex items-center ${styles.video}`}>
             <ReactPlayer
               url={url}
               width="100%"
             />
-            <div className={captionClass}>
-              {caption}
+            <div className={styles.videoWrapper}>
+              <div className={captionClass}>
+                {caption}
+              </div>
             </div>
           </div>
         ) : null

@@ -34,10 +34,6 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 2. Live Preview Mode
 3. Search Functionality
 
-## Tasks on Blog Posts
-
-1. Fill in content in post pages
-
 ## Issues
 
 1. Hydration issue with every form
