@@ -77,3 +77,17 @@
     }
   }
 }
+
+.strike {
+  color: styles.$vermillion;
+
+  &::before {
+    background-color: styles.$vermillion;
+    content: "";
+    height: styles.to-rem(1);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+  }
+}

@@ -174,6 +174,15 @@ export const RichTextComponents: PortableTextReactComponents = {
           {children}
         </Link>
       );
+    },
+    strike: ({ children }) => {
+      return (
+        <span
+          className={`relative ${styles.strike}`}
+        >
+          {children}
+        </span>
+      )
     }
   },
   hardBreak: false,

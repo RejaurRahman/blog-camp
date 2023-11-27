@@ -28,7 +28,7 @@ export default function VideoEmbed({ caption, captionClass, url }: Props) {
               url={url}
               width="100%"
             />
-            <div className={styles.videoWrapper}>
+            <div className={`w-full ${styles.videoWrapper}`}>
               <div className={captionClass}>
                 {caption}
               </div>

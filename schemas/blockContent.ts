@@ -1,5 +1,6 @@
 import { defineType, defineArrayMember } from "sanity";
 import { ImageIcon } from "@sanity/icons";
+import { StrikethroughIcon } from "@sanity/icons";
 
 /**
  * This is the schema type for block content used in the post document type
@@ -50,7 +51,8 @@ export default defineType({
         // preference or highlighting
         decorators: [
           { title: "Strong", value: "strong" },
-          { title: "Emphasis", value: "em" }
+          { title: "Emphasis", value: "em" },
+          { title: "Strike", icon: StrikethroughIcon, value: "strike" }
         ],
         // Annotations can be any object structure – e.g. a link or a footnote.
         annotations: [

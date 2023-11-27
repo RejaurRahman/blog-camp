@@ -13,9 +13,8 @@
     }
   }
 
-  .videoCaption {
-    @include styles.breakpoint(min-width, device-mobile) {
-      max-width: styles.to-rem(640);
-    }
+  .videoCaption,
+  .videoWrapper {
+    max-width: styles.to-rem(640);
   }
 }
