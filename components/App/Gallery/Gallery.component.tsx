@@ -19,6 +19,7 @@ interface GalleryImage {
   _type: "image";
   asset: Reference;
   alt: string;
+  caption: string;
 }
 
 interface Gallery {
@@ -67,6 +68,11 @@ export default function Gallery({ gallery }: Props) {
                 }
                 width={245}
               />
+              {slide.caption && (
+                <div className={`p-4 ${styles.caption}`}>
+                  {slide.caption}
+                </div>
+              )}
             </SwiperSlide>
           )
         })}

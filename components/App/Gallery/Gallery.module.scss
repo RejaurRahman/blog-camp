@@ -1,13 +1,15 @@
 @use "../../../styles/base.scss" as styles;
 
-$media-max-height: styles.to-rem(600);
 $pagination-dots: 18px;
 
 .media {
-  max-height: $media-max-height;
-
   img {
     position: relative !important;
+  }
+
+  .caption {
+    background-color: styles.$black;
+    color: styles.$white;
   }
 
   :global(.swiper-wrapper),
@@ -19,9 +21,8 @@ $pagination-dots: 18px;
     height: styles.to-rem(42);
 
     @include styles.breakpoint(min-width, device-desktop) {
-      bottom: styles.to-rem(25);
       left: 50%;
-      position: absolute;
+      position: relative;
       transform: translateX(-50%);
       z-index: 1;
     }
@@ -43,12 +44,6 @@ $pagination-dots: 18px;
   }
 
   :global(.swiper-pagination-bullet-active) {
-    @include styles.breakpoint(max-width, device-desktop) {
-      background-color: styles.$black;
-    }
-
-    @include styles.breakpoint(min-width, device-desktop) {
-      background-color: styles.$white;
-    }
+    background-color: styles.$buddha-gold;
   }
 }
