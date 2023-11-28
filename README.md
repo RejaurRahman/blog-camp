@@ -34,10 +34,6 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 2. Live Preview Mode
 3. Search Functionality
 
-## Issues
-
-1. Hydration issue with every form
-
 ## Getting Started
 
 Project needs to run in Node Version 18. Install Next.JS with TailwindCSS

@@ -1,7 +1,7 @@
 "use client";
 
 import { SubmitPayload } from "@formspark/use-formspark";
-import React, { InputHTMLAttributes, useState } from "react";
+import React, { InputHTMLAttributes, useEffect, useState } from "react";
 import { FieldValues, SubmitHandler, UseFormRegister, useForm } from "react-hook-form";
 
 import styles from "@/components/App/Blog/PostComments/PostComments.module.scss";
@@ -37,8 +37,9 @@ export function InputField({
 
 export default function Form({ formFields }: FormProps) {
   const [submitted, setSubmitted] = useState(false);
-  const { register, handleSubmit } = useForm();
+  const [clientRendered, setClientRendered] = useState(false);
   const [loading, setLoading] = useState(false);
+  const { register, handleSubmit } = useForm();
 
   const FORMSPARK_ACTION_URL = "https://submit-form.com/xwHKYtXh7";
 
@@ -59,6 +60,10 @@ export default function Form({ formFields }: FormProps) {
     setLoading(false);
   }
 
+  useEffect(() => {
+    setClientRendered(true);
+  }, [])
+
   if (submitted) {
     return (
       <div
@@ -76,82 +81,86 @@ export default function Form({ formFields }: FormProps) {
 
   return (
     <>
-      <hr
-        className={`inline-block w-full mt-5 mb-10 mx-auto border ${styles.seperator}`}
-      />
-      <h3
-        className="text-3xl pb-7"
-      >
-        {formFields?.heading}
-      </h3>
-      <p
-        className="text-lg pb-12"
-      >
-        {formFields?.contactContent}
-      </p>
-      <form
-        className={`flex items-center p-5 mb-10 ${styles.form}`}
-        onSubmit={handleSubmit(onSubmit)}
-      >
-        {Array.isArray(formFields.formFields) &&
-          formFields.formFields.map((field: FormFields) => {
-            const {
-              _key,
-              fieldName,
-              inputType,
-              placeholder,
-              required
-            } = field ?? {};
-            const current = fieldName.split(" ")
-            .map((word, index) =>
-              index === 0 ? word.charAt(0).toLowerCase() + word.slice(1) : word.charAt(0).toUpperCase() + word.slice(1)
-            )
-            .join("");
+      {clientRendered && (
+        <>
+          <hr
+            className={`inline-block w-full mt-5 mb-10 mx-auto border ${styles.seperator}`}
+          />
+          <h3
+            className="text-3xl pb-7"
+          >
+            {formFields?.heading}
+          </h3>
+          <p
+            className="text-lg pb-12"
+          >
+            {formFields?.contactContent}
+          </p>
+          <form
+            className={`flex items-center p-5 mb-10 ${styles.form}`}
+            onSubmit={handleSubmit(onSubmit)}
+          >
+            {Array.isArray(formFields.formFields) &&
+              formFields.formFields.map((field: FormFields) => {
+                const {
+                  _key,
+                  fieldName,
+                  inputType,
+                  placeholder,
+                  required
+                } = field ?? {};
+                const current = fieldName.split(" ")
+                .map((word, index) =>
+                  index === 0 ? word.charAt(0).toLowerCase() + word.slice(1) : word.charAt(0).toUpperCase() + word.slice(1)
+                )
+                .join("");
 
-            console.log(current);
+                console.log(current);
 
-            if (!inputType) return null;
+                if (!inputType) return null;
 
-            if (inputType == "textArea") {
-              return (
-                <div
-                  className="w-full"
-                  key={_key}
-                >
-                  <textarea
-                    {...register(current)}
-                    aria-describedby="textarea"
-                    className={`rounded py-2 px-3 mb-5 w-full form-textarea block outline-none ${styles.field}`}
+                if (inputType == "textArea") {
+                  return (
+                    <div
+                      className="w-full"
+                      key={_key}
+                    >
+                      <textarea
+                        {...register(current)}
+                        aria-describedby="textarea"
+                        className={`rounded py-2 px-3 mb-5 w-full form-textarea block outline-none ${styles.field}`}
+                        id={current}
+                        required={!!required}
+                        rows={8}
+                        placeholder={placeholder}
+                      />
+                    </div>
+                  )
+                }
+
+                return (
+                  <InputField
+                    aria-describedby={inputType}
+                    fieldName={fieldName}
                     id={current}
-                    required={!!required}
-                    rows={8}
+                    key={_key}
                     placeholder={placeholder}
+                    register={register}
+                    required={required}
+                    type={inputType}
                   />
-                </div>
-              )
-            }
-
-            return (
-              <InputField
-                aria-describedby={inputType}
-                fieldName={fieldName}
-                id={current}
-                key={_key}
-                placeholder={placeholder}
-                register={register}
-                required={required}
-                type={inputType}
-              />
-            )
-          })}
-        <button
-          className={`rounded px-8 w-fit h-11 ${styles.button}`}
-          disabled={loading}
-          type="submit"
-        >
-          Submit
-        </button>
-      </form>
+                )
+              })}
+            <button
+              className={`rounded px-8 w-fit h-11 ${styles.button}`}
+              disabled={loading}
+              type="submit"
+            >
+              Submit
+            </button>
+          </form>
+        </>
+      )}
     </>
   )
 }
