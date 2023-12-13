@@ -40,7 +40,7 @@ export async function generateStaticParams() {
   }))
 }
 
-export default async function Post({ params: {slug} }: Props) {
+export default async function Post({ params: { slug } }: Props) {
   const query = groq`
     *[_type=="post" && slug.current == $slug][0] {
       ...,

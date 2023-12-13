@@ -1,0 +1,55 @@
+@use "../../../styles/base.scss" as styles;
+
+$nav-width-desktop: styles.to-rem(96);
+$nav-width-mobile: styles.to-rem(45);
+
+.container {
+  width: 100%;
+
+  @include styles.breakpoint(max-width, device-mobile) {
+    padding: {
+      top: styles.to-rem(50);
+      right: styles.to-rem(15);
+      bottom: styles.to-rem(50);
+      left: calc($nav-width-mobile + styles.to-rem(15));
+    }
+  }
+
+  @include styles.mix-breakpoint(device-mobile, device-tablet) {
+    padding: {
+      top: styles.to-rem(45);
+      right: calc($nav-width-desktop + styles.to-rem(15));
+      left: calc($nav-width-desktop + styles.to-rem(15));
+    }
+  }
+
+  @include styles.breakpoint(min-width, device-tablet) {
+    padding: {
+      top: styles.to-rem(96);
+      right: styles.to-rem(45);
+      left: calc($nav-width-desktop + styles.to-rem(45));
+    }
+  }
+}
+
+.title {
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: styles.to-rem(1);
+    background-color: styles.$buddha-gold;
+  }
+
+  @include styles.breakpoint(max-width, device-desktop) {
+    font-size: styles.to-rem(34);
+    line-height: styles.to-rem(36);
+  }
+
+  @include styles.breakpoint(min-width, device-desktop) {
+    font-size: styles.to-rem(45);
+    line-height: styles.to-rem(48);
+  }
+}

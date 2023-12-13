@@ -79,7 +79,7 @@ export default function SidebarNav({ displayDesktop, post }: Props) {
                 onClick={() => clickHeadTitle(title)}
                 route={`#${
                   title.toString().split(" ").length > 1 ?
-                  title.toString().replace(/\s/g, '').toLowerCase() :
+                  title.toString().replace(/\s/g, "").toLowerCase() :
                   title.toString().toLowerCase()
                 }`}
               >
@@ -102,7 +102,7 @@ export default function SidebarNav({ displayDesktop, post }: Props) {
                   onClick={() => clickHeadTitle(title)}
                   route={`#${
                     title.toString().split(" ").length > 1 ?
-                    title.toString().replace(/\s/g, '').toLowerCase() :
+                    title.toString().replace(/\s/g, "").toLowerCase() :
                     title.toString().toLowerCase()
                   }`}
                 >
