@@ -7,6 +7,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 - Custom 404 Error
 - Pages like About Us and Contact Us
 - Search Functionality
+- Sitemap generating
 - Tags and Categories
 
 ## Blog Homepage Functionality
@@ -31,8 +32,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Global Tasks
 
-1. Sitemap generating
-2. Live Preview Mode
+1. Live Preview Mode
 
 ## Getting Started
 

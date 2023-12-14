@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.blog-camp.netlify.app
+
+# Sitemaps
+Sitemap: https://www.blog-camp.netlify.app/sitemap.xml
