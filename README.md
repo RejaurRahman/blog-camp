@@ -30,10 +30,6 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 - Two Column Text option
 - Videos embed
 
-## Global Tasks
-
-1. Live Preview Mode
-
 ## Getting Started
 
 Project needs to run in Node Version 18. Install Next.JS with TailwindCSS

@@ -1,9 +1,5 @@
 @use "../../../../styles/base.scss" as styles;
 
-.card {
-  z-index: -2;
-}
-
 .card,
 .innerWrapper {
   flex-flow: column;

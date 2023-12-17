@@ -1,9 +1,9 @@
-import React from "react";
+import React from "react"
 
-import ArticlePost from "@/components/App/Blog/ArticlePost/ArticlePost.component";
-import ClientSideRoute from "@/components/App/ClientSideRoute/ClientSideRoute";
+import ArticlePost from "@/components/App/Blog/ArticlePost/ArticlePost.component"
+import ClientSideRoute from "@/components/App/ClientSideRoute/ClientSideRoute"
 
-import styles from "./RelatedPosts.module.scss";
+import styles from "./RelatedPosts.module.scss"
 
 
 interface Props {
@@ -41,5 +41,5 @@ export default function RelatedPosts({ relatedPosts }: Props) {
         </>
       )}
     </>
-  );
+  )
 }

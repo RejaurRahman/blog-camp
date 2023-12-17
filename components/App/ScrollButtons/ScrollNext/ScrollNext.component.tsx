@@ -1,26 +1,30 @@
-"use client";
+"use client"
 
-import React, { useState, useEffect } from "react";
+import React, {
+  useEffect,
+  useState
+} from "react"
 
-import { ArrowDownIcon } from "@heroicons/react/24/solid";
+import { ArrowDownIcon } from "@heroicons/react/24/solid"
 
-import baseStyles from "@/components/App/ScrollButtons/ScrollButtons.module.scss";
-import styles from "./ScrollNext.module.scss";
+import baseStyles from "@/components/App/ScrollButtons/ScrollButtons.module.scss"
+import styles from "./ScrollNext.module.scss"
 
 export default function ScrollNext() {
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollY = window.scrollY || document.documentElement.scrollTop;
-      setIsVisible(scrollY >= 20);
-    };
+      const scrollY = window.scrollY || document.documentElement.scrollTop
+      setIsVisible(scrollY >= 20)
+    }
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll)
+
     return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+      window.removeEventListener("scroll", handleScroll)
+    }
+  }, [])
 
   return (
     <div

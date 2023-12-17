@@ -1,16 +1,16 @@
-import React from "react";
+import React from "react"
 
-import ClientSideRoute from "@/components/App/ClientSideRoute/ClientSideRoute";
+import ClientSideRoute from "@/components/App/ClientSideRoute/ClientSideRoute"
 
-import styles from "./Breadcrumbs.module.scss";
+import styles from "./Breadcrumbs.module.scss"
 
 type Props = {
-  pageTitle: string;
+  pageTitle: string
 }
 
 export default function Breadcrumbs({ pageTitle }: Props) {
   return (
-    <nav className={`relative pb-7 ${styles.wrapper}`}>
+    <nav className="relative pb-7">
       <ul
         className={`flex ${styles.breadcrumbs}`}
         itemScope

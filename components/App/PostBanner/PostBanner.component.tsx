@@ -1,20 +1,20 @@
-"use client";
+"use client"
 
-import Image from "next/image";
-import { AnimatePresence, motion, useScroll } from "framer-motion";
-import { usePathname } from "next/navigation";
-import React from "react";
+import Image from "next/image"
+import { AnimatePresence, motion, useScroll } from "framer-motion"
+import { usePathname } from "next/navigation"
+import React from "react"
 
-import styles from "./PostBanner.module.scss";
+import styles from "./PostBanner.module.scss"
 
 type Props = {
-  imageSrc: string;
-  imageAltText: string;
+  imageSrc: string
+  imageAltText: string
 }
 
 export default function PostBanner({ imageSrc, imageAltText }: Props) {
-  const pathname = usePathname();
-  const { scrollYProgress } = useScroll();
+  const pathname = usePathname()
+  const { scrollYProgress } = useScroll()
 
   return (
     <>

@@ -1,10 +1,10 @@
-import { PortableText } from "@portabletext/react";
-import React from "react";
+import { PortableText } from "@portabletext/react"
+import React from "react"
 
-import styles from "./TwoColumnText.module.scss";
+import styles from "./TwoColumnText.module.scss"
 
 interface Props {
-  columns: TwoColumnText;
+  columns: TwoColumnText
 }
 
 export default function TwoColumnText({ columns }: Props) {

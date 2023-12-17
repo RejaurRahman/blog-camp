@@ -1,21 +1,21 @@
-"use client";
+"use client"
 
-import * as Dialog from "@radix-ui/react-dialog";
-import { motion } from "framer-motion";
-import React, { useState } from "react";
+import * as Dialog from "@radix-ui/react-dialog"
+import { motion } from "framer-motion"
+import React, { useState } from "react"
 
-import HeaderLeft from "@/components/App/Layout/HeaderLeft/HeaderLeft.component";
-import HeaderLogo from "@/components/App/Layout/HeaderLogo/HeaderLogo.component";
-import HeaderSocial from "@/components/App/Layout/HeaderSocial/HeaderSocial.component";
+import HeaderLeft from "@/components/App/Layout/HeaderLeft/HeaderLeft.component"
+import HeaderLogo from "@/components/App/Layout/HeaderLogo/HeaderLogo.component"
+import HeaderSocial from "@/components/App/Layout/HeaderSocial/HeaderSocial.component"
 
-import styles from "./HeaderModal.module.scss";
+import styles from "./HeaderModal.module.scss"
 
 interface Props {
-  data?: SiteData;
+  data?: SiteData
 }
 
 export default function HeaderModal({ data }: Props) {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false)
 
   const openChange = () => {
     setOpen(!open)

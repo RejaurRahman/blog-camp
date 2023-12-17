@@ -1,21 +1,21 @@
-import React from "react";
-import { groq } from "next-sanity";
-import { client } from "@/lib/client";
-import { notFound } from "next/navigation";
+import React from "react"
+import { groq } from "next-sanity"
+import { client } from "@/lib/client"
+import { notFound } from "next/navigation"
 
-import { PortableText } from "@portabletext/react";
-import urlFor from "@/lib/urlFor";
+import { PortableText } from "@portabletext/react"
+import urlFor from "@/lib/urlFor"
 
-import BlogAuthor from "@/components/App/Blog/BlogAuthor/BlogAuthor.component";
-import BlogHeader from "@/components/App/Blog/BlogHeader/BlogHeader.component";
-import PostBanner from "@/components/App/PostBanner/PostBanner.component";
-import PostComments from "@/components/App/Blog/PostComments/PostComments.component";
-import RelatedPosts from "@/components/App/Blog/RelatedPosts/RelatedPosts.component";
-import { RichTextComponents } from "@/components/App/RichTextComponents/RichTextComponents.component";
-import SharePosts from "@/components/App/Blog/SharePosts/SharePosts.component";
-import SidebarNav from "@/components/App/Blog/SidebarNav/SidebarNav.component";
+import BlogAuthor from "@/components/App/Blog/BlogAuthor/BlogAuthor.component"
+import BlogHeader from "@/components/App/Blog/BlogHeader/BlogHeader.component"
+import PostBanner from "@/components/App/PostBanner/PostBanner.component"
+import PostComments from "@/components/App/Blog/PostComments/PostComments.component"
+import RelatedPosts from "@/components/App/Blog/RelatedPosts/RelatedPosts.component"
+import { RichTextComponents } from "@/components/App/RichTextComponents/RichTextComponents.component"
+import SharePosts from "@/components/App/Blog/SharePosts/SharePosts.component"
+import SidebarNav from "@/components/App/Blog/SidebarNav/SidebarNav.component"
 
-import styles from "./post.module.scss";
+import styles from "./post.module.scss"
 
 type Props = {
   params: {
@@ -23,7 +23,7 @@ type Props = {
   }
 }
 
-export const revalidate = 30;
+export const revalidate = 30
 
 export async function generateStaticParams() {
   const query = groq`
@@ -32,8 +32,8 @@ export async function generateStaticParams() {
     }
   `
 
-  const slugs: Post[] = await client.fetch(query);
-  const slugRoutes = slugs.map((slug) => slug.slug.current);
+  const slugs: Post[] = await client.fetch(query)
+  const slugRoutes = slugs.map((slug) => slug.slug.current)
 
   return slugRoutes.map((slug) => ({
     slug
@@ -50,13 +50,13 @@ export default async function Post({ params: { slug } }: Props) {
     }
   `
 
-  const post: Post = await client.fetch(query, { slug });
+  const post: Post = await client.fetch(query, { slug })
 
   if (!post) {
-    notFound();
+    notFound()
   }
 
-  const relatedPostsReferences:Post[] = post?.relatedPost || [];
+  const relatedPostsReferences:Post[] = post?.relatedPost || []
 
   const relatedPostsQuery = groq`
     *[_type == "post" && _id in $references] {
@@ -69,9 +69,9 @@ export default async function Post({ params: { slug } }: Props) {
 
   const references = relatedPostsReferences.map(
     (ref:RelatedPostRef) => ref._ref
-  );
+  )
 
-  const relatedPosts = await client.fetch(relatedPostsQuery, { references });
+  const relatedPosts = await client.fetch(relatedPostsQuery, { references })
 
   const commentsQuery = groq`
     *[_type == "comment" && post._ref == $postId && approved == true] {
@@ -81,7 +81,7 @@ export default async function Post({ params: { slug } }: Props) {
     }
   `
 
-  const comments = await client.fetch(commentsQuery, { postId: post._id });
+  const comments = await client.fetch(commentsQuery, { postId: post._id })
 
   return (
     <article>

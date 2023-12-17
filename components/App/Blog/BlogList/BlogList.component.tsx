@@ -1,24 +1,24 @@
-"use client";
+"use client"
 
-import React, { useState } from "react";
+import React, { useState } from "react"
 
-import ArticlePost from "@/components/App/Blog/ArticlePost/ArticlePost.component";
-import ClientSideRoute from "@/components/App/ClientSideRoute/ClientSideRoute";
-import FeaturedPost from "@/components/App/Blog/FeaturedPost/FeaturedPost.component";
+import ArticlePost from "@/components/App/Blog/ArticlePost/ArticlePost.component"
+import ClientSideRoute from "@/components/App/ClientSideRoute/ClientSideRoute"
+import FeaturedPost from "@/components/App/Blog/FeaturedPost/FeaturedPost.component"
 
 import styles from "./BlogList.module.scss"
 
 type Props = {
-  posts: Post[];
+  posts: Post[]
 }
 
 export default function BlogList({ posts }: Props) {
-  const [visible, setVisible] = useState(4);
+  const [visible, setVisible] = useState(4)
 
-  const moreLoadedPosts = visible < posts.length;
+  const moreLoadedPosts = visible < posts.length
 
   const showMoreItems = () => {
-    setVisible((prevValue) => prevValue + 4);
+    setVisible((prevValue) => prevValue + 4)
   }
 
   return (

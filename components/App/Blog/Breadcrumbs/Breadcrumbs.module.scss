@@ -1,9 +1,5 @@
 @use "../../../../styles/base.scss" as styles;
 
-.wrapper {
-  z-index: -2;
-}
-
 .breadcrumbs {
   li {
     &::before,
@@ -50,6 +46,8 @@
 }
 
 .itemWrapper {
+  color: styles.$black;
+
   @include styles.breakpoint(max-width, device-mobile) {
     height: styles.to-rem(55);
   }

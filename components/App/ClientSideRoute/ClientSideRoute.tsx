@@ -1,7 +1,7 @@
-"use client";
+"use client"
 
-import Link from "next/link";
-import React from "react";
+import Link from "next/link"
+import React from "react"
 
 export default function ClientSideRoute({
   children,
@@ -11,9 +11,9 @@ export default function ClientSideRoute({
   route
 }: {
   children: React.ReactNode,
-  className?: string;
-  itemProp?: string;
-  onClick?: () => void;
+  className?: string
+  itemProp?: string
+  onClick?: () => void
   route: string
 }) {
   return (

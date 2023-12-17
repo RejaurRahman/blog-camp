@@ -1,16 +1,16 @@
-import React from "react";
-import { groq } from "next-sanity";
-import { client } from "@/lib/client";
-import { notFound } from "next/navigation";
+import React from "react"
+import { groq } from "next-sanity"
+import { client } from "@/lib/client"
+import { notFound } from "next/navigation"
 
-import BlogList from "@/components/App/Blog/BlogList/BlogList.component";
-import TextBanner from "@/components/App/TextBanner/TextBanner.component";
+import BlogList from "@/components/App/Blog/BlogList/BlogList.component"
+import TextBanner from "@/components/App/TextBanner/TextBanner.component"
 
-import styles from "@/app/index.module.scss";
+import styles from "@/app/index.module.scss"
 
 type Props = {
   params: {
-    slug: string;
+    slug: string
   }
 }
 
@@ -21,17 +21,17 @@ export async function generateStaticParams() {
     }
   `
 
-  const authors: Author[] = await client.fetch(query);
-  const authorSlugs = authors.map((author) => author.slug.current);
+  const authors: Author[] = await client.fetch(query)
+  const authorSlugs = authors.map((author) => author.slug.current)
 
   const slugRoutes = authorSlugs.map((slug) => ({
     slug
-  }));
+  }))
 
-  return slugRoutes;
+  return slugRoutes
 }
 
-export const revalidate = 30;
+export const revalidate = 30
 
 export default async function AuthorPosts({ params: { slug } }: Props) {
   const authorQuery = groq`
@@ -41,10 +41,10 @@ export default async function AuthorPosts({ params: { slug } }: Props) {
     }
   `
 
-  const author: Author = await client.fetch(authorQuery, { slug });
+  const author: Author = await client.fetch(authorQuery, { slug })
 
   if (!author) {
-    notFound();
+    notFound()
   }
 
   const postQuery = groq`
@@ -56,7 +56,7 @@ export default async function AuthorPosts({ params: { slug } }: Props) {
     }
   `
 
-  const post: Post[] = await client.fetch(postQuery, { author: author });
+  const post: Post[] = await client.fetch(postQuery, { author: author })
 
   return (
     <div className={`flex ml-auto ${styles.container}`}>

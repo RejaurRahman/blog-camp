@@ -1,9 +1,9 @@
-import Link from "next/link";
-import React, { ReactNode } from "react";
-import { ArrowUturnLeftIcon } from "@heroicons/react/24/solid";
+import Link from "next/link"
+import React, { ReactNode } from "react"
+import { ArrowUturnLeftIcon } from "@heroicons/react/24/solid"
 
 interface StudioNavbarProps {
-  renderDefault: () => ReactNode;
+  renderDefault: () => ReactNode
 }
 
 export default function StudioNavbar({ renderDefault }: StudioNavbarProps | any) {
@@ -22,5 +22,5 @@ export default function StudioNavbar({ renderDefault }: StudioNavbarProps | any)
       </div>
       <>{renderDefault()}</>
     </div>
-  );
+  )
 }

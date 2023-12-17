@@ -1,9 +1,15 @@
-"use client";
+"use client"
 
-import React, { useEffect, useState } from "react";
-import { useForm, SubmitHandler } from "react-hook-form";
+import React, {
+  useEffect,
+  useState
+} from "react"
+import {
+  SubmitHandler,
+  useForm
+} from "react-hook-form"
 
-import styles from "./PostComments.module.scss";
+import styles from "./PostComments.module.scss"
 
 interface FormInput {
   _id: string
@@ -18,8 +24,8 @@ interface Props {
 }
 
 export default function PostComments({ post, comments }: Props) {
-  const [submitted, setSubmitted] = useState(false);
-  const [clientRendered, setClientRendered] = useState(false);
+  const [submitted, setSubmitted] = useState(false)
+  const [clientRendered, setClientRendered] = useState(false)
 
   const {
     formState: {errors},
@@ -45,7 +51,7 @@ export default function PostComments({ post, comments }: Props) {
   }
 
   useEffect(() => {
-    setClientRendered(true);
+    setClientRendered(true)
   }, [])
 
   return (

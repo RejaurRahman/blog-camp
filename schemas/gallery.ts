@@ -1,5 +1,5 @@
-import { defineField, defineType } from "sanity";
-import { ImagesIcon } from "@sanity/icons";
+import { defineField, defineType } from "sanity"
+import { ImagesIcon } from "@sanity/icons"
 
 export default defineType({
   name: "gallery",

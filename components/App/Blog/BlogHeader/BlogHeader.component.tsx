@@ -1,38 +1,42 @@
-"use client";
+"use client"
 
-import React, { useCallback, useEffect, useState } from "react";
+import React, {
+  useCallback,
+  useEffect,
+  useState
+} from "react"
 
-import { ClockIcon } from "@heroicons/react/24/outline";
+import { ClockIcon } from "@heroicons/react/24/outline"
 
-import Breadcrumbs from "@/components/App/Blog/Breadcrumbs/Breadcrumbs.component";
-import ClientSideRoute from "@/components/App/ClientSideRoute/ClientSideRoute";
+import Breadcrumbs from "@/components/App/Blog/Breadcrumbs/Breadcrumbs.component"
+import ClientSideRoute from "@/components/App/ClientSideRoute/ClientSideRoute"
 
-import blogListStyles from "@/components/App/Blog/BlogList/BlogList.module.scss";
-import styles from "./BlogHeader.module.scss";
+import blogListStyles from "@/components/App/Blog/BlogList/BlogList.module.scss"
+import styles from "./BlogHeader.module.scss"
 
 type Props = {
-  post: Post;
+  post: Post
 }
 
 export default function BlogHeader({ post }: Props) {
-  const [calculateWords, setCalculateWords] = useState(0);
+  const [calculateWords, setCalculateWords] = useState(0)
 
   const wordCalculate = useCallback(() => {
-    let numberOfWords = 0;
-    const averageWPM = 190;
+    let numberOfWords = 0
+    const averageWPM = 190
 
-    const words = document.querySelectorAll("p, h1, h2, h3, h4, h5, h6");
+    const words = document.querySelectorAll("p, h1, h2, h3, h4, h5, h6")
     words.forEach((word) => {
-      numberOfWords += word.innerHTML.trim().split(" ").length;
-    });
+      numberOfWords += word.innerHTML.trim().split(" ").length
+    })
 
-    const readTime = Math.ceil(numberOfWords / averageWPM);
-    setCalculateWords(readTime);
-  }, []);
+    const readTime = Math.ceil(numberOfWords / averageWPM)
+    setCalculateWords(readTime)
+  }, [])
 
   useEffect(() => {
-    wordCalculate();
-  }, [calculateWords, wordCalculate]);
+    wordCalculate()
+  }, [calculateWords, wordCalculate])
 
   return (
     <div className={`flex relative ${styles.wrapper}`}>

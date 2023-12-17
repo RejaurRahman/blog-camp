@@ -1,18 +1,27 @@
-"use client";
+"use client"
 
-import { SubmitPayload } from "@formspark/use-formspark";
-import React, { InputHTMLAttributes, useEffect, useState } from "react";
-import { FieldValues, SubmitHandler, UseFormRegister, useForm } from "react-hook-form";
+import { SubmitPayload } from "@formspark/use-formspark"
+import React, {
+  InputHTMLAttributes,
+  useEffect,
+  useState
+} from "react"
+import {
+  FieldValues,
+  SubmitHandler,
+  UseFormRegister,
+  useForm
+} from "react-hook-form"
 
-import styles from "@/components/App/Blog/PostComments/PostComments.module.scss";
+import styles from "@/components/App/Blog/PostComments/PostComments.module.scss"
 
 interface InputFieldProps extends InputHTMLAttributes<HTMLInputElement> {
-  fieldName: string;
-  id: string;
-  placeholder?: string;
-  register: UseFormRegister<FieldValues>;
-  required?: boolean;
-  type?: string;
+  fieldName: string
+  id: string
+  placeholder?: string
+  register: UseFormRegister<FieldValues>
+  required?: boolean
+  type?: string
 }
 
 export function InputField({
@@ -36,15 +45,15 @@ export function InputField({
 }
 
 export default function Form({ formFields }: FormProps) {
-  const [submitted, setSubmitted] = useState(false);
-  const [clientRendered, setClientRendered] = useState(false);
-  const [loading, setLoading] = useState(false);
-  const { register, handleSubmit } = useForm();
+  const [submitted, setSubmitted] = useState(false)
+  const [clientRendered, setClientRendered] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const { register, handleSubmit } = useForm()
 
-  const FORMSPARK_ACTION_URL = "https://submit-form.com/xwHKYtXh7";
+  const FORMSPARK_ACTION_URL = "https://submit-form.com/xwHKYtXh7"
 
   const onSubmit: SubmitHandler<SubmitPayload> = async (data) => {
-    setLoading(true);
+    setLoading(true)
 
     await fetch(FORMSPARK_ACTION_URL, {
       method: "POST",
@@ -56,12 +65,12 @@ export default function Form({ formFields }: FormProps) {
         data
       })
     })
-    setSubmitted(true);
-    setLoading(false);
+    setSubmitted(true)
+    setLoading(false)
   }
 
   useEffect(() => {
-    setClientRendered(true);
+    setClientRendered(true)
   }, [])
 
   if (submitted) {
@@ -108,16 +117,14 @@ export default function Form({ formFields }: FormProps) {
                   inputType,
                   placeholder,
                   required
-                } = field ?? {};
+                } = field ?? {}
                 const current = fieldName.split(" ")
                 .map((word, index) =>
                   index === 0 ? word.charAt(0).toLowerCase() + word.slice(1) : word.charAt(0).toUpperCase() + word.slice(1)
                 )
-                .join("");
+                .join("")
 
-                console.log(current);
-
-                if (!inputType) return null;
+                if (!inputType) return null
 
                 if (inputType == "textArea") {
                   return (

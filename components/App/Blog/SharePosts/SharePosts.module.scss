@@ -14,29 +14,11 @@
       bottom: styles.to-rem(50);
     }
   }
-
-  z-index: -2;
 }
 
 .socialLink {
   color: styles.$black;
   border: styles.to-rem(1) solid styles.$black;
-  transition: color 0.3s ease, border-color 0.3s ease;
-
-  &:hover {
-    color: styles.$buddha-gold;
-    border: styles.to-rem(1) solid styles.$buddha-gold;
-
-    svg {
-      path {
-        fill: currentColor;
-      }
-    }
-  }
-
-  svg {
-    height: styles.to-rem(21);
-  }
 }
 
 .copyText {

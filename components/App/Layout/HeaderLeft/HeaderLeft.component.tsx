@@ -1,12 +1,12 @@
-"use client";
+"use client"
 
-import Link from "next/link";
+import Link from "next/link"
 import React, {
   FormEvent,
   useState
-} from "react";
+} from "react"
 
-import styles from "./HeaderLeft.module.scss";
+import styles from "./HeaderLeft.module.scss"
 
 interface Props {
   data?: SiteData
@@ -14,9 +14,9 @@ interface Props {
 }
 
 export default function HeaderLeft({ data, setOpen } : Props) {
-  const [searchQuery, setSearchQuery] = useState("");
+  const [searchQuery, setSearchQuery] = useState("")
 
-  const currentYear = new Date().getFullYear();
+  const currentYear = new Date().getFullYear()
 
   const handleSearchSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -67,7 +67,7 @@ export default function HeaderLeft({ data, setOpen } : Props) {
           }
         </ul>
         <span className={`text-sm uppercase ${styles.copyright}`}>
-          Copyright &copy; {currentYear}. {data?.footerText}
+          Copyright &copy {currentYear}. {data?.footerText}
         </span>
       </div>
     </>

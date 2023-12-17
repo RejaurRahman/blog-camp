@@ -6,10 +6,6 @@
   flex-flow: column;
 }
 
-.wrapper {
-  z-index: -2;
-}
-
 .mainWrapper {
   @include styles.breakpoint(max-width, device-tablet) {
     flex-flow: column;

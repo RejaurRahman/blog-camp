@@ -1,16 +1,16 @@
-import React from "react";
-import { groq } from "next-sanity";
-import { client } from "@/lib/client";
-import { notFound } from "next/navigation";
+import React from "react"
+import { groq } from "next-sanity"
+import { client } from "@/lib/client"
+import { notFound } from "next/navigation"
 
-import BlogList from "@/components/App/Blog/BlogList/BlogList.component";
-import TextBanner from "@/components/App/TextBanner/TextBanner.component";
+import BlogList from "@/components/App/Blog/BlogList/BlogList.component"
+import TextBanner from "@/components/App/TextBanner/TextBanner.component"
 
-import styles from "@/app/index.module.scss";
+import styles from "@/app/index.module.scss"
 
 type Props = {
   params: {
-    slug: string;
+    slug: string
   }
 }
 
@@ -21,17 +21,17 @@ export async function generateStaticParams() {
     }
   `
 
-  const categories: Category[] = await client.fetch(query);
-  const categorySlugs = categories.map((category) => category.slug.current);
+  const categories: Category[] = await client.fetch(query)
+  const categorySlugs = categories.map((category) => category.slug.current)
 
   const slugRoutes = categorySlugs.map((slug) => ({
     slug
-  }));
+  }))
 
-  return slugRoutes;
+  return slugRoutes
 }
 
-export const revalidate = 30;
+export const revalidate = 30
 
 export default async function CategoryPosts({ params: { slug } }: Props) {
   const categoryQuery = groq`
@@ -41,10 +41,10 @@ export default async function CategoryPosts({ params: { slug } }: Props) {
     }
   `
 
-  const category: Category = await client.fetch(categoryQuery, { slug });
+  const category: Category = await client.fetch(categoryQuery, { slug })
 
   if (!category) {
-    notFound();
+    notFound()
   }
 
   const postQuery = groq`
@@ -56,7 +56,7 @@ export default async function CategoryPosts({ params: { slug } }: Props) {
     }
   `
 
-  const post: Post[] = await client.fetch(postQuery, { category: category });
+  const post: Post[] = await client.fetch(postQuery, { category: category })
 
   return (
     <div className={`flex ml-auto ${styles.container}`}>

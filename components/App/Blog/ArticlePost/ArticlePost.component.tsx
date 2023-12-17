@@ -1,14 +1,14 @@
-import Image from "next/image";
-import React from "react";
+import Image from "next/image"
+import React from "react"
 
-import { ArrowUpRightIcon } from "@heroicons/react/24/solid";
-import urlFor from "@/lib/urlFor";
+import { ArrowUpRightIcon } from "@heroicons/react/24/solid"
+import urlFor from "@/lib/urlFor"
 
-import blogListStyles from "@/components/App/Blog/BlogList/BlogList.module.scss";
-import styles from "./ArticlePost.module.scss";
+import blogListStyles from "@/components/App/Blog/BlogList/BlogList.module.scss"
+import styles from "./ArticlePost.module.scss"
 
 type Props = {
-  post: Post;
+  post: Post
 }
 
 export default function ArticlePost({ post }: Props) {

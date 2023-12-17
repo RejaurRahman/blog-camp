@@ -1,15 +1,15 @@
-import Image from "next/image";
-import React from "react";
+import Image from "next/image"
+import React from "react"
 
-import ClientSideRoute from "@/components/App/ClientSideRoute/ClientSideRoute";
+import ClientSideRoute from "@/components/App/ClientSideRoute/ClientSideRoute"
 
-import { ArrowUpRightIcon } from "@heroicons/react/24/solid";
+import { ArrowUpRightIcon } from "@heroicons/react/24/solid"
 
-import Logo from "@/assets/images/logo.png";
+import Logo from "@/assets/images/logo.png"
 
-import styles from "./not-found.module.scss";
+import styles from "./not-found.module.scss"
 
-export const revalidate = 30;
+export const revalidate = 30
 
 export default function NotFound() {
   return (
@@ -32,7 +32,7 @@ export default function NotFound() {
       <p
         className={`text-center ${styles.text}`}
       >
-        You didn&apos;t break the internet, but we can&apos;t find what you are looking for.
+        You didn&apost break the internet, but we can&apost find what you are looking for.
       </p>
       <div className={`flex ${styles.buttonWrapper}`}>
         <ClientSideRoute

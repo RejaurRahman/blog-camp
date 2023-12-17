@@ -2,17 +2,17 @@
  * This configuration is used to for the Sanity Studio that’s mounted on the `/app/studio/[[...index]]/page.tsx` route
  */
 
-import { visionTool } from "@sanity/vision";
-import { defineConfig } from "sanity";
-import { deskTool } from "sanity/desk";
+import { visionTool } from "@sanity/vision"
+import { defineConfig } from "sanity"
+import { deskTool } from "sanity/desk"
 
 // Go to https://www.sanity.io/docs/api-versioning to learn how API versioning works
-import { apiVersion, dataset, projectId } from "./env";
-import { schema } from "./schema";
-import { blogCampTheme } from "./theme";
+import { apiVersion, dataset, projectId } from "./env"
+import { schema } from "./schema"
+import { blogCampTheme } from "./theme"
 
-import Logo from "./components/Sanity/Logo/Logo.component";
-import StudioNavbar from "./components/Sanity/StudioNavbar/StudioNavbar.component";
+import Logo from "./components/Sanity/Logo/Logo.component"
+import StudioNavbar from "./components/Sanity/StudioNavbar/StudioNavbar.component"
 
 export default defineConfig({
   basePath: "/studio",
@@ -34,5 +34,5 @@ export default defineConfig({
     }
   },
   theme: blogCampTheme,
-  title: "BLOGCAMP Content Studio",
+  title: "BLOGCAMP Content Studio"
 })

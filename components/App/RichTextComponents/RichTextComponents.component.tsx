@@ -1,17 +1,17 @@
-import { PortableTextReactComponents } from "@portabletext/react";
-import Image from "next/image";
-import Link from "next/link";
-import React from "react";
+import { PortableTextReactComponents } from "@portabletext/react"
+import Image from "next/image"
+import Link from "next/link"
+import React from "react"
 
-import urlFor from "@/lib/urlFor";
+import urlFor from "@/lib/urlFor"
 
-import Form from "../Form/Form.component";
-import Gallery from "@/components/App/Gallery/Gallery.component";
-import TextMedia from "@/components/App/TextMedia/TextMedia.component";
-import TwoColumnText from "@/components/App/TwoColumnText/TwoColumnText.component";
-import VideoEmbed from "@/components/App/VideoEmbed/VideoEmbed.component";
+import Form from "../Form/Form.component"
+import Gallery from "@/components/App/Gallery/Gallery.component"
+import TextMedia from "@/components/App/TextMedia/TextMedia.component"
+import TwoColumnText from "@/components/App/TwoColumnText/TwoColumnText.component"
+import VideoEmbed from "@/components/App/VideoEmbed/VideoEmbed.component"
 
-import styles from "./RichTextComponents.module.scss";
+import styles from "./RichTextComponents.module.scss"
 
 export const RichTextComponents: PortableTextReactComponents = {
   types: {
@@ -35,7 +35,7 @@ export const RichTextComponents: PortableTextReactComponents = {
             </div>
           )}
         </div>
-      );
+      )
     },
     formBuilder: ({ value }) => {
       return (
@@ -45,12 +45,12 @@ export const RichTextComponents: PortableTextReactComponents = {
     gallery: ({ value }) => {
       return (
         <Gallery gallery={value} />
-      );
+      )
     },
     textMedia: ({ value }) => {
       return (
         <TextMedia textMedia={value} />
-      );
+      )
     },
     twoColumnText: ({ value }) => {
       return (
@@ -63,7 +63,7 @@ export const RichTextComponents: PortableTextReactComponents = {
           caption={value.caption}
           captionClass={`p-4 mb-12 ${styles.mediaCaption}`}
           url={value.url} />
-      );
+      )
     }
   },
   list: {
@@ -92,7 +92,7 @@ export const RichTextComponents: PortableTextReactComponents = {
     ),
     h2: ({ children }) => {
       if (!children) {
-        return null;
+        return null
       }
 
       const id =
@@ -100,7 +100,7 @@ export const RichTextComponents: PortableTextReactComponents = {
           ? children.toString().split(" ").length > 1
             ? children.toString().replace(/\s/g, "").toLowerCase()
             : children.toString().toLowerCase()
-          : undefined;
+          : undefined
 
       return (
         <div className="relative">
@@ -114,7 +114,7 @@ export const RichTextComponents: PortableTextReactComponents = {
             {children}
           </h2>
         </div>
-      );
+      )
     },
     h3: ({ children }) => (
       <h3
@@ -161,8 +161,8 @@ export const RichTextComponents: PortableTextReactComponents = {
   },
   marks: {
     link: ({ children, value }) => {
-      const rel = !value.href.startsWith("/") ? "noreferrer noopener" : undefined;
-      const target = !value.href.startsWith("/") ? "_blank" : undefined;
+      const rel = !value.href.startsWith("/") ? "noreferrer noopener" : undefined
+      const target = !value.href.startsWith("/") ? "_blank" : undefined
 
       return (
         <Link
@@ -173,7 +173,7 @@ export const RichTextComponents: PortableTextReactComponents = {
         >
           {children}
         </Link>
-      );
+      )
     },
     strike: ({ children }) => {
       return (

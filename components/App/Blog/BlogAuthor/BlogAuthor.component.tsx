@@ -1,17 +1,17 @@
-import Image from "next/image";
-import { PortableText } from "@portabletext/react";
-import React from "react";
+import Image from "next/image"
+import { PortableText } from "@portabletext/react"
+import React from "react"
 
-import { ArrowUpRightIcon } from "@heroicons/react/24/solid";
-import urlFor from "@/lib/urlFor";
+import { ArrowUpRightIcon } from "@heroicons/react/24/solid"
+import urlFor from "@/lib/urlFor"
 
-import ClientSideRoute from "@/components/App/ClientSideRoute/ClientSideRoute";
+import ClientSideRoute from "@/components/App/ClientSideRoute/ClientSideRoute"
 
-import styles from "./BlogAuthor.module.scss";
+import styles from "./BlogAuthor.module.scss"
 
 type Props = {
-  displayDesktop: boolean;
-  post: Post;
+  displayDesktop: boolean
+  post: Post
 }
 
 export default function BlogAuthor({ displayDesktop, post }: Props) {

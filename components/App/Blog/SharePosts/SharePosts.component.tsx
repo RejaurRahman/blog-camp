@@ -1,28 +1,26 @@
-"use client";
+"use client"
 
-import React, { useState } from "react";
+import Image from "next/image"
+import React, { useState } from "react"
 
-import ClientSideRoute from "@/components/App/ClientSideRoute/ClientSideRoute";
+import ClientSideRoute from "@/components/App/ClientSideRoute/ClientSideRoute"
 
-import { CopyToClipboard } from "react-copy-to-clipboard";
+import { CopyToClipboard } from "react-copy-to-clipboard"
 
-import { config, library } from "@fortawesome/fontawesome-svg-core";
-import { faCopy, faEnvelope } from "@fortawesome/free-solid-svg-icons";
-import { fab } from "@fortawesome/free-brands-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import CopyIcon from "@/assets/svg/copy.svg"
+import FBIcon from "@/assets/svg/facebook.svg"
+import LinkedinIcon from "@/assets/svg/linkedin.svg"
+import MailIcon from "@/assets/svg/mail.svg"
+import TwitterIcon from "@/assets/svg/twitter.svg"
 
-library.add(faCopy, faEnvelope, fab);
-
-config.autoAddCss = false;
-
-import styles from "./SharePosts.module.scss";
+import styles from "./SharePosts.module.scss"
 
 type Props = {
-  post: Post;
+  post: Post
 }
 
 export default function SharePosts({ post }: Props) {
-  const [copied, setCopied] = useState(false);
+  const [copied, setCopied] = useState(false)
 
   return (
     <nav className={`relative ${styles.wrapper}`}>
@@ -32,42 +30,72 @@ export default function SharePosts({ post }: Props) {
             className={`flex items-center justify-center w-10 h-10 rounded-full ${styles.socialLink}`}
             route={`https://www.facebook.com/sharer/sharer.php?u=${post.slug}`}
           >
-            <FontAwesomeIcon icon={["fab", "facebook-f"]} />
+            <Image
+              alt="Facebook Share"
+              className={styles.socialImage}
+              height={21}
+              src={FBIcon}
+              width={21}
+            />
           </ClientSideRoute>
         </li>
         <li className="mr-3">
           <ClientSideRoute
             className={`flex items-center justify-center w-10 h-10 rounded-full ${styles.socialLink}`}
-            route={`https://twitter.com/intent/tweet?text=${post.title}&amp;url=${post.slug}&amp;via=Rejaur_3Ronny`}
+            route={`https://twitter.com/intent/tweet?text=${post.title}&ampurl=${post.slug}&ampvia=Rejaur_3Ronny`}
           >
-            <FontAwesomeIcon icon={["fab", "twitter"]} />
+            <Image
+              alt="Twitter Share"
+              className={styles.socialImage}
+              height={21}
+              src={TwitterIcon}
+              width={21}
+            />
           </ClientSideRoute>
         </li>
         <li className="mr-3">
           <ClientSideRoute
             className={`flex items-center justify-center w-10 h-10 rounded-full ${styles.socialLink}`}
-            route={`https://www.linkedin.com/shareArticle?mini=true&amp;url=${post.slug}&amp;summary=${post.title}&amp;source=rejaur-rahman-a938a657`}
+            route={`https://www.linkedin.com/shareArticle?mini=true&ampurl=${post.slug}&ampsummary=${post.title}&ampsource=rejaur-rahman-a938a657`}
           >
-            <FontAwesomeIcon icon={["fab", "linkedin-in"]} />
+            <Image
+              alt="LinkedIn Share"
+              className={styles.socialImage}
+              height={21}
+              src={LinkedinIcon}
+              width={21}
+            />
           </ClientSideRoute>
         </li>
         <li className="mr-3">
           <ClientSideRoute
             className={`flex items-center justify-center w-10 h-10 rounded-full ${styles.socialLink}`}
-            route={`mailto:?subject=${post.title}&amp;body=${post.slug}`}
+            route={`mailto:?subject=${post.title}&ampbody=${post.slug}`}
           >
-            <FontAwesomeIcon icon={["fas", "envelope"]} />
+            <Image
+              alt="Mail Share"
+              className={styles.socialImage}
+              height={21}
+              src={MailIcon}
+              width={21}
+            />
           </ClientSideRoute>
         </li>
         <li className={`flex items-center justify-center relative w-10 h-10 rounded-full cursor-pointer ${styles.socialLink}`}>
           <CopyToClipboard
             text={post.slug.current}
             onCopy={() => {
-              setCopied(true);
-              setTimeout(() => setCopied(false), 1000);
+              setCopied(true)
+              setTimeout(() => setCopied(false), 1000)
             }}
           >
-            <FontAwesomeIcon icon={["fas", "copy"]} />
+            <Image
+              alt="Copy Share"
+              className={styles.socialImage}
+              height={21}
+              src={CopyIcon}
+              width={21}
+            />
           </CopyToClipboard>
           {copied ? (
             <span

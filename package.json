@@ -11,10 +11,6 @@
   },
   "dependencies": {
     "@formspark/use-formspark": "^0.1.39",
-    "@fortawesome/fontawesome-svg-core": "^6.4.2",
-    "@fortawesome/free-brands-svg-icons": "^6.4.2",
-    "@fortawesome/free-solid-svg-icons": "^6.4.2",
-    "@fortawesome/react-fontawesome": "^0.2.0",
     "@heroicons/react": "^2.0.18",
     "@portabletext/react": "^3.0.9",
     "@radix-ui/react-dialog": "^1.0.5",

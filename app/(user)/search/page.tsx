@@ -1,13 +1,13 @@
-import React from "react";
-import { groq } from "next-sanity";
-import { client } from "@/lib/client";
+import React from "react"
+import { groq } from "next-sanity"
+import { client } from "@/lib/client"
 
-import ArticlePost from "@/components/App/Blog/ArticlePost/ArticlePost.component";
+import ArticlePost from "@/components/App/Blog/ArticlePost/ArticlePost.component"
 
-import postStyles from "@/app/(user)/post/[slug]/post.module.scss";
-import styles from "./page.module.scss";
+import postStyles from "@/app/(user)/post/[slug]/post.module.scss"
+import styles from "./page.module.scss"
 
-export const revalidate = 30;
+export const revalidate = 30
 
 const query = groq`
   *[_type == "post" && (
@@ -24,9 +24,9 @@ const query = groq`
 `
 
 export default async function Search({ searchParams }: { searchParams: { query: string } }) {
-  const searchQuery = searchParams.query;
+  const searchQuery = searchParams.query
 
-  const searchResult: Post[] = await client.fetch(query, { searchQuery });
+  const searchResult: Post[] = await client.fetch(query, { searchQuery })
 
   return (
     <div className={styles.container}>

@@ -1,16 +1,16 @@
-"use client";
+"use client"
 
-import * as NavigationMenu from "@radix-ui/react-navigation-menu";
-import React, { useEffect, useState } from "react";
-import { groq } from "next-sanity";
-import { client } from "@/lib/client";
+import * as NavigationMenu from "@radix-ui/react-navigation-menu"
+import React, { useEffect, useState } from "react"
+import { groq } from "next-sanity"
+import { client } from "@/lib/client"
 
-import HeaderLogo from "@/components/App/Layout/HeaderLogo/HeaderLogo.component";
-import HeaderModal from "@/components/App/Layout/HeaderModal/HeaderModal.component";
-import HeaderSocial from "@/components/App/Layout/HeaderSocial/HeaderSocial.component";
-import ScrollButtons from "@/components/App/ScrollButtons/ScrollButtons.component";
+import HeaderLogo from "@/components/App/Layout/HeaderLogo/HeaderLogo.component"
+import HeaderModal from "@/components/App/Layout/HeaderModal/HeaderModal.component"
+import HeaderSocial from "@/components/App/Layout/HeaderSocial/HeaderSocial.component"
+import ScrollButtons from "@/components/App/ScrollButtons/ScrollButtons.component"
 
-import styles from "./Header.module.scss";
+import styles from "./Header.module.scss"
 
 const sitewideQuery = groq`
   *[_type == "sitewide"][0] {
@@ -23,17 +23,17 @@ const sitewideQuery = groq`
 `
 
 export default function Header() {
-  const [data, setData] = useState<SiteData>();
+  const [data, setData] = useState<SiteData>()
 
   const getDataUsingSanity = async () => {
-    const sidewideData= await client.fetch(sitewideQuery);
+    const sidewideData= await client.fetch(sitewideQuery)
 
     setData(sidewideData)
-  };
+  }
 
   useEffect(() => {
-    getDataUsingSanity();
-  }, []);
+    getDataUsingSanity()
+  }, [])
 
   return (
     <header

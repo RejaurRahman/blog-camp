@@ -1,37 +1,43 @@
-"use client";
+"use client"
 
-import Image from "next/image";
-import React, { useRef } from "react";
+import Image from "next/image"
+import React, { useRef } from "react"
 
-import { Autoplay, Pagination } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
+import {
+  Autoplay,
+  Pagination
+} from "swiper/modules"
+import {
+  Swiper,
+  SwiperSlide
+} from "swiper/react"
 
-import urlFor from "@/lib/urlFor";
+import urlFor from "@/lib/urlFor"
 
 // eslint-disable-next-line import/no-unresolved, import/extensions
-import "swiper/css";
+import "swiper/css"
 
-import type SwiperCore from "swiper";
+import type SwiperCore from "swiper"
 
-import styles from "./Gallery.module.scss";
+import styles from "./Gallery.module.scss"
 
 interface GalleryImage {
-  _type: "image";
-  asset: Reference;
-  alt: string;
-  caption: string;
+  _type: "image"
+  asset: Reference
+  alt: string
+  caption: string
 }
 
 interface Gallery {
-  images: GalleryImage[];
+  images: GalleryImage[]
 }
 
 interface Props {
-  gallery: Gallery;
+  gallery: Gallery
 }
 
 export default function Gallery({ gallery }: Props) {
-  const swiperRef = useRef<SwiperCore>();
+  const swiperRef = useRef<SwiperCore>()
 
   return gallery.images.length ? (
     <div className={`relative w-full h-full mb-6 ${styles.media}`}>
@@ -41,7 +47,7 @@ export default function Gallery({ gallery }: Props) {
         enabled={gallery.images.length > 1}
         modules={[Autoplay, Pagination]}
         onBeforeInit={(swiper) => {
-          swiperRef.current = swiper;
+          swiperRef.current = swiper
         }}
         pagination={{
           el: ".swiper-pagination-gallery",

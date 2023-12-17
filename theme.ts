@@ -1,4 +1,4 @@
-import { buildLegacyTheme } from "sanity";
+import { buildLegacyTheme } from "sanity"
 
 const props = {
   "colour-beer": "#fbb117",
@@ -8,8 +8,8 @@ const props = {
   "colour-sea-green": "#2e8b57",
   "colour-supernova": "#ffcc00",
   "colour-vermillion": "#ff4c17",
-  "colour-white": "#fff",
-};
+  "colour-white": "#fff"
+}
 
 export const blogCampTheme = buildLegacyTheme({
   /* Base theme colors */
@@ -42,5 +42,5 @@ export const blogCampTheme = buildLegacyTheme({
   "--main-navigation-color": props["colour-black"],
   "--main-navigation-color--inverted": props["colour-white"],
 
-  "--focus-color": props["colour-supernova"],
-});
+  "--focus-color": props["colour-supernova"]
+})

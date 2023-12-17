@@ -1,0 +1,20 @@
+@use "../../../../styles/base.scss" as styles;
+
+.link {
+  @include styles.breakpoint(max-height, device-height-s) {
+    padding-top: styles.to-rem(30);
+  }
+
+  padding-top: styles.to-rem(50);
+
+  &:hover {
+    .image {
+      transform: scale(1.5);
+    }
+  }
+
+  .image {
+    transform: scale(1);
+    transition: transform 0.3s ease-in-out;
+  }
+}

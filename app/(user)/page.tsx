@@ -1,11 +1,11 @@
-import React from "react";
-import { groq } from "next-sanity";
-import { client } from "@/lib/client";
+import React from "react"
+import { groq } from "next-sanity"
+import { client } from "@/lib/client"
 
-import BlogList from "@/components/App/Blog/BlogList/BlogList.component";
-import MainBanner from "@/components/App/MainBanner/MainBanner.component";
+import BlogList from "@/components/App/Blog/BlogList/BlogList.component"
+import MainBanner from "@/components/App/MainBanner/MainBanner.component"
 
-import styles from "@/app/index.module.scss";
+import styles from "@/app/index.module.scss"
 
 const query = groq`
   *[_type=="post"] {
@@ -15,10 +15,10 @@ const query = groq`
   } | order(_publishedAt asc)
 `
 
-export const revalidate = 30;
+export const revalidate = 30
 
 export default async function HomePage() {
-  const posts = await client.fetch(query);
+  const posts = await client.fetch(query)
 
   return (
     <div className={`flex ml-auto ${styles.container}`}>

@@ -1,57 +1,60 @@
-"use client";
+"use client"
 
-import React, { useEffect, useState } from "react";
+import React, {
+  useEffect,
+  useState
+} from "react"
 
-import { ArrowDownIcon } from "@heroicons/react/24/solid";
+import { ArrowDownIcon } from "@heroicons/react/24/solid"
 
-import ClientSideRoute from "@/components/App/ClientSideRoute/ClientSideRoute";
+import ClientSideRoute from "@/components/App/ClientSideRoute/ClientSideRoute"
 
-import styles from "./SidebarNav.module.scss";
+import styles from "./SidebarNav.module.scss"
 
 type Props = {
-  displayDesktop: boolean;
-  post: Post;
+  displayDesktop: boolean
+  post: Post
 }
 
 export default function SidebarNav({ displayDesktop, post }: Props) {
-  const headTitles: string[] = [];
-  const [navSticky, setNavSticky] = useState(false);
-  const [headTitle, setHeadTitle] = useState("Contents Navigation");
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const headTitles: string[] = []
+  const [navSticky, setNavSticky] = useState(false)
+  const [headTitle, setHeadTitle] = useState("Contents Navigation")
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollY = window.scrollY || document.documentElement.scrollTop;
+      const scrollY = window.scrollY || document.documentElement.scrollTop
 
       if (scrollY >= 100) {
-        setNavSticky(true);
+        setNavSticky(true)
       } else {
-        setNavSticky(false);
+        setNavSticky(false)
       }
     }
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll)
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("scroll", handleScroll)
     }
   }, [])
 
   post.body.forEach((body) => {
     if (body.style === "h2") {
       body.children.forEach((children) => {
-        headTitles.push(children.text);
+        headTitles.push(children.text)
       })
     }
   })
 
   const clickHeadTitle = (title: string) => {
-    setHeadTitle(title);
-    setIsDropdownOpen(false);
+    setHeadTitle(title)
+    setIsDropdownOpen(false)
   }
 
   const toggleDropdown = () => {
-    setIsDropdownOpen(!isDropdownOpen);
+    setIsDropdownOpen(!isDropdownOpen)
   }
 
   return (

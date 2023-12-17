@@ -1,56 +1,101 @@
-import React from "react";
+import Image from "next/image"
+import Link from "next/link"
+import React from "react"
 
-import { config, library } from "@fortawesome/fontawesome-svg-core";
-import { fab } from "@fortawesome/free-brands-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import FBIcon from "@/assets/svg/facebook.svg"
+import LinkedinIcon from "@/assets/svg/linkedin.svg"
+import PinterestIcon from "@/assets/svg/pinterest.svg"
+import RedditIcon from "@/assets/svg/reddit.svg"
+import TwitterIcon from "@/assets/svg/twitter.svg"
 
-library.add(fab);
-
-config.autoAddCss = false;
-
-import SocialIcon from "./SocialIcon/SocialIcon.component";
+import styles from "./HeaderSocial.module.scss"
 
 interface Props {
-  data?: SocialLinks;
+  data?: SocialLinks
 }
 
 export default function HeaderSocial({ data }: Props) {
   return data?.fbLink || data?.linkedinLink || data?.pinterestLink || data?.redditLink || data?.twitterLink ? (
     <ul>
       {data?.fbLink && (
-        <SocialIcon
-          url={data?.fbLink}
+        <Link
+          className={`flex justify-center ${styles.link}`}
+          href={data?.fbLink}
+          rel="noopener"
+          target="_blank"
         >
-          <FontAwesomeIcon icon={["fab", "facebook-f"]} />
-        </SocialIcon>
+          <Image
+            alt="Facebook"
+            className={styles.image}
+            height={21}
+            src={FBIcon}
+            width={21}
+          />
+        </Link>
       )}
       {data?.linkedinLink && (
-        <SocialIcon
-          url={data?.linkedinLink}
+        <Link
+          className={`flex justify-center ${styles.link}`}
+          href={data?.linkedinLink}
+          rel="noopener"
+          target="_blank"
         >
-          <FontAwesomeIcon icon={["fab", "linkedin-in"]} />
-        </SocialIcon>
+          <Image
+            alt="LinkedIn"
+            className={styles.image}
+            height={21}
+            src={LinkedinIcon}
+            width={21}
+          />
+        </Link>
       )}
       {data?.pinterestLink && (
-        <SocialIcon
-          url={data?.pinterestLink}
+        <Link
+          className={`flex justify-center ${styles.link}`}
+          href={data?.pinterestLink}
+          rel="noopener"
+          target="_blank"
         >
-          <FontAwesomeIcon icon={["fab", "pinterest"]} />
-        </SocialIcon>
+          <Image
+            alt="Pinterest"
+            className={styles.image}
+            height={21}
+            src={PinterestIcon}
+            width={21}
+          />
+        </Link>
       )}
       {data?.redditLink && (
-        <SocialIcon
-          url={data?.redditLink}
+        <Link
+          className={`flex justify-center ${styles.link}`}
+          href={data?.redditLink}
+          rel="noopener"
+          target="_blank"
         >
-          <FontAwesomeIcon icon={["fab", "reddit-alien"]} />
-        </SocialIcon>
+          <Image
+            alt="Reddit"
+            className={styles.image}
+            height={21}
+            src={RedditIcon}
+            width={21}
+          />
+        </Link>
       )}
       {data?.twitterLink && (
-        <SocialIcon
-        url={data?.twitterLink}
-      >
-        <FontAwesomeIcon icon={["fab", "twitter"]} />
-      </SocialIcon>
+        <Link
+          className={`flex justify-center ${styles.link}`}
+          href={data?.twitterLink}
+          rel="noopener"
+          target="_blank"
+        >
+          <Image
+            alt="Twitter"
+            className={styles.image}
+            height={21}
+            src={TwitterIcon}
+            width={21}
+          />
+        </Link>
       )}
     </ul>
   ) : null

@@ -1,5 +1,8 @@
-import { defineField, defineType } from "sanity";
-import { BlockContentIcon } from "@sanity/icons";
+import {
+  defineField,
+  defineType
+} from "sanity"
+import { BlockContentIcon } from "@sanity/icons"
 
 export default defineType({
   name: "textMedia",

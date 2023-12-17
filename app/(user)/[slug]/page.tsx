@@ -1,16 +1,16 @@
-import React from "react";
-import { groq } from "next-sanity";
-import { client } from "@/lib/client";
-import { notFound } from "next/navigation";
+import React from "react"
+import { groq } from "next-sanity"
+import { client } from "@/lib/client"
+import { notFound } from "next/navigation"
 
-import { PortableText } from "@portabletext/react";
-import urlFor from "@/lib/urlFor";
+import { PortableText } from "@portabletext/react"
+import urlFor from "@/lib/urlFor"
 
-import Breadcrumbs from "@/components/App/Blog/Breadcrumbs/Breadcrumbs.component";
-import PostBanner from "@/components/App/PostBanner/PostBanner.component";
-import { RichTextComponents } from "@/components/App/RichTextComponents/RichTextComponents.component";
+import Breadcrumbs from "@/components/App/Blog/Breadcrumbs/Breadcrumbs.component"
+import PostBanner from "@/components/App/PostBanner/PostBanner.component"
+import { RichTextComponents } from "@/components/App/RichTextComponents/RichTextComponents.component"
 
-import styles from "./page.module.scss";
+import styles from "./page.module.scss"
 
 type Props = {
   params: {
@@ -18,7 +18,7 @@ type Props = {
   }
 }
 
-export const revalidate = 30;
+export const revalidate = 30
 
 export async function generateStaticParams() {
   const query = groq`
@@ -27,8 +27,8 @@ export async function generateStaticParams() {
     }
   `
 
-  const slugs: Page[] = await client.fetch(query);
-  const slugRoutes = slugs.map((slug) => slug.slug.current);
+  const slugs: Page[] = await client.fetch(query)
+  const slugRoutes = slugs.map((slug) => slug.slug.current)
 
   return slugRoutes.map((slug) => ({
     slug
@@ -45,7 +45,7 @@ export default async function Page({ params: {slug} }: Props) {
   const page: Page = await client.fetch(query, { slug })
 
   if (!page) {
-    notFound();
+    notFound()
   }
 
   return (

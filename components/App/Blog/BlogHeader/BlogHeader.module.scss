@@ -8,10 +8,6 @@ $divider-size: styles.to-rem(8);
   flex-flow: column;
 }
 
-.wrapper {
-  z-index: -2;
-}
-
 .contentWrapper {
   @include styles.breakpoint(max-width, device-mobile) {
     flex-flow: column;

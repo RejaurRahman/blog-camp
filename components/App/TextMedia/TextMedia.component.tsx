@@ -1,13 +1,13 @@
-import Image from "next/image";
-import { PortableText } from "@portabletext/react";
-import React from "react";
+import Image from "next/image"
+import { PortableText } from "@portabletext/react"
+import React from "react"
 
-import urlFor from "@/lib/urlFor";
+import urlFor from "@/lib/urlFor"
 
-import styles from "./TextMedia.module.scss";
+import styles from "./TextMedia.module.scss"
 
 type Props = {
-  textMedia: TextMedia;
+  textMedia: TextMedia
 }
 
 export default function TextMedia({ textMedia }: Props) {
@@ -28,5 +28,5 @@ export default function TextMedia({ textMedia }: Props) {
         <PortableText value={textMedia.copy} />
       </div>
     </div>
-  );
+  )
 }

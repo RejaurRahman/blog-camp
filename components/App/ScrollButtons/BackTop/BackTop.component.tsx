@@ -1,33 +1,37 @@
-"use client";
+"use client"
 
-import React, { useState, useEffect } from "react";
+import React, {
+  useEffect,
+  useState
+} from "react"
 
-import { ArrowUpIcon } from "@heroicons/react/24/solid";
+import { ArrowUpIcon } from "@heroicons/react/24/solid"
 
-import baseStyles from "@/components/App/ScrollButtons/ScrollButtons.module.scss";
-import styles from "./BackTop.module.scss";
+import baseStyles from "@/components/App/ScrollButtons/ScrollButtons.module.scss"
+import styles from "./BackTop.module.scss"
 
 export default function BackTop() {
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollY = window.scrollY || document.documentElement.scrollTop;
-      setIsVisible(scrollY >= 20);
-    };
+      const scrollY = window.scrollY || document.documentElement.scrollTop
+      setIsVisible(scrollY >= 20)
+    }
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll)
+
     return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+      window.removeEventListener("scroll", handleScroll)
+    }
+  }, [])
 
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: "smooth",
-    });
-  };
+      behavior: "smooth"
+    })
+  }
 
   return (
     <button
