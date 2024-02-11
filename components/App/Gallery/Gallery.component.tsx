@@ -54,6 +54,7 @@ export default function Gallery({ gallery }: Props) {
           clickable: true,
         }}
         slidesPerView="auto"
+        speed={700}
       >
         {gallery.images.length > 1 && (
           <div
