@@ -32,7 +32,7 @@ export default function NotFound() {
       <p
         className={`text-center ${styles.text}`}
       >
-        You didn&apost break the internet, but we can&apost find what you are looking for.
+        You didn&apos;t break the internet, but we can&apos;t find what you are looking for.
       </p>
       <div className={`flex ${styles.buttonWrapper}`}>
         <ClientSideRoute
